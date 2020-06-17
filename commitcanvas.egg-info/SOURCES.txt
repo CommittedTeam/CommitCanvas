@@ -1,0 +1,7 @@
+README.md
+setup.py
+commitcanvas/__init__.py
+commitcanvas.egg-info/PKG-INFO
+commitcanvas.egg-info/SOURCES.txt
+commitcanvas.egg-info/dependency_links.txt
+commitcanvas.egg-info/top_level.txt
