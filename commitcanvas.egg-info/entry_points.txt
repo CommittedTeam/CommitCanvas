@@ -1,0 +1,6 @@
+[blogtool.parsers]
+commitcanvas = commitcanvas.__main__:main
+
+[console_scripts]
+commitcanvas = commitcanvas.__main__:main
+
