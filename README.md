@@ -30,8 +30,6 @@ To run the sample program run the following commands:
 ## Linter checks
 
 Checks will automatically be activated once there is a commit made from the command line.
-Commit can be made only if all the checks pass.
-
-If you would like to check the linters before making a commit, run the following command
+Commit can be completed only if all the checks pass. Note that once you make a commit only the staged files will be checked, but if you would like to do linter check for all the files or If you would like to check with linters even before making a commit, run the following command
 
 - `poetry run pre-commit run --all-files`
