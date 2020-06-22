@@ -30,7 +30,7 @@ jobs:
         poetry install
     - name: Test with pytest
       run: |
-        poetry run pytest -q tests
+        poetry run pytest
     - name: linter check
       run: |
         poetry run pre-commit run --all-files
