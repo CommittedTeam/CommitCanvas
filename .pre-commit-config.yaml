@@ -1,6 +1,7 @@
 minimum_pre_commit_version: 1.21.0
 repos:
 
+# check with pylint
 - repo: https://github.com/pre-commit/mirrors-pylint
   rev: v2.3.1
   hooks:
@@ -12,6 +13,7 @@ repos:
   hooks:
   - id: pydocstyle
 
+# trim trailing whitespace
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.4.0
   hooks:
