@@ -1,6 +1,6 @@
 # CommitCanvas
 
-[![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/build)
+[![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions)
 
 ## Tools
 
@@ -18,10 +18,21 @@ Please see the [link](https://pre-commit.com/) for more info about installation 
 
 ## Run the main application
 
-To run the sample program run the following commands:
+During development to run the program please run the following command first, that will activate the virtual environment:
 
 - `poetry shell`
+
+Then run the following command to run the program:
+
 - `commitcanvas`
+
+You can run the program with following command as well:
+
+- `poetry run commitcanvas`
+
+Note that after package build, this will automatically be converted into an entrypoint.
+And after installation this entrypoint will create a command `commitcanvas` in the Python
+environment.
 
 ## Run the tests
 
