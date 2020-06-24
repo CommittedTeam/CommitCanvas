@@ -1,0 +1,36 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+
+name: build
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install Poetry
+      run: |
+        pip install poetry
+    - name: Install dependencies
+      run: |
+        poetry install
+    - name: Test with pytest
+      run: |
+        poetry run pytest
+    - name: linter check
+      run: |
+        poetry run pre-commit run --all-files
