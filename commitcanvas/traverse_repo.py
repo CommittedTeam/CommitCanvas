@@ -2,7 +2,6 @@
 # pylint: disable=import-error
 import os
 
-import pandas as pd
 from pydriller import RepositoryMining
 
 
@@ -35,7 +34,3 @@ def traverse(path):
             file_type.append(parse_file_type(modif.filename))
 
     return data
-
-
-PATH = "/home/teona/Documents/CommitCanvas/CommitCanvas"
-print(pd.DataFrame(traverse(PATH)))
