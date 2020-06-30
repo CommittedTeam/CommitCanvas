@@ -26,6 +26,12 @@ Then run the following command to run the program:
 
 - `commitcanvas`
 
+The required arguments for traversing the repository are:
+
+- local path to the repository
+- Github access token
+- repository name
+
 You can run the program with following command as well:
 
 - `poetry run commitcanvas`
