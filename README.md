@@ -22,21 +22,22 @@ During development to run the program please run the following command first, th
 
 - `poetry shell`
 
-Then run the following command to run the program:
+Currently there are two commands available:
 
-- `commitcanvas`
+- `commitcanvas traverse`
 
-The required arguments for traversing the repository are:
+  Collects the data from the repository, and stores in the pickle file.
+  The required arguments for this command are:
 
-- local path to the repository
-- Github access token
-- repository name
+  - Github access token
+  - repository name
 
-You can run the program with following command as well:
+- `commitcanvas display`
 
-- `poetry run commitcanvas`
+  Reads from the pickle file and displays the data.
 
-Note that after package build, this will automatically be converted into an entrypoint.
+
+Note that after package build, `commitcanvas` will automatically be converted into an entrypoint.
 And after installation this entrypoint will create a command `commitcanvas` in the Python
 environment.
 

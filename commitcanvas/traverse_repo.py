@@ -3,11 +3,10 @@
 import os
 
 from github import Github
-from pydriller import RepositoryMining
 
 
 def parse_file_type(name):
-    """Parse through file name and returns its format."""
+    """Parse through file name and return its format."""
     if "." in name:
         file_type, name = os.path.splitext(name)
         file_type += ""
@@ -15,11 +14,9 @@ def parse_file_type(name):
     return name
 
 
-def traverse(path, token, repo_name):
+def traverse(token, repo_name):
     """Collect the data about the commit."""
-    # Get commit message, file types, change types and diffs with Pydriller.
-    # diff: dictionary with two keys Added and Deleted, that contain list of
-    # added and deleted lines.
+    # Get commit build status, message, file types, change types and diffs.
     data = {
         "status": [],
         "message": [],
@@ -27,24 +24,6 @@ def traverse(path, token, repo_name):
         "change_types": [],
         "diff": [],
     }
-    for commit in RepositoryMining(path).traverse_commits():
-
-        file_type = []
-        change_types = []
-        diff_parsed = []
-
-        data["message"].append(commit.msg)
-        data["file_types"].append(file_type)
-        data["change_types"].append(change_types)
-        data["diff"].append(diff_parsed)
-
-        for modif in commit.modifications:
-            change_types.append(modif.change_type.name)
-            diff_parsed.append(modif.diff_parsed)
-            # parse the filenames for the extensions
-            file_type.append(parse_file_type(modif.filename))
-
-    # Get the build statuses for invividual commits using PyGithub
     githb = Github(token)
 
     repo = githb.get_repo(repo_name)
@@ -52,7 +31,23 @@ def traverse(path, token, repo_name):
     commits = repo.get_commits()
     for commit in commits:
 
+        file_type = []
+        change_types = []
+        diff_parsed = []
+
         status = commit.get_combined_status()
         data["status"].append(status.state)
+        data["message"].append(commit.commit.message)
+        data["file_types"].append(file_type)
+        data["diff"].append(diff_parsed)
+        data["change_types"].append(change_types)
+
+        files = commit.files
+
+        for file in files:
+            change_types.append(file.status)
+            diff_parsed.append(file.patch)
+            # parse the filenames for the extensions
+            file_type.append(parse_file_type(file.filename))
 
     return data
