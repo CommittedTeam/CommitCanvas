@@ -31,6 +31,14 @@ def check_for_period(message):
     return check
 
 
+def check_capital_letter(message):
+    """Check that subject line starts with capital letter."""
+    splitted = message.split()
+    check = splitted[0][0].isupper()
+
+    return check
+
+
 def check_length(message):
     """Length of the subject line should not be more than 72 characters."""
     splitted = message.splitlines()
@@ -51,11 +59,22 @@ def check_imperative_mood(message):
         print("Check imperative mood....................PASSED")
     # Give suggestion for using proper imperative word based on the given verb
     if doc[0].tag_ in ("VBD", "VBN", "VBZ", "VBG"):
-        print("Try starting with", '"{}"'.format(doc[0].lemma_), "instead")
+        # spacy returns the lematized word in lowercase, so capitalize it
+        # to fit the requirements for good commit message
+        lemma = doc[0].lemma_.capitalize()
+        print("Try starting with", '"{}"'.format(lemma), "instead")
 
 
 def commit_check(commit_message):
     """Display the diagnostic messages."""
+    if check_capital_letter(commit_message):
+
+        print("Check for capital letter.................PASSED")
+    else:
+
+        print("Check for capital letter.................FAILED")
+        print("\nSubject line should start with capital letter\n")
+
     if check_blank_line(commit_message):
         print("Check for blank line.....................PASSED")
     else:
