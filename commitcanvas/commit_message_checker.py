@@ -43,7 +43,8 @@ def check_imperative_mood(message):
     doc = nlp(message)
 
     if doc[0].tag_ != "VB":
-        print("Commit message should start with verb in imperative mood")
+        print("Check imperative mood....................FAILED")
+        print("\nCommit message should start with verb in imperative mood")
     else:
         print("Check imperative mood....................PASSED")
     if doc[0].tag_ in ("VBD", "VBN", "VBZ", "VBG"):
