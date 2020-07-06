@@ -2,6 +2,7 @@ README.md
 setup.py
 commitcanvas/__init__.py
 commitcanvas/__main__.py
+commitcanvas/commit_message_checker.py
 commitcanvas.egg-info/PKG-INFO
 commitcanvas.egg-info/SOURCES.txt
 commitcanvas.egg-info/dependency_links.txt
