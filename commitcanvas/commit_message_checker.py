@@ -1,5 +1,5 @@
 """Check the style of commit messages."""
-# Good commit message guidelines from Github
+# Guidelines from Github:
 # Separate subject from body with a blank line
 # Do not end the subject line with a period
 # Capitalize the subject line and each paragraph
