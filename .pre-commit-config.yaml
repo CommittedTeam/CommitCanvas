@@ -6,6 +6,8 @@ repos:
   rev: pylint-2.5.3
   hooks:
   - id: pylint
+    args:
+      - --score=n
 
 # check docstrings
 - repo: https://github.com/PyCQA/pydocstyle

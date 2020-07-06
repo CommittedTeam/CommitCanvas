@@ -5,7 +5,7 @@
 # Capitalize the subject line and each paragraph
 # Use the imperative mood in the subject line
 # Wrap lines at 72 characters
-# Use the body to explain what and why you have done something.
+# Use the body to explain what and why you have done something
 # In most cases, you can leave out details about how a change has been made
 # pylint: disable = import-error
 import spacy
