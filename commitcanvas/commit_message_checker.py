@@ -15,6 +15,7 @@ def check_blank_line(message):
     """Check if there is a blank line between subject and a paragraph."""
     splitted = message.splitlines()
     if len(splitted) > 1:
+        # check should only be needed for multyline commit messages
         check = not splitted[1]
     else:
         check = True
@@ -41,12 +42,14 @@ def check_imperative_mood(message):
     nlp = spacy.load("en_core_web_sm")
 
     doc = nlp(message)
-
+    # check if the first word in the subject line is verb or not.
+    # if its not verb fail the check and give diagnostic message.
     if doc[0].tag_ != "VB":
         print("Check imperative mood....................FAILED")
         print("\nCommit message should start with verb in imperative mood")
     else:
         print("Check imperative mood....................PASSED")
+    # Give suggestion for using proper imperative word based on the given verb
     if doc[0].tag_ in ("VBD", "VBN", "VBZ", "VBG"):
         print("Try starting with", '"{}"'.format(doc[0].lemma_), "instead")
 
