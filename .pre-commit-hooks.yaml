@@ -1,5 +1,5 @@
 -   id: commitcanvas
     name: commitcanvas
     language: python
-    entry: poetry run commitcanvas check --staged --msg-filename
+    entry: poetry run commitcanvas check "Test push"
     stages: [commit-msg]
