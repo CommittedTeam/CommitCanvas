@@ -1,9 +1,5 @@
-- id: commitcanvas
-  name: commitcanvas
-  description: "CommitCanvas: commit message quality checker"
-  entry: commitcanvas check
-  language: python
-  language_version: python3
-  require_serial: true
-  stages: [commit-msg]
-  types: [python]
+-   id: commitcanvas
+    name: commitcanvas
+    language: python
+    entry: commitcanvas check --staged --msg-filename
+    stages: [commit-msg]
