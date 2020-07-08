@@ -22,7 +22,7 @@ repos:
   - id: flake8
   - id: trailing-whitespace
 
-# format Python code with blac
+# format Python code with black
 - repo: https://github.com/ambv/black
   rev: 19.10b0
   hooks:
