@@ -1,7 +1,6 @@
 -   id: commitcanvas
     name: commitcanvas
     entry: commitcanvas.sh
-    additional_dependencies: [-r, commitcanvas.egg-info/requirs.txt]
     verbose: False
     language: script
     stages: [commit-msg]
