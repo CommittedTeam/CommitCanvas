@@ -33,3 +33,9 @@ repos:
   rev: v1.9.0
   hooks:
   - id: reorder-python-imports
+
+- repo: https://github.com/CommittedTeam/CommitCanvas
+  rev: 3fc6892e7bb894da15958d85722b7e69a267fd32
+  hooks:
+  - id: commitcanvas
+    language_version: python3.7
