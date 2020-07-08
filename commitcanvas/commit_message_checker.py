@@ -6,7 +6,7 @@
 # Use the imperative mood in the subject line
 # Wrap lines at 72 characters
 # Use the body to explain what and why you have done something
-# In most cases, you can leave out details about how a change has been made
+# In most cases, you can leave out details about how a change has been mad
 # pylint: disable = import-error
 import spacy
 
@@ -44,52 +44,59 @@ def check_length(message):
     return len(splitted[0]) < 73
 
 
+# disable pylint no-else-return error
+# pylint: disable = R1705
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
     nlp = spacy.load("en_core_web_sm")
 
     doc = nlp(message)
-    # check if the first word in the subject line is verb or not.
-    # if its not verb fail the check and give diagnostic message.
-    if doc[0].tag_ != "VB":
-        print("Check imperative mood....................FAILED")
-        print("\nCommit message should start with verb in imperative mood")
-    else:
-        print("Check imperative mood....................PASSED")
-    # Give suggestion for using proper imperative word based on the given verb
+
     if doc[0].tag_ in ("VBD", "VBN", "VBZ", "VBG"):
-        # spacy returns the lematized word in lowercase, so capitalize it
-        # to fit the requirements for good commit message
+        # spacy returns the lemaized word in lowercase, so capitalize it
+        # to fit the requirements for good commit messag
         lemma = doc[0].lemma_.capitalize()
-        print("Try starting with", '"{}"'.format(lemma), "instead")
+        return (False, " ".join(("Start with", '"{}"'.format(lemma))))
+    if doc[0].tag_ != "VB":
+        return (False, "Start message with with verb in imperative mood")
+    else:
+        return True
+
+
+FAIL = "\u2715"
+PASS = "\u2713"
 
 
 def commit_check(commit_message):
     """Display the diagnostic messages."""
     if check_capital_letter(commit_message):
 
-        print("Check for capital letter.................PASSED")
+        print(PASS, " Check for capital letter")
     else:
 
-        print("Check for capital letter.................FAILED")
+        print(FAIL, " Check for capital letter")
         print("\nSubject line should start with capital letter\n")
 
     if check_blank_line(commit_message):
-        print("Check for blank line.....................PASSED")
+        print(PASS, " Check for blank line")
     else:
-        print("Check for blank line.....................FAILED")
+        print(FAIL, " Check for blank line")
         print("\nBlank line required between subject and a pharagraph\n")
 
     if check_length(commit_message):
-        print("Check for length.........................PASSED")
+        print(PASS, " Check for length")
     else:
-        print("Check for length.........................FAILED")
+        print(FAIL, " Check for length")
         print("\nThere must be less than 72 characters in the subject line\n")
 
     if check_for_period(commit_message):
-        print("Check for period.........................PASSED")
+        print(PASS, " Check for period")
     else:
-        print("Check for period.........................FAILED")
+        print(FAIL, " Check for period")
         print("\nNo period needed at the end of the subject line\n")
 
-    check_imperative_mood(commit_message)
+    if check_imperative_mood(commit_message) is True:
+        print(PASS, " Check for imperative mood")
+    elif check_imperative_mood(commit_message)[0] is False:
+        print(FAIL, " Check for imperative mood failed\n")
+        print(check_imperative_mood(commit_message)[1])
