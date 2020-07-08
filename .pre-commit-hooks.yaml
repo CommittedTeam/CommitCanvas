@@ -1,6 +1,6 @@
 -   id: commitcanvas
     name: commitcanvas
-    language: python
-    entry: poetry run commitcanvas check
-    args: "Test commit message"
+    entry: commitcanvas.sh
+    verbose: False
+    language: script
     stages: [commit-msg]
