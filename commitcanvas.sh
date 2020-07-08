@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import shutil
 import sys
-from src import commit_message_checker
+from commitcanvas import commit_message_checker
 # to make this script executable run following command: chmod +x commitcanvas.sh
 
 # save the commit message into the file, to make sure that it doesn't get lost
