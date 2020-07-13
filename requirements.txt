@@ -1,0 +1,5 @@
+en==0.*,>=0.0.1
+en-core-web-sm
+pre-commit==2.*,>=2.5.1
+pytest==5.*,>=5.2.0
+spacy==2.*,>=2.2.0
