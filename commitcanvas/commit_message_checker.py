@@ -48,17 +48,12 @@ def check_length(message):
 # pylint: disable = R1705
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
-    nlp = spacy.load("en_core_web_sm")
+    model = spacy.load("model")
 
-    doc = nlp(message)
+    doc = model(message)
 
-    if doc[0].tag_ in ("VBD", "VBN", "VBZ", "VBG"):
-        # spacy returns the lemaized word in lowercase, so capitalize it
-        # to fit the requirements for good commit messag
-        lemma = doc[0].lemma_.capitalize()
-        return (False, " ".join(("Start with", '"{}"'.format(lemma))))
     if doc[0].tag_ != "VB":
-        return (False, "Start message with with verb in imperative mood")
+        return (False, "Start message with verb in imperative mood")
     else:
         return True
 
