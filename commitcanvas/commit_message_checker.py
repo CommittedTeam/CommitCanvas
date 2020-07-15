@@ -48,10 +48,11 @@ def check_length(message):
 # pylint: disable = R1705
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
-    model = spacy.load("./model")
+    model = spacy.load("model")
 
     doc = model(message)
-
+    # for i in doc:
+    #     print(i.tag_ )
     if doc[0].tag_ != "VB":
         return (False, "Start message with verb in imperative mood")
     else:
