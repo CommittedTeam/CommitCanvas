@@ -41,17 +41,9 @@ repos:
     stages: [commit]
 
 #lint the commit message with commitcanvas
-# - repo: https://github.com/CommittedTeam/CommitCanvas
-#   rev: 6bb713d50ee692cd298c327c09a074e3367ff351
-#   hooks:
-#   - id: commitcanvas
-#     language_version: python3.7
-#     stages: [commit-msg]
-
-- repo: local
+- repo: https://github.com/CommittedTeam/CommitCanvas
+  rev: cc2bc55cff5d8fe3b100b08e9e2f305e645cd74a
   hooks:
-    - id: commitcanvas
-      name: commitcanvas
-      entry: commitcanvas.sh
-      language: script
-      stages: [commit-msg]
+  - id: commitcanvas
+    language_version: python3.7
+    stages: [commit-msg]
