@@ -1,6 +1,7 @@
 -   id: commitcanvas
     name: commitcanvas
-    entry: commitcanvas.sh
+    entry: python commitcanvas.py
+    additional_dependencies: [spacy == 2.2]
     verbose: False
-    language: script
+    language: python
     stages: [commit-msg]

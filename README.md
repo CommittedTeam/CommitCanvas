@@ -15,7 +15,7 @@ After adding new checks to the `.pre-commit-config.yaml` run:
 - `pre-commits install`
 - `pre-commit install --hook-type commit-msg`
 
-Please see the [link](https://pre-commit.com/) for more info about installation and usage of `pre-commit`.
+Please see the [link](https://pre-commit.com/) for more info about installation and usage of `pre-commit`
 
 ## Run the main application
 

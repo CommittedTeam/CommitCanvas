@@ -1,15 +1,17 @@
-#!/usr/bin/env python3
+"""Get commit massage from command line and do checks."""
 import shutil
 import sys
+
 from commitcanvas import commit_message_checker
 
-# to make this script executable run following command: chmod +x commitcanvas.sh
+# to make this script executable run following
+# command: chmod +x commitcanvas.sh
 
 # save the commit message into the file
-shutil.copy(sys.argv[1], '.git/pre-commit-saved-commit-msg')
+shutil.copy(sys.argv[1], ".git/pre-commit-saved-commit-msg")
 
 # get the commit message for the commit checks
-with open('.git/pre-commit-saved-commit-msg', 'r') as file:
+with open(".git/pre-commit-saved-commit-msg", "r") as file:
     data = file.read()
 
 PASSED = True
@@ -22,12 +24,13 @@ imperative = commit_message_checker.check_imperative_mood(data)
 
 list_of_checks = [length, period, capital, blank_line, imperative]
 
-# get overall boolean value, to ensure that every item in the list has True value
+# get overall boolean value, to ensure that every item
+# in the list has True value
 # and therefore all the checks pass.
 overall = all(list_of_checks)
 # Display helpful tips on how to improve commit message
 
-if (PASSED != overall):
+if PASSED != overall:
     if not capital:
 
         print("Error: subject line should start with capital letter")
@@ -47,8 +50,8 @@ if (PASSED != overall):
     if not imperative:
 
         print("Error: start commit message with verb in imperative mood")
-    exit (1)
+    sys.exit(1)
 
 else:
     # all the checks passed
-    exit (0)
+    sys.exit(0)
