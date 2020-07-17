@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+!/usr/bin/env python3
 import shutil
 import sys
 from commitcanvas import commit_message_checker
@@ -18,14 +18,14 @@ list_of_checks = [
         commit_message_checker.check_for_period(data),
         commit_message_checker.check_capital_letter(data),
         commit_message_checker.check_blank_line(data),
-        commit_message_checker.check_imperative_mood(data) == True,
+        commit_message_checker.check_imperative_mood(data),
 ]
 
 # get overall boolean value, to ensure that every item in the list has True value
 # and therefore all the checks pass.
 overall = all(list_of_checks)
-# Display helpful tips on how to impro
-diagnostic_info = commit_message_checker.commit_check(data)
+# Display helpful tips on how to improve commit message
+commit_message_checker.commit_check(data)
 
 if (PASSED != overall):
     exit (1)
