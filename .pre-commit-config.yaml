@@ -40,10 +40,19 @@ repos:
   - id: reorder-python-imports
     stages: [commit]
 
-# lint the commit message with commitcanvas
+#lint the commit message with commitcanvas
 - repo: https://github.com/CommittedTeam/CommitCanvas
   rev: cc2bc55cff5d8fe3b100b08e9e2f305e645cd74a
   hooks:
   - id: commitcanvas
     language_version: python3.7
     stages: [commit-msg]
+
+# - repo: local
+#   hooks:
+#   - id: commitcanvas
+#     name: commitcanvas
+#     entry: python commitcanvas_check.py
+#     additional_dependencies: [spacy == 2.2]
+#     language: python
+#     stages: [commit-msg]

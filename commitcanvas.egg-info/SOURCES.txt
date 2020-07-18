@@ -22,6 +22,7 @@ commitcanvas/model/tagger/cfg
 commitcanvas/model/tagger/model
 commitcanvas/model/tagger/tag_map
 commitcanvas/model/vocab/key2row
+commitcanvas/model/vocab/lexemes.bin
 commitcanvas/model/vocab/lookups.bin
 commitcanvas/model/vocab/lookups_extra.bin
 commitcanvas/model/vocab/strings.json
