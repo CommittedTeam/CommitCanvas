@@ -11,16 +11,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-# APP = typer.Typer()
-#
-#
-# @APP.command()
-# def hello(message: str):
-#     """Demo function."""
-#     print(message)
-#
-#
-# def main():
-#     """Start execution of the program."""
-#     APP()
