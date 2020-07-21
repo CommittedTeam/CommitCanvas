@@ -46,7 +46,11 @@ def check_length(message):
 
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
-    model = spacy.load("./model")
+    nlp = spacy.load("en_core_web_sm")
+    model = nlp.from_disk("model")
 
     doc = model(message)
     return doc[0].tag_ == "VB"
+
+
+print(check_imperative_mood("Rename file"))
