@@ -41,21 +41,37 @@ def annotate(training_data):
 
 
 # pylint: disable = W0612
-def train_model(training_data):
+# def train_model(training_data):
+#     """Train the spacy model."""
+#     n_iter = 5
+#     disabled = model.disable_pipes("parser", "ner")
+#     optimizer = model.begin_training()
+#     for i in range(n_iter):
+#         random.shuffle(training_data)
+#         for text, annotations in training_data:
+#             model.update([text], [annotations], sgd=optimizer)
+#
+#     disabled.restore()
+#
+#     model.to_disk("./model")
+
+
+def train_model(train_data):
     """Train the spacy model."""
-    n_iter = 5
-    disabled = model.disable_pipes("parser", "ner")
-    optimizer = model.begin_training()
-    for i in range(n_iter):
-        random.shuffle(training_data)
-        for text, annotations in training_data:
-            model.update([text], [annotations], sgd=optimizer)
+    nlp = spacy.load("en_core_web_sm")
 
-    disabled.restore()
+    other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
+    with nlp.disable_pipes(*other_pipes):
+        optimizer = nlp.begin_training()
+        for i in range(10):
+            random.shuffle(train_data)
+            for text, annotations in train_data:
+                nlp.update([text], [annotations], sgd=optimizer)
+    nlp.to_disk("./model")
 
-    model.to_disk("./model")
 
-
+data = [["update file", {"tags": ["VB", "NN"]}]]
+train_model(data)
 # save the collected and annotated data in file, and fix the tags based on your
 # needs. Then load the data and pass it to train_model function.
 
