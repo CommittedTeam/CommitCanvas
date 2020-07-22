@@ -70,8 +70,6 @@ def train_model(train_data):
     nlp.to_disk("./model")
 
 
-data = [["update file", {"tags": ["VB", "NN"]}]]
-train_model(data)
 # save the collected and annotated data in file, and fix the tags based on your
 # needs. Then load the data and pass it to train_model function.
 
