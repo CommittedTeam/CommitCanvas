@@ -54,6 +54,3 @@ def check_imperative_mood(message):
 
     doc = nlp(message)
     return doc[0].tag_ == "VB"
-
-
-print(check_imperative_mood("Rename file"))
