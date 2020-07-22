@@ -41,21 +41,6 @@ def annotate(training_data):
 
 
 # pylint: disable = W0612
-# def train_model(training_data):
-#     """Train the spacy model."""
-#     n_iter = 5
-#     disabled = model.disable_pipes("parser", "ner")
-#     optimizer = model.begin_training()
-#     for i in range(n_iter):
-#         random.shuffle(training_data)
-#         for text, annotations in training_data:
-#             model.update([text], [annotations], sgd=optimizer)
-#
-#     disabled.restore()
-#
-#     model.to_disk("./model")
-
-
 def train_model(train_data):
     """Train the spacy model."""
     nlp = spacy.load("en_core_web_sm")
