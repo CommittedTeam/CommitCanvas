@@ -3,6 +3,7 @@ setup.py
 commitcanvas/__init__.py
 commitcanvas/__main__.py
 commitcanvas/commit_message_checker.py
+commitcanvas/commitcanvas_check.py
 commitcanvas/train_spacy_model.py
 commitcanvas.egg-info/PKG-INFO
 commitcanvas.egg-info/SOURCES.txt

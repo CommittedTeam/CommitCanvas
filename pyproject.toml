@@ -7,9 +7,9 @@ authors = ["bagashvilit <bagashvilit@allegheny.edu>"]
 [tool.poetry.dependencies]
 python = "^3.7"
 pre-commit = "^2.5.1"
-spacy = "^2.2"
+spacy = "^2.3.2"
 en = "^0.0.1"
-en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz" }
+en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.0/en_core_web_sm-2.3.0.tar.gz" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
