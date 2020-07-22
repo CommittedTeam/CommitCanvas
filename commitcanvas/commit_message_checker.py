@@ -8,6 +8,8 @@
 # Use the body to explain what and why you have done something
 # In most cases, you can leave out details about how a change has been mad
 # pylint: disable = import-error
+import pathlib
+
 import spacy
 
 
@@ -46,7 +48,9 @@ def check_length(message):
 
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
-    nlp = spacy.load("./model")
+    path = pathlib.Path(__file__).parent / "model"
+    nlp = spacy.load(path)
+    # nlp = spacy.load("./model")
 
     doc = nlp(message)
     return doc[0].tag_ == "VB"
