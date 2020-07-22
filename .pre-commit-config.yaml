@@ -47,12 +47,3 @@ repos:
   - id: commitcanvas
     language_version: python3.7
     stages: [commit-msg]
-
-# - repo: local
-#   hooks:
-#   - id: commitcanvas
-#     name: commitcanvas
-#     entry: python commitcanvas_check.py
-#     additional_dependencies: [spacy == 2.2]
-#     language: python
-#     stages: [commit-msg]
