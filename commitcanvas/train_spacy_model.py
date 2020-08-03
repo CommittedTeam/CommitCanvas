@@ -5,7 +5,7 @@ import random
 import spacy
 from github import Github
 
-model = spacy.load("en_core_web_sm")
+model = spacy.load("model")
 
 
 def collect_training_data(token, repo_name):
@@ -43,7 +43,7 @@ def annotate(training_data):
 # pylint: disable = W0612
 def train_model(train_data):
     """Train the spacy model."""
-    nlp = spacy.load("en_core_web_sm")
+    nlp = spacy.load("./model")
 
     other_pipes = [pipe for pipe in nlp.pipe_names if pipe != "ner"]
     with nlp.disable_pipes(*other_pipes):
@@ -52,19 +52,21 @@ def train_model(train_data):
             random.shuffle(train_data)
             for text, annotations in train_data:
                 nlp.update([text], [annotations], sgd=optimizer)
-    nlp.to_disk("./model")
+    nlp.to_disk("./updated_model")
 
 
 # save the collected and annotated data in file, and fix the tags based on your
 # needs. Then load the data and pass it to train_model function.
 
-
+# token = "798beac5e8cd6c0e8b9ea06066720254f0682a0b"
+# repo = "PyCQA/pylint"
 # data = collect_training_data(token,repo)
 # annotated_data = annotate(data)
-#
+# import json
 # #use json instead of serialization, to manually check the data
 # with open('spacy_training_data/training_data.json', 'w') as file:
 #     json.dump(annotated_data,file)
+# import json
 
 # with open('spacy_training_data/training_data.json', 'r') as file:
 #     data_loaded  = json.load(file)
