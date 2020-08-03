@@ -52,5 +52,4 @@ def check_imperative_mood(message):
     nlp = spacy.load("en_core_web_sm")
 
     doc = nlp(message)
-    print(doc[0].tag_, doc[0].dep_)
     return doc[0].tag_ == "VB" or doc[0].dep_ == "compound"
