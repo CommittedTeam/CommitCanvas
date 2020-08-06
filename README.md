@@ -2,46 +2,134 @@
 
 [![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions)
 
-## Tools
+# Table of contents
 
-Please see the [link](https://python-poetry.org/docs/) for the guide to install Poetry.
+* [About](#about)
+* [Features](#features)
+* [Installation](#installation)
+* [Run](#run)
+* [Development info](#Development-info)
+* [Testing](#Testing)
+  + [Automated Testing](#automated-testing)
+  + [Code Linting](#Code-linting)
+* [Contributing](#contributing)
+* [Future work](#future-work)
+* [Contact](#contact)
 
-To install `pre-commits` run:
+## About
 
-- `pip install pre-commits`
+Automated Analysis of Git Repositories to Support Predictions and Interventions with Builds and Commits
 
-After adding new checks to the `.pre-commit-config.yaml` run:
+## Features
 
-- `pre-commits install`
-- `pre-commit install --hook-type commit-msg`
+- Commit message linter
 
-Please see the [link](https://pre-commit.com/) for more info about installation and usage of `pre-commit`
+    - Separate subject from body with a blank line
+    - Do not end the subject line with a period
+    - Capitalize the subject line and each paragraph
+    - Use the imperative mood in the subject line
+    - Wrap lines at 72 characters
 
-## Run the main application
+- Build status prediction
 
-During development to run the program please run the following command first, that will activate the virtual environment:
+## Installation
 
-- `poetry shell`
+Currently `commitcanvas` works with `pre-commit` so please follow the steps below.
 
-Then run the following command to run the program:
+Add `.pre-commit-config.yaml` to your repository.
 
-- `commitcanvas`
+Add following code block inside the `.pre-commit-config.yaml`:
 
-You can run the program with following command as well:
+```
 
-- `poetry run commitcanvas`
+minimum_pre_commit_version: 1.21.0
+repos:
 
-Note that after package build, this will automatically be converted into an entrypoint.
-And after installation this entrypoint will create a command `commitcanvas` in the Python
-environment.
+# check with commitcanvas.
+- repo: https://github.com/CommittedTeam/CommitCanvas
+  rev: 0e134ab74ec2393d8162f723ecc78c132ce2202a
+  hooks:
+    - id: commitcanvas
+      language_version: python3.7
+      language: python
+      stages: [commit-msg]
 
-## Run the tests
+```
 
-- `poetry run pytest`
+Install `pre-commit`, please refer the [documentation](https://pre-commit.com/#install)
 
-## Linter checks
+To use `commitcanvas` as a `commit-msg` hook, install pre-commit in `.git/hooks/prepare-commit-msg`:
 
-Checks will automatically be activated once there is a commit made from the command line.
-Commit can be completed only if all the checks pass. Note that once you make a commit only the staged files will be checked, but if you would like to do linter check for all the files or If you would like to check with linters even before making a commit, run the following command
+`pre-commit install --hook-type prepare-commit-msg`
 
-- `poetry run pre-commit run --all-files`
+NOTE: You need to run this command everytime you clone the repository, unless you configure `pre-commit` globaly. Please follow the [link](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories) for more information.
+
+## Run
+
+Every time you make a commit `commitcanvas` will automatically check the commit message, and if there are any erros, `git commit` command will be aborted before creating a commit, and helpul tips will be dispalyed about how to improve the commit message.
+
+## Development info
+
+- Clone the source code onto your machine
+
+    With HTTPS:
+
+    `https://github.com/CommittedTeam/CommitCanvas.git`
+
+    or With SSH:
+
+    `git@github.com:CommittedTeam/CommitCanvas.git`
+
+- Install Poetry(Recommended)
+
+    Poetry is a tool for dependency managment and packaging in Python. Please follow the documentation [here](https://python-poetry.org/docs/#installation) on how to install poetry on your machine
+
+When under developmnet always install the dependencies with `poetry install` and run the program with `poetry run python program_name`.
+
+You can add new dependencies to `pyproject.toml` either manually or by `poetry add package_name`. Please refer to documentation [here](https://python-poetry.org/docs/cli/#add) for more information.
+
+Use `poetry update` for updating the dependencies to their latest versions as neccessary. Please refer to documentation [here](https://python-poetry.org/docs/cli/#update) for more information.
+
+Please use `pre-commit` hooks for linting the code. Install pre-commit with `pip install pre-commit` or follow the documentation [here](https://pre-commit.com/#install). After cloning the repository locally run `pre-commit install` to install pre-commit into your git hooks.
+
+NOTE: You would have to run `pre-commit install` every time you clone a repository. Please refer to documentation [here](https://pre-commit.com/#usage) for more information.
+
+NOTE: You will not be able to complete commit unless all the linters pass. Only staged changes will be checked at the time of commit.
+
+## Testing
+
+### Automated Testing
+
+Developers of this program can run the test suite with `Pytest`
+
+`poetry run pytest`
+
+### Code linting
+
+Use `poetry run pre-commit run --all-files` to check the code with linters and get the diagnostic info.
+
+Currently this project uses following linters:
+
+- pylint
+- pydocstyle
+- flake8
+- black
+
+You may add more linters to `.pre-commit-config.yaml`
+
+## Contributing
+
+We welcome everyone who is interested in helping improve CommitCanvas! If you are interested in being a contributor, please review our [Code of Conduct](./CODE_OF_CONDUCT.md) and [Guidelines for Contributors](./CONTRIBUTING.md) before raising an issue, or beginning a contribution.
+
+To create a pull request please follow this [template](./pull_request_template.md)
+
+## Future work
+
+Currently CommitCanvas only has a feature that lints the commit messages, but we plan to add a feature that will predict the build status before commiting your changes.
+
+## Contact
+
+If you have any questions or concerns about this project please contact:
+
+- Dr. Kapfhammer(gkapfham@allegheny.edu)
+- Teona Bagashvili(bagashvilit@allegheny.edu)
