@@ -1,16 +1,16 @@
 """Get commit massage from command line and do checks."""
 import sys
 
-from commitcanvas import commit_message_checker
+from commitcanvas import commit_message_checker as cm
 
 
 def get_checks(commit_message):
     """Do all the checks for the commit message."""
-    length = commit_message_checker.check_length(commit_message)
-    period = commit_message_checker.check_for_period(commit_message)
-    capital = commit_message_checker.check_capital_letter(commit_message)
-    blank_line = commit_message_checker.check_blank_line(commit_message)
-    imperative = commit_message_checker.check_imperative_mood(commit_message)
+    length = cm.check_length(commit_message)
+    period = cm.check_for_period(commit_message)
+    capital = cm.check_capital_letter(commit_message)
+    blank_line = cm.check_blank_line(commit_message)
+    imperative = cm.check_imperative_mood(commit_message)
 
     list_of_checks = [capital, blank_line, length, period, imperative]
     return list_of_checks
