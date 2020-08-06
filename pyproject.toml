@@ -9,11 +9,11 @@ python = "^3.7"
 pre-commit = "^2.5.1"
 spacy = "^2.3.2"
 en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz" }
-pathlib = "^1.0.1"
-codecov = "^2.1.8"
+
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+coverage = "^5.2.1"
 
 [tool.poetry.scripts]
 commitcanvas = "commitcanvas.__main__:main"
