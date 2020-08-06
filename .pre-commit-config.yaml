@@ -42,7 +42,7 @@ repos:
 
 #lint the commit message with commitcanvas
 - repo: https://github.com/CommittedTeam/CommitCanvas
-  rev: 10917a13622cb6ba0b5cb485ccdfc3c365aca0b9
+  rev: 7984622121b8e568d6f41f59930a126fc0de32d7
   hooks:
   - id: commitcanvas
     language_version: python3.7
