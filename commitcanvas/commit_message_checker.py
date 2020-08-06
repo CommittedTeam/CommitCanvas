@@ -53,9 +53,3 @@ def check_imperative_mood(message):
 
     doc = nlp(message)
     return doc[0].tag_ in ["VB", "VBP"] or doc[0].dep_ == "compound"
-
-
-print(
-    "Add Name,age ,height,weight and salary labels with \
-    corresponding text boxes and more over a Submit Button..."
-)
