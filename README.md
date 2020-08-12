@@ -14,7 +14,7 @@
   + [Code Linting](#Code-linting)
 * [Contributing](#contributing)
 * [Future work](#future-work)
-* [Contact](#contact)
+* [Contributors](#contributors)
 
 ## About
 
@@ -127,9 +127,13 @@ To create a pull request please follow this [template](./pull_request_template.m
 
 Currently CommitCanvas only has a feature that lints the commit messages, but we plan to add a feature that will predict the build status before commiting your changes.
 
-## Contact
+## Contributors
 
-If you have any questions or concerns about this project please contact:
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/bagashvilit"><img src="https://avatars3.githubusercontent.com/u/46755932?v=4" width="64px;" alt="Saejin Mahlau-Heinert"/><br /><sub><b>Teona Bagashvili</b></sub></a><br /><a>
+    <td align="center"><a href="https://www.gregorykapfhammer.com"><img src="https://avatars2.githubusercontent.com/u/926029?v=4" width="64px;" alt="Gregory M. Kapfhammer"/><br /><sub><b>Gregory M. Kapfhammer</b></sub></a><br /><a>
 
-- Dr. Kapfhammer(gkapfham@allegheny.edu)
-- Teona Bagashvili(bagashvilit@allegheny.edu)
+
+
