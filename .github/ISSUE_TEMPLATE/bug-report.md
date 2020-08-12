@@ -23,4 +23,4 @@ labels: Bug
 - **CommitCanvas version**: <!-- Replace with version -->
 
 ## Issue
-<!-- Now feel free to write your issue, but please be descriptive! Thank you🙌 ❤️ -->
+<!-- Now feel free to write your issue, but please be descriptive! Thank you -->

@@ -12,4 +12,4 @@ labels: ''
 - [ ] I have read the [README.md](https://github.com/CommittedTeam/CommitCanvas) and believe that my question is not covered.
 
 ## Issue
-<!-- Now feel free to write your issue, but please be descriptive! Thank you🙌 ❤️ -->
+<!-- Now feel free to write your issue, but please be descriptive! Thank you -->
