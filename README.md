@@ -1,7 +1,7 @@
 # CommitCanvas
 
 [![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions)
-[![codecov](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check/graph/badge.svg)](https://codecov.io/gh/CommittedTeam/CommitCanvas)
+[![codecov](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check/graph/badge.svg)](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check)
 
 # Table of contents
 
