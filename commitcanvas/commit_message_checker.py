@@ -8,7 +8,6 @@
 # Use the body to explain what and why you have done something
 # In most cases, you can leave out details about how a change has been mad
 # pylint: disable = import-error
-# import pathlib
 import spacy
 
 
