@@ -9,6 +9,11 @@ from commitcanvas import commitcanvas_check as cm
     "input_message,expected_value",
     [
         ("Fix typo", 0),
+        (
+            "add missing test dependency\n\n"
+            "Without this dependency the test suite fails",
+            1,
+        ),
         ("Merge pull request #1 from CommittedTeam/Set-up-repository", 0),
         ("This is a new feature.", 1),
         (
