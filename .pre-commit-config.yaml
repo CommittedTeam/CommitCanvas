@@ -45,5 +45,4 @@ repos:
   rev: 7984622121b8e568d6f41f59930a126fc0de32d7
   hooks:
   - id: commitcanvas
-    language_version: python3.7
     stages: [commit-msg]
