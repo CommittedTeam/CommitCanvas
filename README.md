@@ -30,8 +30,6 @@ Automated Analysis of Git Repositories to Support Predictions and Interventions 
     - Use the imperative mood in the subject line
     - Wrap lines at 72 characters
 
-- Build status prediction
-
 ## Installation
 
 Currently `commitcanvas` works with `pre-commit` so please follow the steps below.
