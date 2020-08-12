@@ -8,4 +8,4 @@ Author-email: bagashvilit@allegheny.edu
 License: UNKNOWN
 Description: UNKNOWN
 Platform: UNKNOWN
-Requires-Python: >=3.7,<4.0
+Requires-Python: >=2.7,<3.8
