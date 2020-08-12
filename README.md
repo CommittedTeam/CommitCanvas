@@ -14,7 +14,7 @@
 * [Testing](#Testing)
   + [Automated Testing](#automated-testing)
   + [Code Linting](#Code-linting)
-* [Comparison to Other Tools](#Comparison-to-Other-Tools)  
+* [Comparison to Other Tools](#Comparison-to-Other-Tools)
 * [Contributing](#contributing)
 * [Contributors](#contributors)
 
