@@ -80,7 +80,7 @@ Every time you make a commit `commitcanvas` will automatically check the commit 
 
     `git@github.com:CommittedTeam/CommitCanvas.git`
 
-- Install Poetry(Recommended)
+- Install Poetry (Recommended)
 
     Poetry is a tool for dependency managment and packaging in Python. Please follow the documentation [here](https://python-poetry.org/docs/#installation) on how to install poetry on your machine
 
