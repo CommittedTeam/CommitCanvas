@@ -2,6 +2,7 @@
 
 [![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions)
 [![codecov](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check/graph/badge.svg)](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e502043ad1954b11b24b0f88de5be576)](https://app.codacy.com/gh/CommittedTeam/CommitCanvas?utm_source=github.com&utm_medium=referral&utm_content=CommittedTeam/CommitCanvas&utm_campaign=Badge_Grade_Dashboard)
 
 # Table of contents
 
@@ -13,6 +14,7 @@
 * [Testing](#Testing)
   + [Automated Testing](#automated-testing)
   + [Code Linting](#Code-linting)
+* [Comparison to Other Tools](#Comparison-to-Other-Tools)  
 * [Contributing](#contributing)
 * [Contributors](#contributors)
 
@@ -115,11 +117,12 @@ Currently this project uses following linters:
 
 You may add more linters to `.pre-commit-config.yaml`
 
+## Comparison to Other Tools
+
+
 ## Contributing
 
 We welcome everyone who is interested in helping improve CommitCanvas! If you are interested in being a contributor, please review our [Code of Conduct](./CODE_OF_CONDUCT.md) and [Guidelines for Contributors](./CONTRIBUTING.md) before raising an issue, or beginning a contribution.
-
-To create a pull request please follow this [template](./pull_request_template.md)
 
 ## Contributors
 
