@@ -14,7 +14,6 @@
   + [Automated Testing](#automated-testing)
   + [Code Linting](#Code-linting)
 * [Contributing](#contributing)
-* [Future work](#future-work)
 * [Contributors](#contributors)
 
 ## About
@@ -123,10 +122,6 @@ You may add more linters to `.pre-commit-config.yaml`
 We welcome everyone who is interested in helping improve CommitCanvas! If you are interested in being a contributor, please review our [Code of Conduct](./CODE_OF_CONDUCT.md) and [Guidelines for Contributors](./CONTRIBUTING.md) before raising an issue, or beginning a contribution.
 
 To create a pull request please follow this [template](./pull_request_template.md)
-
-## Future work
-
-Currently CommitCanvas only has a feature that lints the commit messages, but we plan to add a feature that will predict the build status before commiting your changes.
 
 ## Contributors
 
