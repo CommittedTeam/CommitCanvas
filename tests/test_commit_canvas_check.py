@@ -10,7 +10,12 @@ from commitcanvas import commitcanvas_check as cm
     [
         ("Fix typo", 0),
         (
-            "add missing test dependency\n\n"
+            "Add Name,age ,height,weight and salary labels with"
+            "corresponding text boxes and more over a Submit Button...",
+            1,
+        ),
+        (
+            "add missing test dependency\n"
             "Without this dependency the test suite fails",
             1,
         ),
