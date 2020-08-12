@@ -1,9 +1,7 @@
 ---
 name: "\U0001F4DA Documentation"
 about: Did you find errors or problems in the README.md?
-title: ''
 labels: Documentation
-assignees: ''
 
 ---
 

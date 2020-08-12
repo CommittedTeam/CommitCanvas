@@ -1,9 +1,7 @@
 ---
-name: "\U0001F5C3 Everything Else"
+name: "\U0001F5C3 Other"
 about: For questions and issues that do not fall in any of the other categories.
-title: ''
 labels: ''
-assignees: ''
 
 ---
 

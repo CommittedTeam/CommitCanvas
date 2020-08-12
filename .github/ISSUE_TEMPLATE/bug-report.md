@@ -1,9 +1,7 @@
 ---
 name: "\U0001F41E Bug Report"
 about: Did you find a bug?
-title: ''
 labels: Bug
-assignees: ''
 
 ---
 

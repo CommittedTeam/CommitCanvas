@@ -1,9 +1,7 @@
 ---
 name: "\U0001F381 Feature Request"
 about: Do you have ideas for new features and improvements?
-title: ''
 labels: Feature
-assignees: ''
 
 ---
 
