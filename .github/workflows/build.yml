@@ -43,7 +43,7 @@ jobs:
         poetry run pytest --cov=./ --cov-report=xml
     - name: Upload coverage to Codecov
       steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v1
       - uses: codecov/codecov-action@v1
         with:
           file: ./coverage.xml # optional
