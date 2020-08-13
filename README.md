@@ -47,7 +47,7 @@ repos:
 
 # check with commitcanvas.
 - repo: https://github.com/CommittedTeam/CommitCanvas
-  rev: master
+  rev: v0.1.0
   hooks:
     - id: commitcanvas
       language_version: python3.7
