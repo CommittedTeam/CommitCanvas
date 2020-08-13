@@ -1,6 +1,6 @@
 # How to contribute
 
-We welcome everyone who is interested in helping improve CommitCanvas! If you are interested in being a contributor, please review our [Code of Conduct](./CODE_OF_CONDUCT.md) and [Guidelines for Contributors](./CONTRIBUTING.md) before raising an issue, or beginning a contribution.
+If you have a bug report, feature request or any other questions please raise an [issue](https://github.com/CommittedTeam/CommitCanvas/issues).
 
 ## Testing
 

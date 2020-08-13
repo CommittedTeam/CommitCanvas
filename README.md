@@ -8,8 +8,7 @@
 
 # Table of contents
 
-* [About](#about)
-* [Features](#features)
+* [Key Features](#key-features)
 * [Installation](#installation)
 * [Run](#run)
 * [Development info](#Development-info)
@@ -20,19 +19,24 @@
 * [Contributing](#contributing)
 * [Contributors](#contributors)
 
-## About
+## Key Features
 
-Automated Analysis of Git Repositories to Support Predictions and Interventions with Builds and Commits
+Have you ever wanted a tool that could ...
 
-## Features
+  - predict whether or not a commit is likely to break the build?
+  - let you know when your commit message does not follow a standard?
+  - tell you whether or not a commit message has the correct label?
+  - suggest a commit message/label if you are not sure how to write one?
 
-- Commit message linter
+CommitCanvas already has a feature that helps users identify and fix commit messages that do not conform to the following standards:
 
-    - Separate subject from body with a blank line
-    - Do not end the subject line with a period
-    - Capitalize the subject line and each paragraph
-    - Use the imperative mood in the subject line
-    - Wrap lines at 72 characters
+  - Separate subject from body with a blank line
+  - Do not end the subject line with a period
+  - Capitalize the subject line and each paragraph
+  - Use the imperative mood in the subject line
+  - Wrap subject line at 72 characters
+
+Other features mentioned above are under development and will be added to CommitCanvas in the near future. Please see the [issues](https://github.com/CommittedTeam/CommitCanvas/issues) for more information.
 
 ## Installation
 
