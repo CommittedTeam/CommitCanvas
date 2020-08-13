@@ -127,6 +127,13 @@ You may add more linters to `.pre-commit-config.yaml`
 
 ## Comparison to Other Tools
 
+Some of the existing tools that are similar to CommitCanvas:
+
+- [gitlint](https://github.com/jorisroovers/gitlint): "Linting for your git commit messages"
+- [commitlint](https://github.com/conventional-changelog/commitlint): "Lint commit messages"
+- [cz-cli](https://github.com/commitizen/cz-cli): "The commitizen command line utility."
+
+Popular existing tools for checking the commit message usually have features to lint the message, fix or suggest labels, add or modify the checks and help the users keep creating explicit commit history. In addition to those functionalities, in the near future, CommitCanvas will also have a feature to predict the build status and let the users see if the commit is going to break the build before pushing their changes to Github. Please see the [issues](https://github.com/CommittedTeam/CommitCanvas/issues) for more information.
 
 ## Contributing
 
