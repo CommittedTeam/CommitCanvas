@@ -1,8 +1,10 @@
 # CommitCanvas
 
-[![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions)
+[![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions?query=workflow%3Abuild)
+[![release](https://github.com/CommittedTeam/CommitCanvas/workflows/release/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions?query=workflow%3Arelease)
 [![codecov](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check/graph/badge.svg)](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e502043ad1954b11b24b0f88de5be576)](https://app.codacy.com/gh/CommittedTeam/CommitCanvas?utm_source=github.com&utm_medium=referral&utm_content=CommittedTeam/CommitCanvas&utm_campaign=Badge_Grade_Dashboard)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/CommittedTeam/CommitCanvas/graphs/commit-activity)
 
 # Table of contents
 
@@ -58,9 +60,9 @@ repos:
 
 Install `pre-commit`, please refer the [documentation](https://pre-commit.com/#install)
 
-To use `commitcanvas` as a `commit-msg` hook, install pre-commit in `.git/hooks/prepare-commit-msg`:
+To use `commitcanvas` as a `commit-msg` hook, install pre-commit in `.git/hooks/commit-msg`:
 
-`pre-commit install --hook-type prepare-commit-msg`
+`pre-commit install --hook-type commit-msg`
 
 NOTE: You need to run this command everytime you clone the repository, unless you configure `pre-commit` globaly. Please follow the [link](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories) for more information.
 
@@ -105,6 +107,8 @@ Developers of this program can run the test suite with `Pytest`
 `poetry run pytest`
 
 ### Code linting
+
+Run `pre-commit install` to install pre-commit in `.git/hooks/pre-commit`
 
 Use `poetry run pre-commit run --all-files` to check the code with linters and get the diagnostic info.
 
