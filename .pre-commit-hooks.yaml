@@ -1,0 +1,6 @@
+-   id: commitcanvas
+    name: commitcanvas
+    entry: commitcanvas
+    verbose: False
+    language: python
+    stages: [commit-msg]

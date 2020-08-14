@@ -2,32 +2,47 @@ minimum_pre_commit_version: 1.21.0
 repos:
 
 # check with pylint
-- repo: https://github.com/pre-commit/mirrors-pylint
-  rev: v2.3.1
+- repo: https://github.com/PyCQA/pylint
+  rev: pylint-2.5.3
   hooks:
   - id: pylint
+    stages: [commit]
+    args:
+      - --score=n
 
 # check docstrings
 - repo: https://github.com/PyCQA/pydocstyle
   rev: 5.0.2
   hooks:
   - id: pydocstyle
+    stages: [commit]
 
 # trim trailing whitespace
 - repo: https://github.com/pre-commit/pre-commit-hooks
   rev: v2.4.0
   hooks:
   - id: flake8
+    stages: [commit]
   - id: trailing-whitespace
+    stages: [commit]
 
-# format Python code with blac
+# format Python code with black
 - repo: https://github.com/ambv/black
   rev: 19.10b0
   hooks:
   - id: black
+    stages: [commit]
 
 # reorder Python imports
 - repo: https://github.com/asottile/reorder_python_imports
   rev: v1.9.0
   hooks:
   - id: reorder-python-imports
+    stages: [commit]
+
+#lint the commit message with commitcanvas
+- repo: https://github.com/CommittedTeam/CommitCanvas
+  rev: v0.1.1
+  hooks:
+  - id: commitcanvas
+    stages: [commit-msg]
