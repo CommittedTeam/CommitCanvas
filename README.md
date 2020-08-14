@@ -2,11 +2,11 @@
 
 [![Actions Status](https://github.com/CommittedTeam/CommitCanvas/workflows/build/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions?query=workflow%3Abuild)
 [![release](https://github.com/CommittedTeam/CommitCanvas/workflows/release/badge.svg)](https://github.com/CommittedTeam/CommitCanvas/actions?query=workflow%3Arelease)
-[![codecov](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check/graph/badge.svg)](https://codecov.io/gh/CommittedTeam/CommitCanvas/branch/commit_message_check)
+[![codecov](http://codecov.io/github/CommittedTeam/CommitCanvas/coverage.svg?branch=master)](http://codecov.io/github/CommittedTeam/CommitCanvas?branch=master)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e502043ad1954b11b24b0f88de5be576)](https://app.codacy.com/gh/CommittedTeam/CommitCanvas?utm_source=github.com&utm_medium=referral&utm_content=CommittedTeam/CommitCanvas&utm_campaign=Badge_Grade_Dashboard)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/CommittedTeam/CommitCanvas/graphs/commit-activity)
 
-# Table of contents
+## Table of contents
 
 * [Key Features](#key-features)
 * [Installation](#installation)
