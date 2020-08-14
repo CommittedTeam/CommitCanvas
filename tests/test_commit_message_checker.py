@@ -81,15 +81,9 @@ def test_check_for_blank_line(input_message, expected_boolean):
     [
         ("fix typo", True),
         ("Merge pull request #1 from CommittedTeam/Set-up-repository", True),
-        ("This is a new feature", False),
-        (
-            (
-                "Merge branch 'command-line-interface'"
-                "of github.com:GatorCogitate/cog… "
-            ),
-            True,
-        ),
-        ("Edit coverage report to exclude main function.", True),
+        ("Adds new feature", False),
+        (("Create new branch 'command-line-interface'"), True,),
+        ("Edited coverage report to exclude main function.", False),
     ],
 )
 def test_check_for_imperative_mood(input_message, expected_boolean):

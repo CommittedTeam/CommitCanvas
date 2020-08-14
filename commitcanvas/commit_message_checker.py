@@ -46,10 +46,11 @@ def check_length(message):
 
 def check_imperative_mood(message):
     """Check if the commit message starts with a verb in imperative mood."""
-    # path = pathlib.Path(__file__).parent / "model"
+    # This function only makes sure that the verb is in imperative mood,
+    # but after we train the spacy model with commit messages it will be able
+    # detect pos other then verb as well.
     message = message.lower()
     nlp = spacy.load("en_core_web_sm")
 
     doc = nlp(message)
-    # NOTE: this part will be modified
-    return doc[0].tag_ in ["VB", "VBP", "NNP"] or doc[0].dep_ == "compound"
+    return doc[0].tag_ in ["VB", "VBP", "NN", "NNP"]

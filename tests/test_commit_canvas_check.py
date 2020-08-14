@@ -20,7 +20,7 @@ from commitcanvas import commitcanvas_check as cm
             1,
         ),
         ("Merge pull request #1 from CommittedTeam/Set-up-repository", 0),
-        ("This is a new feature.", 1),
+        ("Added new feature.", 1),
         (
             (
                 "Merge branch 'command-line-interface'"
@@ -47,10 +47,10 @@ def test_exit_value(input_message, expected_value):
             "Merge pull request #1 from CommittedTeam/Set-up-repository",
             [True, True, True, True, True],
         ),
-        ("This is a new feature.", [True, True, True, False, False]),
+        ("Added a new feature.", [True, True, True, False, False]),
         (
             (
-                "Merge branch 'command-line-interface'"
+                "Delete branch 'command-line-interface'"
                 "of github.com:GatorCogitate/cog… "
             ),
             [True, True, True, True, True],
