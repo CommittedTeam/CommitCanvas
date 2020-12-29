@@ -12,7 +12,7 @@ from sklearn.model_selection import KFold, StratifiedKFold, cross_val_score, cro
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 
-features = ["commit_type","modified","added","deleted","num_files","nlocs","is_test","has_md","unique_file_formats"]
+features = ["commit_type","added","removed","total","num_files","nlocs","is_test","has_md","similarity"]
 data = pd.read_csv("data/training_data.csv",usecols=features)
 # encode the labels
 target = data["commit_type"]
@@ -33,14 +33,10 @@ features = np.array(features)
 
 # construct the training and testing splits
 (trainData, testData, trainLabel, testLabel) = train_test_split(
-    features, labels, test_size=0.2, random_state = 1,stratify=labels
+    features, labels, test_size=0.2, random_state=1
 )
 
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import ExtraTreesClassifier
-
-model = RandomForestClassifier(random_state=1,max_depth=6)
-scv = StratifiedKFold(n_splits=2)
+model = RandomForestClassifier(random_state=1)
 
 clf = model.fit(trainData,trainLabel)
 
@@ -58,6 +54,7 @@ print(
 )
 
 importances = list(clf.feature_importances_)
+
 # List of tuples with variable and importance
 feature_importances = [(feature, round(importance, 2)) for feature, importance in zip(feature_list, importances)]
 # Sort the feature importances by most important first
@@ -69,42 +66,5 @@ from sklearn.metrics import confusion_matrix
 
 print(confusion_matrix(testLabel, y_pred, labels=np.unique(labels)))
 
-# see sample classification
-
-feat = ["commit_msg","modified","added","deleted","num_files","nlocs","is_test","has_md","unique_file_formats","diffs_parsed"]
-data = pd.read_csv("data/raw_data.csv",usecols=feat)
-for i in range(3):
-    sample = data.sample()
-
-    msg = sample["commit_msg"]
-    labels = np.array(msg)
-    diffs = sample["diffs_parsed"]
-    parsed_diffs = np.array(diffs)[0]
-    sample.drop(columns=['commit_msg', 'diffs_parsed'], inplace=True)
-
-    print("\nSample classifications:\n")
-    print("Actual commit message: ",labels[0])
-    print("Suggested label: ",le.inverse_transform(clf.predict(sample))[0])
-
-
-    from ast import literal_eval
-
-    res = literal_eval(parsed_diffs)
-
-    if res["added"]:
-        source = res["added"]
-    elif res["deleted"]:
-        source = res["deleted"]
-    else:
-        source = None
-
-    # pylint: disable = import-error
-    import fixes
-
-    r = fixes.Remove_punctuations()
-    document = r.remove(source)
-    c = fixes.Sentence_rank()
-    out = c.sentence_rank(document)
-    print("Suggested commit message:\n",out)
 
 
