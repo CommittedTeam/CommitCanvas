@@ -1,7 +1,6 @@
 import pytest
 from commitcanvas.generate_msg import commit_data as cd
 
-# Test case failing, get_commit_types needs to be more generalized
 @pytest.mark.parametrize(
     "input_message,expected_type",
     [
