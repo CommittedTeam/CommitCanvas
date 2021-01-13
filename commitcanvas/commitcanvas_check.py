@@ -1,52 +1,52 @@
 """Get commit massage from command line and do checks."""
-import sys
+# import sys
 
-from commitcanvas import commit_message_checker as cm
-
-
-def get_checks(commit_message):
-    """Do all the checks for the commit message."""
-    length = cm.check_length(commit_message)
-    period = cm.check_for_period(commit_message)
-    capital = cm.check_capital_letter(commit_message)
-    blank_line = cm.check_blank_line(commit_message)
-    imperative = cm.check_imperative_mood(commit_message)
-
-    list_of_checks = [capital, blank_line, length, period, imperative]
-    return list_of_checks
+# from commitcanvas import commit_message_checker as cm
 
 
-def commit_check(commit_message):
-    """Show diagnostic info."""
-    list_of_checks = get_checks(commit_message)
-    # get overall boolean value, to ensure that every item
-    # in the list has True value
-    # and therefore all the checks pass.
-    boolean_value = all(list_of_checks)
-    # Display helpful tips on how to improve commit message
-    if not boolean_value:
-        if not list_of_checks[0]:
+# def get_checks(commit_message):
+#     """Do all the checks for the commit message."""
+#     length = cm.check_length(commit_message)
+#     period = cm.check_for_period(commit_message)
+#     capital = cm.check_capital_letter(commit_message)
+#     blank_line = cm.check_blank_line(commit_message)
+#     imperative = cm.check_imperative_mood(commit_message)
 
-            print("Error: subject line should start with capital letter")
+#     list_of_checks = [capital, blank_line, length, period, imperative]
+#     return list_of_checks
 
-        if not list_of_checks[1]:
 
-            print("Error: blank line required between subject and pharagraph")
+# def commit_check(commit_message):
+#     """Show diagnostic info."""
+#     list_of_checks = get_checks(commit_message)
+#     # get overall boolean value, to ensure that every item
+#     # in the list has True value
+#     # and therefore all the checks pass.
+#     boolean_value = all(list_of_checks)
+#     # Display helpful tips on how to improve commit message
+#     if not boolean_value:
+#         if not list_of_checks[0]:
 
-        if not list_of_checks[2]:
+#             print("Error: subject line should start with capital letter")
 
-            print("Error: keep less than 72 characters in the subject line")
+#         if not list_of_checks[1]:
 
-        if not list_of_checks[3]:
+#             print("Error: blank line required between subject and pharagraph")
 
-            print("Error: no period needed at the end of the subject line")
+#         if not list_of_checks[2]:
 
-        if not list_of_checks[4]:
+#             print("Error: keep less than 72 characters in the subject line")
 
-            print("Error: start commit message with verb in imperative mood")
-        # return exit code 1 if some of the checks didn't pass
-        sys.exit(1)
+#         if not list_of_checks[3]:
 
-    else:
-        # all the checks passed
-        sys.exit(0)
+#             print("Error: no period needed at the end of the subject line")
+
+#         if not list_of_checks[4]:
+
+#             print("Error: start commit message with verb in imperative mood")
+#         # return exit code 1 if some of the checks didn't pass
+#         sys.exit(1)
+
+#     else:
+#         # all the checks passed
+#         sys.exit(0)
