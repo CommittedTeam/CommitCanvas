@@ -27,7 +27,9 @@ def get_file_formats(file_formats):
     """Create a list of unique file formats."""
     # get unique elements of the list using set method, list will be unordered
     unique_file_formats = list(set(parse_for_type(file_formats)))
-    return unique_file_formats
+    # sort the set for testing purposes
+    sorted_formats = sorted(unique_file_formats)
+    return sorted_formats
 
 
 def test_files_ratio(strings):
@@ -106,14 +108,14 @@ def drop_extra_features(data):
     return data
 
 
-data = pd.read_csv("data/collected_data.csv",index_col=0,converters={"file_paths": literal_eval,"diffs_parsed": literal_eval})
+# data = pd.read_csv("data/collected_data.csv",index_col=0,converters={"file_paths": literal_eval,"diffs_parsed": literal_eval})
 
-new_features = add_new_features(data)
-# Drop rows that have nan values
-new_features = new_features.dropna()
+# new_features = add_new_features(data)
+# # Drop rows that have nan values
+# new_features = new_features.dropna()
 
-train = drop_extra_features(new_features)
-print(train.columns)
-train.to_csv("data/train_data.csv",header=True)
+# train = drop_extra_features(new_features)
+# print(train.columns)
+# train.to_csv("data/train_data.csv",header=True)
 
 
