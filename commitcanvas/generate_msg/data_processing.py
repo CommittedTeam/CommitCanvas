@@ -109,15 +109,16 @@ def drop_extra_features(data):
     data = data.drop(features, axis=1)
     return data
 
+def prepare_training_data():
+    """ Read collected data, add new features, remove extra features and write to the trainign data file."""
+    data = pd.read_pickle("data/collected_data.pkl")
 
-# data = pd.read_pickle("data/collected_data.pkl")
+    new_features = add_new_features(data)
+    # Drop rows that have nan values
+    new_features = new_features.dropna()
 
-# new_features = add_new_features(data)
-# # Drop rows that have nan values
-# new_features = new_features.dropna()
+    train_data = drop_extra_features(new_features)
 
-# train = drop_extra_features(new_features)
-# print(train.columns)
-# train.to_pickle("data/train_data.pkl")
+    train_data.to_pickle("data/train_data.pkl")
 
 
