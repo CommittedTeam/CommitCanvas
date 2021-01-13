@@ -9,12 +9,11 @@ from statistics import mean
 
 def get_commit_types(commit_msg):
 
-    if ":" in commit_msg:
-        type_scope = commit_msg.split(":")[0]
-        if "(" in type_scope:
-            return type_scope.split("(")[0]
-        else:
-            return type_scope
+    commit_msg_parts = commit_msg.strip().split()
+    if ":" in commit_msg_parts[0]:          
+        commit_type = re.findall( r'\w+|[^\s\w]+', commit_msg_parts[0])[0]
+        return commit_type
+
 
 def get_commit_data(repo_url):
     """Collect the data with pydriller."""
