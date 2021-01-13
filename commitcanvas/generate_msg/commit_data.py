@@ -5,7 +5,7 @@ import pandas as pd
 import re
 from difflib import SequenceMatcher
 from statistics import mean
-
+from ast import literal_eval
 
 def get_commit_types(commit_msg):
 
@@ -57,3 +57,7 @@ def get_commit_data(repo_url):
             commits_info.append(commit_dict)
 
     return commits_info
+
+data = pd.read_csv("data/collected_data.csv",index_col=0,converters={"file_paths": literal_eval,"diffs_parsed": literal_eval})
+
+data.to_pickle("data/collected_data.pkl")

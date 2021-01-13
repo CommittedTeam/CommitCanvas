@@ -91,6 +91,7 @@ def get_dummies(dataframe):
 
 
 def add_new_features(data):
+    """ Add new features to the dataset."""
     data["total_files"] = [len(files) for files in data['file_paths']]
     data["total_lines"] = data.added - data.removed
     data['unique_file_formats'] = [get_file_formats(file_name) for file_name in data['file_paths']]
@@ -103,12 +104,13 @@ def add_new_features(data):
 
 
 def drop_extra_features(data):
+    """ Drop the features that will not be used during trainign."""
     features = ['project_name', 'commit_hash', 'commit_msg','file_paths', 'diffs_parsed', 'unique_file_formats']
     data = data.drop(features, axis=1)
     return data
 
 
-# data = pd.read_csv("data/collected_data.csv",index_col=0,converters={"file_paths": literal_eval,"diffs_parsed": literal_eval})
+# data = pd.read_pickle("data/collected_data.pkl")
 
 # new_features = add_new_features(data)
 # # Drop rows that have nan values
@@ -116,6 +118,6 @@ def drop_extra_features(data):
 
 # train = drop_extra_features(new_features)
 # print(train.columns)
-# train.to_csv("data/train_data.csv",header=True)
+# train.to_pickle("data/train_data.pkl")
 
 

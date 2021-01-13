@@ -73,7 +73,7 @@ def print_feature_importances():
     [print('Variable: {:20} Importance: {}'.format(*pair)) for pair in feature_importances]
 
 # read the training data and split it into features and labels
-data = pd.read_csv("data/train_data.csv",index_col=0)
+data = pd.read_pickle("data/train_data.pkl")
 
 labels = label_encoding(data)[0]
 targetNames = label_encoding(data)[1]
