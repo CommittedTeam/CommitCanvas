@@ -63,7 +63,7 @@ def get_repo_data(repo_full_name):
     repo_data = []
     for name in repo_full_name:
 
-        github = Github("0e1877ed650c540ab94beff1012a24b8f759a827")
+        github = Github("token")
         repo = github.get_repo(name)
         # check that the repository is not empty and the programming language can be detected
         if repo.get_commits and repo.language is not None:
@@ -79,7 +79,7 @@ def get_repo_data(repo_full_name):
 
 def get_repos_by_topic(topic):
     # topic is "conventional commit"
-    github = Github("0e1877ed650c540ab94beff1012a24b8f759a827")
+    github = Github("token")
     myfile = open('data/test.txt', 'w')
     repos = github.search_repositories(topic)
 
