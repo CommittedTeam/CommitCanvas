@@ -195,7 +195,7 @@ def add_new_features(types,data):
     return combined
 
 
-data = pd.read_pickle("data/data.pkl")
+data = pd.read_pickle("data/small_data.pkl")
 
 # remove duplicate commits
 data = data.drop_duplicates(subset ="commit_hash")
@@ -210,8 +210,8 @@ data = data.loc[data['commit_type'].isin(types)]
 
 print(data)
 
-train_data = add_new_features(types,data)
-print(train_data)
+# train_data = add_new_features(types,data)
+# print(train_data)
 
 
 
