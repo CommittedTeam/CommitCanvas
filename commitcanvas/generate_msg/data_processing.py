@@ -9,7 +9,17 @@ from statistics import mean
 import matplotlib.pyplot as plt
 from ast import literal_eval
 import difflib
-
+import jellyfish
+import datetime
+import statistics
+from cdifflib import CSequenceMatcher
+from sklearn.feature_extraction.text import TfidfVectorizer
+import nltk
+from nltk.stem import WordNetLemmatizer
+from nltk.stem import PorterStemmer
+from nltk.tokenize import RegexpTokenizer
+from nltk.corpus import stopwords
+import itertools
 
 def parse_for_type(paths):
     """Parse through file name and returns its format."""
@@ -34,15 +44,16 @@ def get_file_formats(file_formats):
 
 def test_files_ratio(strings):
     """
-    Get the ratio of the test relates files in all files modifies.
+    Get the ratio of the test relates files in all files modified.
     
-    This is a questionable feature because it assumes that test files contain word "test"
+    This feature assumes that test files contain word "test"
     """
     count = 0
     for i in strings:
         # Majority of the test related files have word "test" in the file path
-        if "test" in (i.lower()):
-            count += 1
+        if i:
+            if "test" in (i.lower()):
+                count += 1
     try:
         ratio = round((count / len(strings)),2)
     except ZeroDivisionError:
@@ -50,36 +61,11 @@ def test_files_ratio(strings):
 
     return ratio
 
-
-def get_similarity_index(diffs):
-    """
-    Get similarity index between added and deleted lines.
-
-    The current approach uses SequenceMatcher,
-    However there are multiple other algorithms that may be better for finding similarity index, especially for source code
-    """
-    similarities = []
-    # get the similarity index for each modified file separately
-    for diff in diffs:
-        # All the added lines per modified file will be joined
-        added_lines = "\n".join([x[1] for x in diff["added"]])
-        # All the deleted lines per modified file will be joined
-        deleted_lines = "\n".join([x[1] for x in diff["deleted"]])
-        # Similarity index will be calculated based on joined added and joined deleted lines
-        similarity_ratio = SequenceMatcher(None, added_lines, deleted_lines).ratio()
-        similarities.append(similarity_ratio)
-    # if there are multiple files and therefore multiple similarity scores get the average
-    if len(similarities) > 1:
-        return mean(similarities)
-    elif len(similarities) == 1:
-        return similarities[0]
-
-
 def get_dummies(dataframe):
     """
     Encode categorical data as dummy variables.
     
-    This method is targeting encoding file extensions
+    This method is encoding file extensions
     """
     # one commit may have multiple modified files and therefore multiple different file extensions
     # pandas get_dummies() can encode that as long as extensions are split by separators.
@@ -89,36 +75,146 @@ def get_dummies(dataframe):
 
     return dummies
 
+def get_churns(diff):
+    # get code churns from the diff
+    churns = []
+    diff = diff.splitlines()
+    diff.append("\n")
+    i = 0
+    while(i < len(diff)):              
+        tmp = []
+        while ((diff[i].startswith('+') or diff[i].startswith('-'))) :
+            tmp.append(diff[i])
+            i += 1
+        if tmp: 
+            churns.append(tmp)
+        i += 1 
+    return churns
 
-def add_new_features(data):
+def filter_churns(churn):
+    # Separate the code churn into added and deleted
+    churns = {
+        "added" : [],
+        "deleted": []
+    }
+    for i in churn:
+        if i.startswith("-"):
+            churns["deleted"].append(i[1:])
+        else:
+            churns["added"].append(i[1:])
+    return churns
+
+def get_style_churns(churns):
+    # count how many of the code churns were only style related changes
+    non_alum = 0
+    for churn in churns:
+        filtered = filter_churns(churn)
+        deleted = "".join(filtered["deleted"])
+        added = "".join(filtered["added"])
+        set1 = set(deleted) 
+        set2 = set(added) 
+        common = list(set1 & set2) 
+
+        result = [ch for ch in deleted if ch not in common] + [ch for ch in added if ch not in common]
+        if not result or re.match(r'^[_\W]+$',"".join(result)):       
+            non_alum += 1
+    if churns:
+        return non_alum/len(churns)
+
+def detect_bots(row):
+    if re.findall( r'.bot.', row["commit_author_email"]) or re.findall( r'.bot.', row["commit_author_name"]):
+        return True
+
+def get_subject_line(message):
+    '''separate commit subject from the commit type'''
+    return (message.split(":")[1].strip())
+
+def group_messages(types,data):
+    parsed_messages = {}
+    for commit_type in types:   
+        new_data = data.loc[data['commit_type'] == commit_type]
+        parsed_messages.update({commit_type:(new_data.commit_subject).tolist()})
+    return parsed_messages
+
+def stem_tokenizer(text):
+        ps = PorterStemmer()
+        tokens = [word for word in nltk.word_tokenize(text) if (word.isalpha() and word not in stopwords.words('english'))] 
+        stems = [ps.stem(item) for item in tokens]
+        return stems
+
+def get_keywords(dataset,types):
+    tfIdfVectorizer=TfidfVectorizer(tokenizer = stem_tokenizer)
+    tfIdf = tfIdfVectorizer.fit_transform(dataset)
+    keywords = {}
+    for i in range(len(dataset)):
+        df = pd.DataFrame(tfIdf[i].T.todense(), index=tfIdfVectorizer.get_feature_names(), columns=[types[i]])
+        df = df.sort_values(types[i], ascending=False)
+        df = df[(df != 0).all(1)]
+        keywords.update(df.to_dict())
+    return(keywords)
+
+def get_keywords_for_data(types,data):
+    subjects = data.commit_subject.tolist()
+    tokenized = [stem_tokenizer(subject) for subject in subjects]
+
+    messages = group_messages(types,data)
+    dataset = [" ".join(document) for document in list(messages.values())]
+    words = (get_keywords(dataset,types))
+
+    combined = []
+    for i in tokenized:
+        dictionary = {"chore": 0, "ci": 0, "build": 0, "fix": 0,"feat": 0,"docs": 0,"refactor": 0,"test": 0,"style": 0}
+        for token in i:
+            for key, value in words.items():
+                for keyword in list(value.keys()):
+                    if token == keyword:
+                        dictionary[key] += value[keyword]
+        combined.append(dictionary)
+    return(pd.DataFrame(combined))
+
+def add_new_features(types,data):
     """ Add new features to the dataset."""
-    data["total_files"] = [len(files) for files in data['file_paths']]
-    data["total_lines"] = data.added - data.removed
-    data['unique_file_formats'] = [get_file_formats(file_name) for file_name in data['file_paths']]
-    data['similarity_index'] = [get_similarity_index(diff) for diff in data['diffs_parsed']]
-    data['test_files_ratio'] = [test_files_ratio(files) for files in data['file_paths']]
+    data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
+    data["churns"] = data['diffs'].apply(lambda diff: get_churns("".join(diff)))
+    data["churns_count"] = data['churns'].apply(lambda diff: len(diff))
+    data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
+    data["style_churns"] = data['churns'].apply(lambda diff: get_style_churns(diff))
+    data["test_files_ratio"] = data['file_paths'].apply(lambda files: test_files_ratio(files))
+    data["unique_file_formats"] = data['file_paths'].apply(lambda files: get_file_formats(files))
+    data["num_unique_extensions"] = data['unique_file_formats'].apply(lambda files: len(files))
     
+    keywords_for_data = (get_keywords_for_data(types,data))
+
     dummies = get_dummies(data.unique_file_formats)
     combined = pd.concat([data, dummies],axis=1)
+
+    train_data = pd.concat([combined,keywords_for_data.set_index(combined.index)],axis=1)
+
+    train_data.to_pickle("data/train_data.pkl")
+
     return combined
 
 
-def drop_extra_features(data):
-    """ Drop the features that will not be used during trainign."""
-    features = ['project_name', 'commit_hash', 'commit_msg','file_paths', 'diffs_parsed', 'unique_file_formats']
-    data = data.drop(features, axis=1)
-    return data
+data = pd.read_pickle("data/data.pkl")
 
-def prepare_training_data():
-    """ Read collected data, add new features, remove extra features and write to the trainign data file."""
-    data = pd.read_pickle("data/collected_data.pkl")
+# remove duplicate commits
+data = data.drop_duplicates(subset ="commit_hash")
 
-    new_features = add_new_features(data)
-    # Drop rows that have nan values
-    new_features = new_features.dropna()
+# remove commits made by the bots
+for index,row in data.iterrows():
+    if detect_bots(row):
+        data = data.drop(index)
 
-    train_data = drop_extra_features(new_features)
+types = ["chore","ci","build","fix","feat","docs","refactor","test","style"]
+data = data.loc[data['commit_type'].isin(types)]
 
-    train_data.to_pickle("data/train_data.pkl")
+print(data)
+
+train_data = add_new_features(types,data)
+print(train_data)
+
+
+
+
 
 

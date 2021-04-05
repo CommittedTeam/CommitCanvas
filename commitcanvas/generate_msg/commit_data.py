@@ -6,54 +6,95 @@ import re
 from difflib import SequenceMatcher
 from statistics import mean
 from ast import literal_eval
+from github import Github
+
 
 def get_commit_types(commit_msg):
-
     commit_msg_parts = commit_msg.strip().split()
     if ":" in commit_msg_parts[0]:          
         commit_type = re.findall( r'\w+|[^\s\w]+', commit_msg_parts[0])[0]
-        return commit_type
+        # must consist of characters, to exclude emojis
+        if commit_type.isalpha():
+            return commit_type
 
 
-def get_commit_data(repo_url):
-    """Collect the data with pydriller."""
+def get_commit_data(repos):
+    """Collect the commit data with pydriller."""
     commits_info = []
-    commit_types = ["feat","test","refactor","docs","chore","fix","perf","style","ci","build"]
-    for commit in RepositoryMining('repo_url').traverse_commits():
+    for repo in repos:
+        for commit in RepositoryMining(repo["repo_url"]).traverse_commits():
 
-        commit_type = get_commit_types(commit.msg.lower())
-        
-        if commit_type in commit_types:
-
-            file_paths = []
-            diffs = []
-
-            added = 0
-            removed = 0
-
-            for m in commit.modifications:
-
-                if m.added:
-                    added += m.added
-
-                if m.removed:
-                    removed += m.removed
-                    
-                diffs.append(m.diff_parsed)
-                file_paths.append(m.new_path)
-
-            commit_dict = {
-
-                "project_name": commit.project_name,
-                "commit_hash": commit.hash,
-                "commit_msg": commit.msg,
-                "commit_type": commit_type,               
-                "file_paths": file_paths,               
-                "diffs_parsed": diffs,
-                "added": added,
-                "removed": removed,
+            commit_type = get_commit_types(commit.msg.lower())
+            # skip commits that do not follow conventional commit types syntax
+            if commit_type is not None:
                 
-            }
-            commits_info.append(commit_dict)
+                file_paths = []
+                diffs = []
+
+                for m in commit.modifications:
+        
+                    diffs.append(m.diff)
+                    file_paths.append(m.new_path)
+                print(repo["repo_name"])
+                commit_dict = {
+
+                    "name": repo["repo_name"],
+                    "language": repo["repo_language"],
+                    "url": repo["repo_url"],
+                    "commit_hash": commit.hash,
+                    "commit_msg": commit.msg,
+                    "commit_author_name": commit.author.name,
+                    "commit_author_email": commit.author.email,
+                    "commit_type": commit_type,               
+                    "file_paths": file_paths,
+                    "diffs": diffs,
+                    "num_files": commit.files,
+                    "num_lines_added": commit.insertions,
+                    "num_lines_removed": commit.deletions,
+                    "num_lines_total": commit.lines,
+                    
+                }
+                
+                commits_info.append(commit_dict)
 
     return commits_info
+
+def get_repo_data(repo_full_name):
+    repo_data = []
+    for name in repo_full_name:
+
+        github = Github("0e1877ed650c540ab94beff1012a24b8f759a827")
+        repo = github.get_repo(name)
+        # check that the repository is not empty and the programming language can be detected
+        if repo.get_commits and repo.language is not None:
+            print(name)
+            data = {
+                "repo_name": name,
+                "repo_url": repo.clone_url,
+                "repo_language": repo.language  
+            }
+            repo_data.append(data)
+
+    return repo_data
+
+def get_repos_by_topic(topic):
+    # topic is "conventional commit"
+    github = Github("0e1877ed650c540ab94beff1012a24b8f759a827")
+    myfile = open('data/test.txt', 'w')
+    repos = github.search_repositories(topic)
+
+    for repo in repos:
+        myfile.write("%s\n" % repo)
+    myfile.close()
+
+with open("data/test.txt") as f:
+    content = f.readlines()
+# remove characters like `\n` at the end of each line
+content = [x.strip() for x in content]
+
+repos = get_repo_data(content)
+print(repos)
+data = get_commit_data(repos)
+pandas = pd.DataFrame(data)
+pandas.to_pickle("data/small_data.pkl")
+pandas.to_csv("data/small_data.csv")
