@@ -20,7 +20,7 @@ User can run the experiment for all the repositories, specified repository, spec
 
 - name: repository name(String). Please see the list of available [repositories](data/repositories.txt)
 
-- language: programming language(String). By specifing the programming language `commitcanvas` will select all the repositories where dominant programming language is the given one. If you select the programming language make sure to leave `name` option empty
+- language: programming language(String). Please see the list of available [languages](data/languages.txt). By specifing the programming language `commitcanvas` will select all the repositories where dominant programming language is the one that user provided. If you select the programming language make sure to leave `name` option empty
 
 - cross: (Boolean). If user selects True commitcanvas will run cross project validation and return classification report for each of the repositories. If you select `cross` option as True, then `name` option must be empty
 

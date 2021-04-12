@@ -199,11 +199,9 @@ def add_new_features(types,data):
 
     train_data = pd.concat([combined,keywords_for_data.set_index(combined.index)],axis=1)
 
-    train_data.to_pickle("data/train_combined.pkl")
+    train_data.to_pickle("data/train_data.pkl")
 
     return combined
-
-
 
 
 
