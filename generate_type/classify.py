@@ -12,15 +12,15 @@ def callback():
     """
 
 @app.command()
-def classify(name: str = None, language: str = None, crossproj: bool = False):
+def classify(name: str = None, language: str = None, cross: bool = False):
     """
     random forest model with specified data
     """
     if ((language and name) is not None):      
         raise typer.BadParameter("If value for language is not empty, value for name must be empty")
-    if crossproj:
+    if cross:
         if name is not None:
-            raise typer.BadParameter("If value for crossproj is not empty, value for name must be empty")
+            raise typer.BadParameter("If value for cross is True, value for name must be empty")
         else:
             rf.cross_project_validate(name,language)
     else:
