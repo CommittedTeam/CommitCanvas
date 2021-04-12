@@ -7,12 +7,11 @@ from github import Github
 import pygit2
 
 def get_commit_types(commit_msg):
-    commit_msg_parts = commit_msg.strip().split()
-    if ":" in commit_msg_parts[0]:          
-        commit_type = re.findall( r'\w+|[^\s\w]+', commit_msg_parts[0])[0]
-        # must consist of characters, to exclude emojis
-        if commit_type.isalpha():
-            return commit_type
+    commit_msg_parts = commit_msg.strip().split()          
+    commit_type = re.findall( r'\w+|[^\s\w]+', commit_msg_parts[0])[0]
+    # must consist of characters, to exclude emojis
+    if commit_type.isalpha():
+        return commit_type
 
 def get_commit_data(repos):
     """Collect the commit data with pydriller."""

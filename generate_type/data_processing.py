@@ -23,8 +23,6 @@ import itertools
 import numba
 import numpy as np
 
-# NOTE according to pandas dicumentation numba may significantly improve the performance
-
 def parse_for_type(paths):
     """Parse through file name and returns its extension."""
     formats = []
@@ -117,7 +115,7 @@ def get_style_churns(churns):
         set1 = set(deleted) 
         set2 = set(added) 
         common = list(set1 & set2) 
-
+        # NOTE Needs to be refactored
         result = [ch for ch in deleted if ch not in common] + [ch for ch in added if ch not in common]
         if not result or re.match(r'^[_\W]+$',"".join(result)):       
             non_alum += 1
