@@ -1,0 +1,27 @@
+JayceChant/commit-msg 
+KeNaCo/auto-changelog
+LonnyGomes/conventional-commits-poc
+Roytangrb/gitwok SKalt/git-cc
+ViBiOh/herodote WormieCorp/CCVARN
+ap0llo/changelog
+be-fe/cz-conventional-changelog-befe
+bradgarropy/test-conventional-commits
+brigand/glint bvieira/sv4git
+commitizen-tools/commitizen commitizen/cz-cli
+conventional-changelog-archived-repos/conventional-commits-parser
+conventional-changelog-archived-repos/git-raw-commits
+conventional-changelog/commitlint
+conventional-changelog/conventional-changelog
+conventional-changelog/releaser-tools
+conventional-commits-rs/conventional-commits-parser
+craicoverflow/sailr folke/devmoji
+j3ko/commit-composer
+lppedd/idea-conventional-commit
+redgreenio/rune-cli
+relekang/python-semantic-release
+semantic-release/commit-analyzer
+semantic-release/semantic-release
+tomtom-international/commisery
+vivaxy/gacp vivaxy/vscode-conventional-commits
+wesleytodd/conventional-commits-parser
+yi-Xu-0100/conventional-commit-types-i18n
