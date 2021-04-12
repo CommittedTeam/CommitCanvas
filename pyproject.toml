@@ -20,7 +20,8 @@ scikit-learn = "^0.24.0"
 PyDriller = "^1.15.5"
 
 [tool.poetry.scripts]
-commitcanvas = "commitcanvas.__main__:main"
+# commitcanvas = "commitcanvas.__main__:main"
+commitcanvas = "generate_type.classify:app"
 
 # [tool.poetry.plugins."blogtool.parsers"]
 # "commitcanvas" = "commitcanvas.__main__:main"

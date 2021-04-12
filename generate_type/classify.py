@@ -14,7 +14,7 @@ def callback():
 @app.command()
 def classify(name: str = None, language: str = None, crossproj: bool = False):
     """
-    Train and run random forest model with specified dat
+    random forest model with specified data
     """
     if ((language and name) is not None):      
         raise typer.BadParameter("If value for language is not empty, value for name must be empty")
@@ -25,7 +25,6 @@ def classify(name: str = None, language: str = None, crossproj: bool = False):
             rf.cross_project_validate(name,language)
     else:
         rf.model(name,language)
-    typer.echo(f"Running classification for: {name} {language}")
 
 
 

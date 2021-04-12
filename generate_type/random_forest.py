@@ -12,19 +12,15 @@ from sklearn.metrics import precision_recall_fscore_support
 
 def data_prep(name, language):
     """ Prepare data for training"""
-    data = pd.read_pickle("generate_type/data/reduced_train_data.pkl")
+    data = pd.read_pickle("generate_type/data/train_data.pkl")
     # Select specific repository or the programming language as specified by the user
     if language is not None:
         data = data.loc[data['language'] == language]
     if name is not None:
         data = data.loc[data['name'] == name]
     
-    features = ['commit_subject',"language","url","commit_hash","commit_msg","commit_author_name","commit_author_email","churns","unique_file_formats","file_paths","diffs"]
-    types = ["chore","fix","feat","docs","refactor","test","style"]
-    # Select specific commit types
-    data = data.loc[data['commit_type'].isin(types)]
     # drop extra features
-    data = data.drop(features, axis=1)
+    data = data.drop("language", axis=1)
     data = data.dropna()
 
     return data
