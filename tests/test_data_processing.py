@@ -1,6 +1,6 @@
 import pytest
 
-from commitcanvas.generate_msg import data_processing as dp
+from generate_type import data_processing as dp
 
 @pytest.mark.parametrize(
     "input_list,expected_list",

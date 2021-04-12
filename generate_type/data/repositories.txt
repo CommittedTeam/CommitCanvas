@@ -25,3 +25,4 @@ tomtom-international/commisery
 vivaxy/gacp vivaxy/vscode-conventional-commits
 wesleytodd/conventional-commits-parser
 yi-Xu-0100/conventional-commit-types-i18n
+GatorEducator/gatorgrader
