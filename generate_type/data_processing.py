@@ -76,52 +76,6 @@ def get_dummies(dataframe):
 
     return dummies
 
-def get_churns(diff):
-    """ get code churns from the diff """
-    churns = []
-    diff = diff.splitlines()
-    diff.append("\n")
-    i = 0
-    while(i < len(diff)):              
-        tmp = []
-        while ((diff[i].startswith('+') or diff[i].startswith('-'))) :
-            tmp.append(diff[i])
-            i += 1
-        if tmp: 
-            churns.append(tmp)
-        i += 1 
-    return churns
-
-def filter_churns(churn):
-    """ Classify the code churn into added and deleted """
-    churns = {
-        "added" : [],
-        "deleted": []
-    }
-    for i in churn:
-        if i.startswith("-"):
-            churns["deleted"].append(i[1:])
-        else:
-            churns["added"].append(i[1:])
-    return churns
-
-def get_style_churns(churns):
-    """Count how many of the code churns were non functional changes such as whitespace, blank line, punctuaions"""
-    non_alum = 0
-    for churn in churns:
-        filtered = filter_churns(churn)
-        deleted = "".join(filtered["deleted"])
-        added = "".join(filtered["added"])
-        set1 = set(deleted) 
-        set2 = set(added) 
-        common = list(set1 & set2) 
-        # NOTE Needs to be refactored
-        result = [ch for ch in deleted if ch not in common] + [ch for ch in added if ch not in common]
-        if not result or re.match(r'^[_\W]+$',"".join(result)):       
-            non_alum += 1
-    if churns:
-        return non_alum/len(churns)
-
 def detect_bots(row):
     """ If there is keyword: bot in the author name or email then that is considered as bot"""
     if re.findall( r'.bot.', row["commit_author_email"]) or re.findall( r'.bot.', row["commit_author_name"]):
@@ -182,9 +136,6 @@ def get_keywords_for_data(types,data):
 def add_new_features(types,data):
     """ Add new features to the dataset."""
     data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
-    data["churns"] = data['diffs'].apply(lambda diff: get_churns("".join(diff)))
-    data["churns_count"] = data['churns'].apply(lambda diff: len(diff))
-    data["style_churns"] = data['churns'].apply(lambda diff: get_style_churns(diff))
     data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
     data["test_files_ratio"] = data['file_paths'].apply(lambda files: test_files_ratio(files))
     data["unique_file_formats"] = data['file_paths'].apply(lambda files: get_file_formats(files))
