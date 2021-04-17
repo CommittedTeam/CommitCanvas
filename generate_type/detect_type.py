@@ -36,7 +36,8 @@ def match(list_commits):
     for commit in list_commits:
         temp_key = ""
         for key in conventions.keys():
-            if (re.match(conventions[key],commit)):
+            # Tka eonly subject line from the multiline commit messages
+            if (re.match(conventions[key],commit.split('\n')[0])):
                 temp_key = key
                 break
             else:
@@ -51,5 +52,4 @@ def detect(matches):
     except:
         convention = "undefined"
     return convention
-
 
