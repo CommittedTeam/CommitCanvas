@@ -1,0 +1,511 @@
+,name,url,language,license,stars,created_since,updated_since,contributor_count,org_count,commit_frequency,recent_releases_count,updated_issues_count,closed_issues_count,comment_frequency,dependents_count,criticality_score,convention
+0,node,https://github.com/nodejs/node,JavaScript,Other,75769,145,0,3250,10,61.1,66,2066,1414,3.9,1037565,0.9933799999999999,angular
+24,openssl,https://github.com/openssl/openssl,C,Apache License 2.0,14518,268,0,705,4,48.0,15,989,602,4.7,408323,0.89094,angular
+27,gatsby,https://github.com/gatsbyjs/gatsby,JavaScript,MIT License,48517,69,0,3896,3,80.8,5,2122,1788,1.6,982574,0.8880899999999999,angular
+35,ant-design,https://github.com/ant-design/ant-design,TypeScript,MIT License,65911,69,0,1519,6,53.2,76,2488,1936,2.6,34898,0.8770899999999999,angular
+38,angular,https://github.com/angular/angular,TypeScript,MIT License,69347,77,0,1441,4,55.9,95,2775,1935,2.2,69620,0.87075,angular
+39,three.js,https://github.com/mrdoob/three.js,JavaScript,MIT License,66127,131,0,1720,8,60.0,12,783,583,2.5,23400,0.8706299999999999,eslint
+41,grafana,https://github.com/grafana/grafana,TypeScript,Apache License 2.0,39072,97,0,1521,4,75.6,44,3725,2657,1.6,40821,0.86874,eslint
+50,electron,https://github.com/electron/electron,C++,MIT License,88517,95,0,1146,6,29.5,157,1976,1455,2.1,48992,0.86345,angular
+58,eslint,https://github.com/eslint/eslint,JavaScript,MIT License,17690,92,0,890,10,9.6,26,670,608,1.4,159676,0.8567100000000001,eslint
+61,cockroach,https://github.com/cockroachdb/cockroach,Go,Other,19665,84,0,441,7,133.8,36,4507,3040,2.5,10643,0.8545299999999999,angular
+85,curl,https://github.com/curl/curl,C,Other,19037,256,0,873,8,27.8,9,412,369,2.7,30391,0.83391,angular
+86,jest,https://github.com/facebook/jest,TypeScript,MIT License,33723,86,0,1270,5,13.5,34,750,460,2.2,55397,0.8325600000000001,angular
+89,zephyr,https://github.com/zephyrproject-rtos/zephyr,C,Apache License 2.0,4068,70,0,1046,5,191.9,13,2894,2065,2.2,5266,0.83206,angular
+96,erpnext,https://github.com/frappe/erpnext,Python,GNU General Public License v3.0,7426,117,0,426,7,50.1,44,987,709,0.6,83126,0.82821,angular
+98,cypress,https://github.com/cypress-io/cypress,JavaScript,MIT License,26276,80,0,247,6,27.6,31,1879,1163,2.3,86977,0.8269299999999999,angular
+99,linuxbrew-core,https://github.com/Homebrew/linuxbrew-core,Ruby,"BSD 2-Clause ""Simplified"" License",945,142,0,11810,5,1301.8,0,1936,1912,0.6,3010,0.8265299999999999,angular
+100,edx-platform,https://github.com/edx/edx-platform,Python,GNU Affero General Public License v3.0,5368,111,0,960,3,51.1,253,883,773,3.5,13245,0.82644,angular
+112,frappe,https://github.com/frappe/frappe,Python,MIT License,2019,117,0,419,6,72.6,43,618,493,1.2,38421,0.8213600000000001,angular
+118,packages,https://github.com/openwrt/packages,Makefile,GNU General Public License v2.0,2618,81,0,798,4,62.0,0,989,856,2.1,598773,0.81983,angular
+121,openwrt,https://github.com/openwrt/openwrt,C,GNU General Public License v2.0,7306,204,0,904,4,62.9,2,499,339,5.2,25474,0.8175899999999999,angular
+132,envoy,https://github.com/envoyproxy/envoy,C++,Apache License 2.0,15635,54,0,673,5,48.9,27,1619,1101,3.5,7216,0.81409,angular
+133,angular-cli,https://github.com/angular/angular-cli,TypeScript,MIT License,24063,70,0,534,7,34.6,105,1187,1074,1.7,17315,0.81404,angular
+137,cli,https://github.com/npm/cli,JavaScript,Other,3929,137,0,727,9,16.9,49,1092,395,1.3,11256,0.81287,angular
+147,serverless,https://github.com/serverless/serverless,JavaScript,MIT License,38454,70,0,955,12,21.6,64,584,364,2.4,4073,0.8094399999999999,angular
+148,freeCodeCamp,https://github.com/freeCodeCamp/freeCodeCamp,JavaScript,"BSD 3-Clause ""New"" or ""Revised"" License",318328,87,0,4551,4,26.3,0,976,770,2.5,28410,0.80829,angular
+155,cilium,https://github.com/cilium/cilium,Go,Apache License 2.0,7213,62,0,260,8,84.4,41,1481,1106,2.9,4523,0.8052199999999999,angular
+215,libuv,https://github.com/libuv/libuv,C,Other,16543,119,0,450,9,4.6,23,150,59,2.2,27448,0.78084,angular
+220,vue-cli,https://github.com/vuejs/vue-cli,JavaScript,MIT License,27082,61,0,421,10,7.9,24,481,348,1.8,14487,0.77915,angular
+222,aws-cdk,https://github.com/aws/aws-cdk,TypeScript,Apache License 2.0,6021,40,0,583,5,50.1,75,2374,1508,3.1,1724,0.77853,angular
+245,tidb,https://github.com/pingcap/tidb,Go,Apache License 2.0,26432,65,0,535,2,49.6,34,3111,2320,4.8,1660,0.77254,angular
+249,zulip,https://github.com/zulip/zulip,Python,Apache License 2.0,12967,102,0,747,4,111.8,11,1287,381,1.6,2504,0.77167,angular
+253,cloudstack,https://github.com/apache/cloudstack,Java,Apache License 2.0,944,127,0,651,6,11.2,3,543,290,4.9,5097,0.77054,angular
+254,sentry,https://github.com/getsentry/sentry,Python,Other,26961,154,0,565,2,107.8,14,22582,22284,0.1,16228,0.77036,angular
+260,hugo,https://github.com/gohugoio/hugo,Go,Apache License 2.0,49232,91,0,735,5,12.6,43,822,353,1.1,10768,0.76932,angular
+261,NodeBB,https://github.com/NodeBB/NodeBB,JavaScript,GNU General Public License v3.0,11606,94,0,223,5,42.1,97,524,495,1.2,19745,0.7689600000000001,angular
+262,rosdistro,https://github.com/ros/rosdistro,Python,Other,540,110,0,1529,7,77.6,4,1187,1157,0.4,1740,0.7688699999999999,angular
+268,netlify-cms,https://github.com/netlify/netlify-cms,JavaScript,MIT License,13190,73,0,402,7,14.3,9,514,381,1.1,40767,0.76689,angular
+270,lxc,https://github.com/lxc/lxc,C,Other,3261,151,0,468,6,12.8,9,76,64,2.9,24554,0.76666,angular
+282,deno,https://github.com/denoland/deno,TypeScript,MIT License,70942,32,0,545,6,44.9,52,1523,1111,2.1,2173,0.7641899999999999,angular
+289,bioconda-recipes,https://github.com/bioconda/bioconda-recipes,Shell,,1234,65,0,1291,11,92.8,0,1452,1337,2.4,603,0.76241,ember
+304,components,https://github.com/angular/components,TypeScript,MIT License,20781,61,1,537,4,28.2,48,1391,896,1.4,15744,0.76057,angular
+310,nokogiri,https://github.com/sparklemotion/nokogiri,Ruby,Other,5563,152,0,207,8,8.2,8,165,121,2.1,45902,0.7588699999999999,angular
+311,libwebsockets,https://github.com/warmcat/libwebsockets,C,Other,2867,124,0,364,7,12.4,9,76,76,5.0,5560,0.7586,angular
+313,vuetify,https://github.com/vuetifyjs/vuetify,TypeScript,MIT License,29042,53,0,632,5,38.2,72,1205,704,1.2,3269,0.7581100000000001,angular
+326,renovate,https://github.com/renovatebot/renovate,TypeScript,GNU Affero General Public License v3.0,4231,49,0,333,10,44.6,1131,7434,7166,0.3,1335,0.75585,angular
+343,kmsan,https://github.com/google/kmsan,C,Other,257,46,3,5000,10,1142.1,0,3,2,1.7,8971,0.75354,angular
+344,webpack-cli,https://github.com/webpack/webpack-cli,JavaScript,MIT License,2052,50,0,115,12,14.5,7,472,454,3.3,19884,0.75338,angular
+349,titanium_mobile,https://github.com/appcelerator/titanium_mobile,Objective-C,Other,2499,141,0,326,6,28.3,10,235,196,1.8,8204,0.75289,angular
+350,optee_os,https://github.com/OP-TEE/optee_os,C,Other,892,81,0,187,7,15.3,7,207,172,5.0,9706,0.75252,angular
+355,sequelize,https://github.com/sequelize/sequelize,JavaScript,MIT License,23459,127,1,1048,7,4.2,29,413,123,1.1,8906,0.75117,angular
+358,void-packages,https://github.com/void-linux/void-packages,Shell,Other,1175,150,0,1129,1,418.0,0,3041,2326,1.2,7313,0.7506,angular
+367,tendermint,https://github.com/tendermint/tendermint,Go,Apache License 2.0,3844,82,0,235,8,16.8,19,613,419,1.8,4317,0.74947,angular
+370,glusterfs,https://github.com/gluster/glusterfs,C,Other,2886,181,0,363,6,7.8,37,826,570,3.3,1052,0.7488,angular
+379,docusaurus,https://github.com/facebook/docusaurus,TypeScript,Other,20967,43,0,506,7,20.1,26,549,455,3.7,700,0.74669,angular
+381,util-linux,https://github.com/karelzak/util-linux,C,GNU General Public License v2.0,1187,343,0,756,5,18.8,6,81,64,3.1,5120,0.74655,angular
+385,sentry-javascript,https://github.com/getsentry/sentry-javascript,TypeScript,"BSD 3-Clause ""New"" or ""Revised"" License",5128,111,0,335,6,10.0,62,270,166,1.7,6905,0.74627,angular
+393,mptcp,https://github.com/multipath-tcp/mptcp,C,Other,708,192,0,5000,10,89.0,1,5,1,0.4,5289,0.74475,angular
+396,MISP,https://github.com/MISP/MISP,PHP,GNU Affero General Public License v3.0,3031,111,0,229,8,50.8,16,2154,497,0.4,2887,0.74462,angular
+398,influxdb,https://github.com/influxdata/influxdb,Go,MIT License,20247,94,0,520,5,40.5,28,1039,637,0.9,1405,0.74449,angular
+399,core,https://github.com/opnsense/core,PHP,"BSD 2-Clause ""Simplified"" License",1433,76,0,167,7,15.5,36,307,182,3.1,4881,0.74441,angular
+400,linux-xlnx,https://github.com/Xilinx/linux-xlnx,C,Other,786,192,0,5000,10,14.9,9,0,0,0.0,31173,0.74433,angular
+401,vue,https://github.com/vuejs/vue,JavaScript,MIT License,177667,91,0,317,7,1.1,33,246,158,1.5,36964,0.74411,angular
+408,quasar,https://github.com/quasarframework/quasar,JavaScript,MIT License,17241,64,0,400,6,32.2,164,550,450,2.0,1326,0.74328,angular
+413,swagger-ui,https://github.com/swagger-api/swagger-ui,JavaScript,Apache License 2.0,19112,115,0,463,7,8.8,35,414,260,0.9,4143,0.74259,angular
+417,google-cloud-go,https://github.com/googleapis/google-cloud-go,Go,Other,2424,81,0,230,5,19.2,88,599,489,5.3,822,0.74179,angular
+423,edk2,https://github.com/tianocore/edk2,C,Other,2032,179,0,507,4,26.5,4,332,330,1.3,14276,0.74095,eslint
+429,carbon,https://github.com/carbon-design-system/carbon,JavaScript,Apache License 2.0,3830,68,0,322,8,23.4,54,764,495,2.1,747,0.7398899999999999,angular
+433,Jackett,https://github.com/Jackett/Jackett,C#,GNU General Public License v2.0,5144,70,0,357,3,48.7,333,1239,1084,2.5,1304,0.73963,angular
+435,macports-ports,https://github.com/macports/macports-ports,Tcl,Other,858,225,1,779,2,242.0,2,1128,1034,2.4,2381,0.7395,angular
+437,taro,https://github.com/NervJS/taro,JavaScript,MIT License,27878,33,0,320,9,16.4,58,999,644,1.4,2972,0.73931,angular
+442,webpack-dev-server,https://github.com/webpack/webpack-dev-server,JavaScript,MIT License,6674,101,0,237,8,1.4,5,274,227,3.5,21086,0.73795,angular
+457,karma,https://github.com/karma-runner/karma,JavaScript,MIT License,11394,112,0,365,8,2.2,16,115,91,2.4,8841,0.7361300000000001,angular
+465,mesa,https://github.com/mesa3d/mesa,C,,538,279,0,1094,7,253.8,23,3,3,0.7,1247,0.7335699999999999,angular
+471,joplin,https://github.com/laurent22/joplin,JavaScript,MIT License,19992,51,0,318,4,32.7,78,616,458,3.2,1519,0.7328399999999999,eslint
+473,material,https://github.com/angular/material,JavaScript,MIT License,16656,79,1,412,10,3.4,11,252,145,0.6,55966,0.7327199999999999,angular
+476,kernel,https://github.com/sonyxperiadev/kernel,C,Other,267,192,0,5000,10,10.5,0,36,30,2.1,997,0.7326699999999999,angular
+477,tokio,https://github.com/tokio-rs/tokio,Rust,MIT License,10686,54,0,409,6,11.5,26,520,424,2.1,2159,0.73249,angular
+503,node-v8,https://github.com/nodejs/node-v8,JavaScript,Other,256,145,1,3266,10,61.3,0,12,6,2.4,1773,0.72941,angular
+537,rxjs,https://github.com/ReactiveX/rxjs,TypeScript,Apache License 2.0,23766,71,0,453,7,12.0,22,223,147,1.2,3163,0.72545,angular
+539,libvirt,https://github.com/libvirt/libvirt,C,GNU Lesser General Public License v2.1,762,185,0,712,2,78.9,33,7,7,1.0,23935,0.72539,angular
+540,fluent-bit,https://github.com/fluent/fluent-bit,C,Apache License 2.0,2461,82,0,210,7,26.2,30,429,183,2.3,976,0.72534,angular
+547,gtk,https://github.com/GNOME/gtk,C,Other,827,282,0,1849,5,115.9,30,0,0,0.0,14014,0.72448,angular
+550,appium,https://github.com/appium/appium,JavaScript,Apache License 2.0,12500,97,0,343,9,3.8,9,266,245,2.7,2136,0.7242,angular
+557,tikv,https://github.com/tikv/tikv,Rust,Apache License 2.0,8587,61,0,285,4,19.9,33,1177,803,4.2,507,0.72375,angular
+562,formatjs,https://github.com/formatjs/formatjs,TypeScript,,12256,82,0,192,7,26.6,1020,306,304,1.3,2132,0.72297,angular
+574,scylla,https://github.com/scylladb/scylla,C++,GNU Affero General Public License v3.0,6543,78,0,105,3,68.0,31,1038,545,3.6,1460,0.72187,angular
+580,yargs,https://github.com/yargs/yargs,JavaScript,MIT License,8409,126,0,229,10,2.5,14,104,67,1.7,8775,0.72142,angular
+581,etherpad-lite,https://github.com/ether/etherpad-lite,JavaScript,Apache License 2.0,10038,119,0,289,6,17.8,5,357,275,2.0,3053,0.72141,angular
+586,nuxt.js,https://github.com/nuxt/nuxt.js,JavaScript,Other,32899,51,0,293,5,12.2,20,691,523,2.1,3123,0.72083,angular
+592,electron-builder,https://github.com/electron-userland/electron-builder,TypeScript,MIT License,10081,69,0,329,11,2.4,14,531,327,2.2,1979,0.72006,angular
+606,graphql-code-generator,https://github.com/dotansimha/graphql-code-generator,TypeScript,MIT License,6075,50,0,289,4,28.2,229,538,449,2.2,1934,0.71901,angular
+607,plugins,https://github.com/rollup/plugins,JavaScript,MIT License,1441,17,1,111,12,6.6,111,226,145,2.5,64492,0.71887,angular
+633,superset,https://github.com/apache/superset,Python,Apache License 2.0,31735,67,0,536,4,32.2,5,1503,1040,2.4,738,0.71662,angular
+652,typeorm,https://github.com/typeorm/typeorm,TypeScript,MIT License,22464,59,0,634,6,6.7,12,1462,793,1.6,947,0.71463,angular
+654,graphql-tools,https://github.com/ardatan/graphql-tools,TypeScript,MIT License,3852,58,0,252,8,18.0,155,423,395,2.3,487,0.7144,angular
+663,lint-staged,https://github.com/okonet/lint-staged,JavaScript,MIT License,7927,61,0,97,9,1.9,42,46,27,3.3,28331,0.71315,angular
+666,semantic-release,https://github.com/semantic-release/semantic-release,JavaScript,,11527,77,0,141,12,1.5,25,96,47,2.2,13170,0.71295,angular
+667,vue-next,https://github.com/vuejs/vue-next,TypeScript,MIT License,19926,31,0,209,11,32.9,55,727,542,1.9,449,0.7129300000000001,angular
+670,jx,https://github.com/jenkins-x/jx,Go,Apache License 2.0,3772,37,1,213,5,9.5,304,308,210,2.5,17950,0.71259,angular
+671,bootstrap-vue,https://github.com/bootstrap-vue/bootstrap-vue,JavaScript,MIT License,12681,52,0,315,5,18.2,34,497,440,2.5,849,0.7125,angular
+677,ohmyzsh,https://github.com/ohmyzsh/ohmyzsh,Shell,MIT License,121870,138,0,2005,9,8.9,0,600,349,1.6,391,0.7119800000000001,angular
+685,sourcegraph,https://github.com/sourcegraph/sourcegraph,Go,Other,4263,66,0,163,2,102.2,56,3172,2256,1.6,1150,0.71165,angular
+698,dvc,https://github.com/iterative/dvc,Python,Apache License 2.0,7005,47,0,202,5,25.4,117,731,562,2.2,1253,0.71078,angular
+702,goreleaser,https://github.com/goreleaser/goreleaser,Go,MIT License,6764,49,0,198,8,9.4,42,1882,1855,1.2,1026,0.71055,angular
+704,ts-jest,https://github.com/kulshekhar/ts-jest,TypeScript,MIT License,4229,53,0,126,5,14.0,24,277,266,1.6,12630,0.71048,angular
+709,video.js,https://github.com/videojs/video.js,JavaScript,Other,30355,130,0,439,7,2.0,21,366,243,1.7,1208,0.70985,angular
+710,react-native-firebase,https://github.com/invertase/react-native-firebase,JavaScript,Other,8677,48,0,333,9,20.5,2,612,562,2.9,960,0.7097899999999999,angular
+742,marked,https://github.com/markedjs/marked,JavaScript,Other,24084,115,0,128,9,6.1,14,190,172,1.9,3019,0.70627,angular
+746,chakra-ui,https://github.com/chakra-ui/chakra-ui,TypeScript,MIT License,14088,18,0,304,6,65.8,171,785,702,2.7,313,0.70602,angular
+749,google-cloud-ruby,https://github.com/googleapis/google-cloud-ruby,Ruby,Apache License 2.0,1037,81,0,130,5,61.9,30,946,735,0.5,1910,0.7056399999999999,angular
+774,cli,https://github.com/netlify/cli,JavaScript,MIT License,1076,76,0,96,6,14.2,88,397,329,1.0,6868,0.7027899999999999,angular
+780,tldr,https://github.com/tldr-pages/tldr,Shell,Other,29999,86,0,1438,8,29.9,0,633,603,1.8,179,0.70225,angular
+791,mpv,https://github.com/mpv-player/mpv,C,Other,13810,242,0,516,2,17.6,2,388,253,3.3,3553,0.7014600000000001,angular
+795,iproute2,https://github.com/shemminger/iproute2,C,GNU General Public License v2.0,372,204,0,564,6,6.7,6,3,3,2.0,20157,0.70115,angular
+797,fwupd,https://github.com/fwupd/fwupd,C,GNU Lesser General Public License v2.1,1099,72,0,141,9,24.8,15,314,301,2.9,333,0.70108,angular
+802,python-docs-samples,https://github.com/GoogleCloudPlatform/python-docs-samples,Python,Apache License 2.0,4686,97,0,366,4,26.4,0,453,415,3.1,3366,0.70035,angular
+812,nx,https://github.com/nrwl/nx,TypeScript,MIT License,5640,41,0,262,6,22.1,86,920,616,1.9,449,0.69962,angular
+813,json,https://github.com/nlohmann/json,C++,MIT License,22634,91,0,212,5,10.2,3,89,70,3.3,9390,0.69925,atom
+814,tensorboard,https://github.com/tensorflow/tensorboard,TypeScript,Apache License 2.0,5106,63,0,248,5,19.1,6,399,320,1.0,7673,0.69923,angular
+830,flow,https://github.com/vaadin/flow,Java,Apache License 2.0,278,174,0,187,4,16.5,93,786,554,1.5,854,0.6984600000000001,angular
+831,puppeteer,https://github.com/puppeteer/puppeteer,TypeScript,Apache License 2.0,67902,45,0,321,5,7.9,21,559,232,1.4,3469,0.6984100000000001,angular
+834,openmrs-core,https://github.com/openmrs/openmrs-core,Java,Other,956,179,0,433,7,9.2,10,259,98,0.6,2255,0.69831,angular
+838,vue-router,https://github.com/vuejs/vue-router,JavaScript,MIT License,17563,86,0,251,7,4.0,19,172,140,1.4,3436,0.69812,angular
+851,lighthouse,https://github.com/GoogleChrome/lighthouse,JavaScript,Apache License 2.0,21483,61,0,274,7,11.8,10,513,348,2.1,863,0.69744,angular
+852,gnuradio,https://github.com/gnuradio/gnuradio,C++,GNU General Public License v3.0,2537,176,0,364,4,11.5,4,441,308,2.3,1737,0.69743,angular
+854,rclone,https://github.com/rclone/rclone,Go,MIT License,25324,99,0,423,4,21.9,9,816,245,2.2,464,0.69729,angular
+856,argo,https://github.com/argoproj/argo,Go,Apache License 2.0,7229,41,0,337,6,22.5,85,836,651,2.4,181,0.69708,angular
+860,pybind11,https://github.com/pybind/pybind11,C++,Other,8483,67,0,225,9,6.6,6,324,212,4.0,648,0.69686,angular
+863,zeebe,https://github.com/zeebe-io/zeebe,Java,,1680,59,0,64,5,28.4,38,1303,1029,1.7,2079,0.69665,angular
+878,rest.js,https://github.com/octokit/rest.js,JavaScript,MIT License,4390,129,1,247,8,7.5,59,97,87,1.6,2004,0.6954899999999999,angular
+883,husky,https://github.com/typicode/husky,Shell,Other,21370,80,1,67,10,2.4,24,124,91,2.1,22102,0.69525,angular
+885,typedoc,https://github.com/TypeStrong/typedoc,HTML,Apache License 2.0,4427,81,0,148,6,6.0,39,261,226,1.6,3244,0.6952,angular
+890,element3,https://github.com/hug-sun/element3,JavaScript,MIT License,2459,54,0,669,9,24.2,28,343,317,0.8,114,0.69497,angular
+898,suricata,https://github.com/OISF/suricata,C,GNU General Public License v2.0,1849,140,0,203,5,21.0,12,290,243,1.4,1322,0.69406,angular
+899,discord.js,https://github.com/discordjs/discord.js,JavaScript,Apache License 2.0,8741,66,0,288,4,8.9,17,481,396,1.6,2484,0.69399,angular
+909,html-webpack-plugin,https://github.com/jantimon/html-webpack-plugin,JavaScript,MIT License,9322,78,0,152,9,1.2,12,120,82,4.0,2942,0.69348,angular
+915,translate,https://github.com/translate/translate,Python,GNU General Public License v2.0,576,176,0,111,5,6.3,6,95,88,0.7,85654,0.69318,angular
+922,NativeScript,https://github.com/NativeScript/NativeScript,TypeScript,Apache License 2.0,19582,83,0,216,5,4.6,34,316,132,2.8,1346,0.6927800000000001,angular
+927,lnd,https://github.com/lightningnetwork/lnd,Go,MIT License,4732,63,0,258,4,28.5,36,368,234,2.2,564,0.6924600000000001,angular
+928,google-api-ruby-client,https://github.com/googleapis/google-api-ruby-client,Ruby,Apache License 2.0,2360,127,0,131,8,22.9,8,1472,1454,0.1,1769,0.69242,angular
+932,golangci-lint,https://github.com/golangci/golangci-lint,Go,GNU General Public License v3.0,6859,33,0,179,7,8.6,27,371,295,1.7,2498,0.69193,angular
+933,vuepress,https://github.com/vuejs/vuepress,JavaScript,MIT License,18128,34,0,349,11,3.9,12,198,96,1.6,3015,0.69188,angular
+941,rustfmt,https://github.com/rust-lang/rustfmt,Rust,Other,3420,73,0,363,8,5.9,19,231,163,2.2,376,0.69122,angular
+948,amplify-js,https://github.com/aws-amplify/amplify-js,TypeScript,Apache License 2.0,7688,40,0,320,4,13.5,1165,1015,636,2.4,526,0.69057,angular
+959,criu,https://github.com/checkpoint-restore/criu,C,Other,1339,113,0,147,7,6.0,7,247,118,2.3,2638,0.6895100000000001,angular
+964,awesome,https://github.com/awesomeWM/awesome,Lua,GNU General Public License v2.0,3653,162,1,372,6,2.9,7,60,21,4.1,4364,0.68914,angular
+973,agda,https://github.com/agda/agda,Haskell,Other,1410,187,0,160,5,26.2,4,228,121,2.5,1691,0.68806,ember
+976,react-query,https://github.com/tannerlinsley/react-query,TypeScript,MIT License,16436,16,0,224,8,16.0,190,246,218,3.4,635,0.68788,angular
+983,sweetalert2,https://github.com/sweetalert2/sweetalert2,JavaScript,MIT License,12272,76,0,106,10,5.6,80,93,86,2.4,1330,0.68739,angular
+985,cockpit,https://github.com/cockpit-project/cockpit,C,GNU Lesser General Public License v2.1,5436,87,0,160,3,32.8,40,524,384,2.2,666,0.6873199999999999,angular
+989,vega,https://github.com/vega/vega,JavaScript,"BSD 3-Clause ""New"" or ""Revised"" License",8908,96,0,107,9,10.3,19,138,96,1.1,2556,0.68715,angular
+992,stencil,https://github.com/ionic-team/stencil,TypeScript,Other,8733,47,0,157,8,15.9,43,212,133,1.8,936,0.68683,angular
+998,css-loader,https://github.com/webpack-contrib/css-loader,JavaScript,MIT License,3907,107,2,104,8,2.1,15,50,38,3.3,21778,0.68648,angular
+1003,graphiql,https://github.com/graphql/graphiql,TypeScript,MIT License,11573,66,0,178,8,6.1,198,78,54,2.4,1405,0.6862,angular
+1004,grpc-gateway,https://github.com/grpc-ecosystem/grpc-gateway,Go,"BSD 3-Clause ""New"" or ""Revised"" License",9997,70,0,227,7,10.1,23,190,168,1.8,663,0.6862,angular
+1005,wine,https://github.com/wine-mirror/wine,C,Other,1519,335,0,2134,2,160.2,25,1,1,2.0,294,0.68619,angular
+1006,nock,https://github.com/nock/nock,JavaScript,MIT License,10181,113,1,270,10,2.3,23,65,43,1.3,3622,0.6859999999999999,angular
+1009,google-api-nodejs-client,https://github.com/googleapis/google-api-nodejs-client,TypeScript,Apache License 2.0,9060,95,0,141,6,25.5,24,353,314,0.8,944,0.68565,angular
+1012,keepalived,https://github.com/acassen/keepalived,C,GNU General Public License v2.0,2475,138,0,142,7,10.8,11,89,83,2.9,948,0.6855,angular
+1016,tarantool,https://github.com/tarantool/tarantool,Lua,Other,2515,126,0,140,5,17.2,17,713,174,0.6,2622,0.6854100000000001,angular
+1023,v,https://github.com/vlang/v,V,MIT License,21353,23,0,368,5,99.1,15,1527,1145,1.6,134,0.68486,angular
+1033,dayjs,https://github.com/iamkun/dayjs,JavaScript,MIT License,33087,33,0,232,6,3.8,29,280,182,2.7,1944,0.6843199999999999,angular
+1037,webpack.js.org,https://github.com/webpack/webpack.js.org,JavaScript,Creative Commons Attribution 4.0 International,1928,55,0,1058,10,10.8,2,402,351,2.2,98,0.68412,angular
+1040,Vulkan-ValidationLayers,https://github.com/KhronosGroup/Vulkan-ValidationLayers,C++,Other,259,79,0,246,4,25.0,7,302,251,2.0,1298,0.68407,angular
+1041,linux,https://github.com/beagleboard/linux,C,Other,528,192,5,5000,10,0.4,113,9,3,1.8,985,0.68396,angular
+1047,loopback-next,https://github.com/strongloop/loopback-next,TypeScript,Other,3328,49,0,183,7,40.7,1233,784,469,1.2,224,0.6835,angular
+1058,grpc-java,https://github.com/grpc/grpc-java,Java,Apache License 2.0,8268,74,0,238,3,13.1,19,340,281,1.8,1963,0.6826399999999999,angular
+1059,node-sass,https://github.com/sass/node-sass,C++,MIT License,7546,109,0,209,7,1.0,4,110,73,2.0,11826,0.6826,angular
+1070,vant,https://github.com/youzan/vant,JavaScript,MIT License,16386,49,0,171,4,48.8,65,659,644,1.8,374,0.68198,angular
+1073,socket.io,https://github.com/socketio/socket.io,JavaScript,MIT License,52145,132,0,176,9,1.6,11,108,66,2.4,1752,0.68152,angular
+1074,aks-engine,https://github.com/Azure/aks-engine,Go,MIT License,809,57,0,339,7,16.9,27,313,261,2.4,89,0.68138,angular
+1076,jquery,https://github.com/jquery/jquery,JavaScript,MIT License,54384,180,1,328,7,1.3,1,40,28,1.8,67506,0.68132,eslint
+1078,pgjdbc,https://github.com/pgjdbc/pgjdbc,Java,"BSD 2-Clause ""Simplified"" License",905,285,0,235,7,3.7,6,190,54,2.2,1992,0.6812199999999999,angular
+1092,common-voice,https://github.com/mozilla/common-voice,TypeScript,Mozilla Public License 2.0,2629,45,0,768,5,63.5,19,98,58,1.7,140,0.6806,eslint
+1096,ant-design-pro,https://github.com/ant-design/ant-design-pro,TypeScript,MIT License,27666,41,0,273,5,4.1,5,627,565,2.3,3666,0.68048,angular
+1106,js-ipfs,https://github.com/ipfs/js-ipfs,JavaScript,Other,4879,81,1,223,8,10.9,182,238,159,1.6,689,0.68002,angular
+1111,vega-lite,https://github.com/vega/vega-lite,TypeScript,"BSD 3-Clause ""New"" or ""Revised"" License",3080,75,0,154,7,17.4,36,292,240,1.0,689,0.6797300000000001,angular
+1115,platform,https://github.com/ngrx/platform,TypeScript,Other,6569,48,0,308,10,5.6,16,174,129,2.1,410,0.67942,angular
+1126,dom-testing-library,https://github.com/testing-library/dom-testing-library,JavaScript,MIT License,2421,34,0,150,9,4.4,109,101,70,4.0,942,0.67881,angular
+1128,pyinstaller,https://github.com/pyinstaller/pyinstaller,Python,Other,7550,187,0,387,4,7.9,3,414,303,2.6,804,0.67869,angular
+1137,incubator-echarts,https://github.com/apache/incubator-echarts,TypeScript,Apache License 2.0,44342,94,0,144,4,22.4,12,1008,544,1.6,751,0.6782,angular
+1138,vlc,https://github.com/videolan/vlc,C,Other,6983,261,1,924,7,71.1,2,3,3,0.7,4973,0.67809,angular
+1157,react-testing-library,https://github.com/testing-library/react-testing-library,JavaScript,MIT License,13510,34,1,155,9,2.1,37,94,88,3.3,4766,0.67698,angular
+1159,scoop-extras,https://github.com/lukesampson/scoop-extras,PowerShell,The Unlicense,942,91,0,537,5,169.4,0,663,483,1.1,233,0.67691,angular
+1161,freeipa,https://github.com/freeipa/freeipa,Python,Other,502,165,0,186,5,17.7,10,302,266,3.3,189,0.67675,angular
+1162,prisma,https://github.com/prisma/prisma,TypeScript,Apache License 2.0,7254,21,0,113,4,49.3,49,1219,669,1.3,1990,0.67674,angular
+1169,hexo,https://github.com/hexojs/hexo,JavaScript,MIT License,31946,101,0,174,7,4.7,8,114,74,1.3,4651,0.67637,angular
+1170,javascript,https://github.com/airbnb/javascript,JavaScript,MIT License,103452,100,0,511,4,1.3,12,66,58,1.2,8042,0.67637,ember
+1175,libreswan,https://github.com/libreswan/libreswan,C,Other,535,186,0,183,5,51.2,17,34,20,3.0,314,0.67611,angular
+1183,dpdk,https://github.com/DPDK/dpdk,C,,1145,96,1,998,5,105.2,19,1,1,1.0,1415,0.67592,angular
+1184,jsii,https://github.com/aws/jsii,TypeScript,Apache License 2.0,987,40,0,53,6,17.6,26,324,282,2.0,3250,0.67592,angular
+1187,pipelines,https://github.com/kubeflow/pipelines,Python,Apache License 2.0,1940,33,0,202,2,19.5,26,679,323,3.4,1438,0.67566,angular
+1193,ionic-native,https://github.com/ionic-team/ionic-native,TypeScript,Other,2038,63,1,664,10,3.6,16,100,52,0.8,1591,0.6752100000000001,angular
+1201,pacemaker,https://github.com/ClusterLabs/pacemaker,C,Other,785,212,0,148,5,22.4,12,89,86,1.9,1036,0.67487,eslint
+1202,react-navigation,https://github.com/react-navigation/react-navigation,TypeScript,,19196,48,1,97,7,11.2,635,553,396,2.4,1362,0.67487,angular
+1204,node-gyp,https://github.com/nodejs/node-gyp,Python,MIT License,7113,109,0,171,9,0.9,14,124,84,2.0,1797,0.67477,angular
+1206,node-mongodb-native,https://github.com/mongodb/node-mongodb-native,JavaScript,Apache License 2.0,8830,134,1,408,7,5.6,17,138,128,0.4,2499,0.67473,angular
+1214,jest-dom,https://github.com/testing-library/jest-dom,JavaScript,MIT License,2130,34,0,73,10,1.4,25,42,30,2.9,12981,0.67409,angular
+1216,snyk,https://github.com/snyk/snyk,TypeScript,Other,2693,63,1,125,3,10.4,295,132,100,1.9,18615,0.67402,angular
+1217,CodeIgniter,https://github.com/bcit-ci/CodeIgniter,PHP,MIT License,18105,175,0,595,9,1.2,3,38,21,1.2,3963,0.67398,ember
+1225,jumpserver,https://github.com/jumpserver/jumpserver,Python,GNU General Public License v2.0,14932,79,1,119,4,14.4,29,740,605,0.6,6263,0.67369,angular
+1234,universal,https://github.com/angular/universal,TypeScript,MIT License,3706,68,0,101,7,5.1,22,133,101,1.5,3832,0.67301,angular
+1244,feathers,https://github.com/feathersjs/feathers,TypeScript,MIT License,13083,112,0,185,8,2.7,14,143,120,1.4,1347,0.67255,angular
+1261,umi,https://github.com/umijs/umi,TypeScript,MIT License,9772,38,0,278,8,12.0,71,642,436,1.5,153,0.6715800000000001,angular
+1266,element,https://github.com/ElemeFE/element,Vue,MIT License,48758,54,0,586,8,1.1,4,1192,728,1.0,1005,0.6714100000000001,angular
+1275,firmware,https://github.com/raspberrypi/firmware,C,,3929,108,0,18,7,1.9,7,81,24,4.6,43890,0.67113,angular
+1276,deck,https://github.com/spinnaker/deck,TypeScript,Apache License 2.0,243,80,0,286,5,21.4,304,190,173,0.7,540,0.67109,angular
+1278,hyper,https://github.com/hyperium/hyper,Rust,MIT License,7349,77,0,276,9,2.2,11,115,89,1.9,921,0.67086,angular
+1292,theme-ui,https://github.com/system-ui/theme-ui,TypeScript,MIT License,3336,22,0,111,7,16.7,75,361,292,2.2,1013,0.67043,angular
+1298,opa,https://github.com/open-policy-agent/opa,Go,Apache License 2.0,4455,61,0,166,7,14.1,27,334,250,2.0,204,0.67008,angular
+1302,spotbugs,https://github.com/spotbugs/spotbugs,Java,GNU Lesser General Public License v2.1,2146,217,0,133,6,4.9,17,90,58,1.5,2660,0.66984,angular
+1304,pro-components,https://github.com/ant-design/pro-components,TypeScript,,859,42,0,318,4,20.9,205,1031,930,2.6,78,0.66971,angular
+1320,pcp,https://github.com/performancecopilot/pcp,C,Other,706,166,0,195,3,46.0,7,114,91,1.0,2621,0.6687,angular
+1321,camunda-bpm-platform,https://github.com/camunda/camunda-bpm-platform,Java,Apache License 2.0,1781,129,0,246,3,16.9,9,222,180,0.6,3693,0.66856,angular
+1328,ceph-ansible,https://github.com/ceph/ceph-ansible,Python,Apache License 2.0,1293,84,1,285,2,9.4,61,298,252,2.8,1684,0.66828,angular
+1335,termux-packages,https://github.com/termux/termux-packages,Shell,Other,4309,68,0,236,4,59.2,0,412,343,2.0,1948,0.66805,angular
+1340,android_frameworks_base,https://github.com/LineageOS/android_frameworks_base,Java,Other,269,149,3,4142,3,161.1,3,6,3,0.2,3069,0.66786,eslint
+1345,apps,https://github.com/polkadot-js/apps,TypeScript,Apache License 2.0,377,34,0,122,6,65.5,35,566,522,1.0,352,0.6675399999999999,ember
+1347,outline,https://github.com/outline/outline,JavaScript,Other,10501,59,0,51,8,10.3,23,190,140,1.4,3137,0.66737,angular
+1349,angular.js,https://github.com/angular/angular.js,JavaScript,MIT License,59587,621,2,1845,5,1.2,4,36,29,0.6,13430,0.66733,angular
+1352,onecloud,https://github.com/yunionio/onecloud,Go,Apache License 2.0,407,30,0,44,4,49.0,26,1714,1684,1.8,1194,0.6672899999999999,angular
+1366,hydra,https://github.com/ory/hydra,Go,Apache License 2.0,9825,68,0,182,5,15.5,32,168,139,1.3,783,0.66665,angular
+1374,uno,https://github.com/unoplatform/uno,C#,Other,4290,32,0,181,5,65.9,9,838,480,3.0,136,0.6663,angular
+1381,Terasology,https://github.com/MovingBlocks/Terasology,Java,Other,2979,120,0,317,2,15.6,11,270,217,1.2,1739,0.66604,angular
+1383,kubernetes-client,https://github.com/fabric8io/kubernetes-client,Java,Apache License 2.0,1667,67,0,223,4,10.0,18,280,191,2.8,429,0.66598,angular
+1389,cli,https://github.com/react-native-community/cli,TypeScript,MIT License,1486,71,1,441,8,4.4,26,109,70,1.8,426,0.66572,angular
+1391,clouddriver,https://github.com/spinnaker/clouddriver,Groovy,Apache License 2.0,277,108,0,305,5,15.7,35,201,186,1.1,183,0.66565,angular
+1404,node-ytdl-core,https://github.com/fent/node-ytdl-core,JavaScript,MIT License,2087,103,0,71,4,5.3,48,155,141,4.1,1096,0.66496,angular
+1411,vuex,https://github.com/vuejs/vuex,JavaScript,MIT License,25490,67,0,311,7,2.1,14,112,81,1.4,1636,0.66471,angular
+1413,syslog-ng,https://github.com/syslog-ng/syslog-ng,C,Other,1388,167,0,151,4,21.8,5,133,105,3.7,525,0.66466,eslint
+1415,pnpm,https://github.com/pnpm/pnpm,TypeScript,MIT License,9427,60,0,78,8,18.9,109,199,110,1.9,494,0.66465,angular
+1431,open-wc,https://github.com/open-wc/open-wc,JavaScript,MIT License,1357,28,0,157,6,14.5,38,193,162,1.8,1067,0.66372,angular
+1433,neomutt,https://github.com/neomutt/neomutt,C,GNU General Public License v2.0,2051,275,1,391,3,19.0,13,97,64,2.9,564,0.6636,angular
+1441,react-use,https://github.com/streamich/react-use,TypeScript,The Unlicense,17838,27,0,161,10,16.3,52,227,146,0.4,1373,0.6631,angular
+1442,cli,https://github.com/heroku/cli,JavaScript,ISC License,669,74,0,145,6,4.2,34,98,62,0.7,5432,0.66303,angular
+1467,validator.js,https://github.com/validatorjs/validator.js,JavaScript,MIT License,16922,125,1,354,11,2.9,4,143,98,2.7,412,0.66199,angular
+1478,opensips,https://github.com/OpenSIPS/opensips,C,Other,816,190,0,147,5,21.4,6,144,90,3.7,249,0.66147,angular
+1485,azerothcore-wotlk,https://github.com/azerothcore/azerothcore-wotlk,C++,Other,1254,55,0,177,4,21.1,1,1089,596,2.1,1832,0.6611199999999999,angular
+1494,vue-test-utils,https://github.com/vuejs/vue-test-utils,JavaScript,MIT License,3179,44,0,260,7,3.1,10,73,57,2.4,1866,0.6607,angular
+1502,zig,https://github.com/ziglang/zig,Zig,MIT License,7660,66,0,332,3,80.1,3,2417,1016,1.5,139,0.66032,angular
+1515,user-event,https://github.com/testing-library/user-event,JavaScript,MIT License,1046,28,1,70,10,4.0,75,94,63,3.1,4844,0.6594300000000001,angular
+1529,vee-validate,https://github.com/logaretm/vee-validate,TypeScript,MIT License,8178,54,0,283,5,13.7,55,186,180,1.8,212,0.65871,angular
+1532,wiki,https://github.com/Requarks/wiki,Vue,GNU Affero General Public License v3.0,11954,53,0,114,9,8.6,19,366,190,1.5,428,0.65851,angular
+1540,eslint-plugin-jest,https://github.com/jest-community/eslint-plugin-jest,TypeScript,MIT License,672,49,0,94,6,3.6,28,71,55,1.0,12526,0.65799,angular
+1552,cloud-kernel,https://github.com/alibaba/cloud-kernel,C,Other,285,192,0,5000,10,20.3,7,5,4,2.2,3,0.65749,angular
+1553,dgraph,https://github.com/dgraph-io/dgraph,Go,Other,14586,65,0,183,3,24.7,43,661,617,0.6,776,0.65749,angular
+1554,edusoho,https://github.com/edusoho/edusoho,JavaScript,,1445,91,1,255,3,57.8,79,9,0,0.4,28541,0.65746,angular
+1556,jina,https://github.com/jina-ai/jina,Python,Apache License 2.0,1847,11,0,81,4,71.2,21,621,575,2.6,1066,0.6574,angular
+1558,capacitor,https://github.com/ionic-team/capacitor,Java,Other,4892,38,0,226,5,12.4,33,408,299,1.6,349,0.65717,angular
+1566,eslint-plugin-jsdoc,https://github.com/gajus/eslint-plugin-jsdoc,JavaScript,Other,482,65,0,70,6,6.2,108,39,31,2.4,3660,0.65692,angular
+1571,wowchemy-hugo-modules,https://github.com/wowchemy/wowchemy-hugo-modules,JavaScript,MIT License,5290,57,0,136,9,5.7,3,163,125,2.1,1811,0.65678,angular
+1573,swagger,https://github.com/nestjs/swagger,TypeScript,MIT License,697,40,0,67,10,10.1,44,191,160,1.0,1473,0.65675,angular
+1577,trezor-firmware,https://github.com/trezor/trezor-firmware,Python,,353,100,0,225,9,22.8,15,210,134,1.8,32,0.65661,angular
+1594,wine,https://github.com/ValveSoftware/wine,C,Other,412,336,0,2119,2,101.2,24,8,1,2.4,36,0.65601,angular
+1599,coveragepy,https://github.com/nedbat/coveragepy,Python,Apache License 2.0,1466,144,0,103,8,3.9,6,90,46,1.6,2761,0.65591,angular
+1614,sass-loader,https://github.com/webpack-contrib/sass-loader,JavaScript,MIT License,3537,84,2,85,8,1.3,14,29,24,2.9,18891,0.6554300000000001,angular
+1615,sendgrid-nodejs,https://github.com/sendgrid/sendgrid-nodejs,JavaScript,MIT License,2260,110,0,183,10,2.5,19,64,50,1.9,298,0.65542,angular
+1617,botpress,https://github.com/botpress/botpress,TypeScript,GNU Affero General Public License v3.0,8982,52,0,148,2,24.5,41,465,318,0.7,3657,0.6553899999999999,angular
+1620,Main,https://github.com/ScoopInstaller/Main,PowerShell,The Unlicense,633,93,0,559,3,125.8,0,367,289,1.0,440,0.6553,angular
+1629,source,https://github.com/lede-project/source,C,GNU General Public License v2.0,1505,205,0,906,4,62.7,2,2,1,0.5,4374,0.65499,angular
+1640,argo-cd,https://github.com/argoproj/argo-cd,Go,Apache License 2.0,4672,35,0,355,4,17.0,39,892,559,1.9,94,0.65467,angular
+1641,rules_nodejs,https://github.com/bazelbuild/rules_nodejs,Starlark,Apache License 2.0,462,45,0,150,4,11.6,29,380,266,1.6,847,0.65454,angular
+1643,material-components-web,https://github.com/material-components/material-components-web,TypeScript,MIT License,15179,82,0,417,3,15.8,5,281,238,1.3,767,0.6544300000000001,angular
+1646,tpm2-tools,https://github.com/tpm2-software/tpm2-tools,C,,368,66,0,98,9,8.7,15,73,50,2.5,546,0.6543100000000001,angular
+1647,grpc-go,https://github.com/grpc/grpc-go,Go,Apache License 2.0,12886,74,0,272,1,8.1,16,237,199,1.8,5126,0.6543,angular
+1671,verdaccio,https://github.com/verdaccio/verdaccio,TypeScript,MIT License,10937,93,0,228,8,3.2,16,114,85,1.5,379,0.6532899999999999,angular
+1672,react-bootstrap,https://github.com/react-bootstrap/react-bootstrap,JavaScript,MIT License,18827,86,0,419,6,4.8,1,196,145,1.7,1126,0.65325,angular
+1674,apollo,https://github.com/ApolloAuto/apollo,C++,Apache License 2.0,17651,43,0,338,4,45.1,2,701,494,1.5,427,0.65322,eslint
+1675,react-table,https://github.com/tannerlinsley/react-table,JavaScript,MIT License,13218,51,0,263,7,5.9,21,150,94,1.7,328,0.65322,angular
+1676,lightning,https://github.com/ElementsProject/lightning,C,Other,1772,69,0,157,3,38.8,12,259,199,2.7,296,0.6532100000000001,angular
+1687,G6,https://github.com/antvis/G6,TypeScript,MIT License,7370,47,0,78,9,25.1,25,439,341,2.2,80,0.65282,angular
+1697,ng-bootstrap,https://github.com/ng-bootstrap/ng-bootstrap,TypeScript,MIT License,7672,65,0,147,8,3.7,19,118,60,1.2,1340,0.65242,angular
+1700,axe-core,https://github.com/dequelabs/axe-core,JavaScript,Mozilla Public License 2.0,3475,82,0,146,6,9.3,14,290,201,1.3,497,0.65232,angular
+1721,ReactiveUI,https://github.com/reactiveui/ReactiveUI,C#,MIT License,6005,129,0,178,6,4.1,22,686,677,0.2,566,0.65169,angular
+1724,coding-standard,https://github.com/slevomat/coding-standard,PHP,MIT License,858,62,0,60,12,8.9,20,79,69,1.9,834,0.65163,eslint
+1739,gluon,https://github.com/freifunk-gluon/gluon,C,Other,442,97,0,132,2,6.3,10,73,39,2.5,9681,0.65105,angular
+1749,ecma262,https://github.com/tc39/ecma262,HTML,Other,11427,82,0,138,6,5.4,3,127,74,2.1,2854,0.65055,eslint
+1753,gridsome,https://github.com/gridsome/gridsome,JavaScript,MIT License,7151,30,0,115,7,3.1,100,147,62,1.7,3201,0.6504300000000001,angular
+1762,graphql,https://github.com/nestjs/graphql,TypeScript,MIT License,647,38,0,54,9,12.7,68,204,181,0.9,1676,0.6500100000000001,angular
+1764,RSSHub,https://github.com/DIYgod/RSSHub,JavaScript,MIT License,14896,34,0,564,4,38.6,0,942,837,1.4,610,0.64985,angular
+1798,caddy,https://github.com/caddyserver/caddy,Go,Apache License 2.0,31461,73,0,78,6,10.7,22,215,188,2.9,234,0.64858,angular
+1806,proxy,https://github.com/istio/proxy,C++,Apache License 2.0,517,50,0,93,5,5.2,51,107,104,1.5,3290,0.6483399999999999,eslint
+1807,uni-app,https://github.com/dcloudio/uni-app,JavaScript,Apache License 2.0,28430,30,0,115,3,71.1,180,317,97,1.3,1142,0.64831,angular
+1817,amplify-cli,https://github.com/aws-amplify/amplify-cli,TypeScript,Apache License 2.0,1914,33,0,177,4,16.8,15,1369,839,2.4,173,0.64795,angular
+1818,sentry-python,https://github.com/getsentry/sentry-python,Python,"BSD 2-Clause ""Simplified"" License",835,32,0,79,5,5.1,28,136,94,2.6,3036,0.64791,angular
+1826,sway,https://github.com/swaywm/sway,C,MIT License,8323,66,0,379,2,7.4,7,380,241,2.3,979,0.64761,angular
+1842,rhodes,https://github.com/rhomobile/rhodes,C,MIT License,1037,150,0,163,5,2.6,37,6,4,1.7,5182,0.6471399999999999,angular
+1845,jshint,https://github.com/jshint/jshint,JavaScript,MIT License,8493,124,0,270,9,0.7,4,24,13,1.4,3504,0.6470899999999999,jshint
+1858,instantsearch.js,https://github.com/algolia/instantsearch.js,TypeScript,MIT License,2579,67,0,90,8,3.3,23,117,81,1.6,1079,0.64665,angular
+1886,nodemon,https://github.com/remy/nodemon,JavaScript,MIT License,21759,125,1,149,8,0.3,4,80,59,2.5,5320,0.64568,angular
+1888,nvme-cli,https://github.com/linux-nvme/nvme-cli,C,GNU General Public License v2.0,648,75,0,193,6,4.7,4,82,56,1.5,2836,0.64548,angular
+1890,commitlint,https://github.com/conventional-changelog/commitlint,TypeScript,MIT License,7109,60,0,111,10,7.7,1,266,234,0.5,5332,0.64542,angular
+1892,vimtex,https://github.com/lervag/vimtex,TeX,MIT License,2987,88,0,126,5,12.6,9,114,99,6.2,84,0.6453800000000001,angular
+1909,react-dnd,https://github.com/react-dnd/react-dnd,TypeScript,MIT License,14992,76,0,181,9,14.0,4,229,172,0.9,371,0.64464,angular
+1911,spinnaker,https://github.com/spinnaker/spinnaker,Shell,Apache License 2.0,7560,79,0,122,5,1.2,20,480,207,1.8,1083,0.64462,angular
+1919,django-allauth,https://github.com/pennersr/django-allauth,Python,MIT License,6106,125,1,523,8,2.5,5,199,111,1.0,489,0.64439,angular
+1929,openfoodfacts-androidapp,https://github.com/openfoodfacts/openfoodfacts-androidapp,Kotlin,Apache License 2.0,534,70,0,122,8,23.7,8,324,247,1.5,133,0.64386,angular
+1953,wireguard-linux,https://github.com/WireGuard/wireguard-linux,C,Other,291,192,1,5000,10,1162.0,0,0,0,0.0,54,0.6430899999999999,angular
+1954,ionic-framework,https://github.com/ionic-team/ionic-framework,TypeScript,Other,42768,90,1,425,3,11.5,46,796,585,2.2,57,0.64307,angular
+1957,server,https://github.com/CasparCG/server,C++,GNU General Public License v3.0,553,126,0,50,7,1.5,6,21,7,4.2,6982,0.643,angular
+1965,webpack-merge,https://github.com/survivejs/webpack-merge,TypeScript,MIT License,2293,68,1,31,9,2.9,16,25,24,3.9,7945,0.64251,angular
+1980,subsurface,https://github.com/subsurface/subsurface,C++,GNU General Public License v2.0,1888,114,0,167,5,31.1,1,164,151,3.8,135,0.6419100000000001,angular
+1981,socket.io-client,https://github.com/socketio/socket.io-client,TypeScript,MIT License,8898,132,0,119,7,1.4,12,78,46,2.7,677,0.64179,angular
+1985,sanity,https://github.com/sanity-io/sanity,TypeScript,MIT License,2232,59,0,51,4,37.8,51,242,116,1.1,1377,0.6416,angular
+1995,yup,https://github.com/jquense/yup,TypeScript,MIT License,11995,77,0,121,7,2.6,15,251,154,1.7,553,0.6413399999999999,angular
+2010,ant-design-vue,https://github.com/vueComponent/ant-design-vue,Vue,Other,13376,40,0,127,4,20.0,34,1310,1085,1.3,176,0.64078,angular
+2014,downshift,https://github.com/downshift-js/downshift,JavaScript,MIT License,9129,42,0,189,12,2.3,48,43,27,2.4,359,0.64064,angular
+2015,koa,https://github.com/koajs/koa,JavaScript,MIT License,30501,91,0,208,10,0.6,12,20,15,2.2,859,0.64062,angular
+2016,fork-ts-checker-webpack-plugin,https://github.com/TypeStrong/fork-ts-checker-webpack-plugin,TypeScript,MIT License,1273,45,0,79,11,1.6,68,75,54,2.5,905,0.64055,angular
+2019,java-docs-samples,https://github.com/GoogleCloudPlatform/java-docs-samples,Java,Apache License 2.0,1232,71,0,206,4,37.3,0,570,545,1.1,1287,0.64052,angular
+2045,nativescript-cli,https://github.com/NativeScript/nativescript-cli,JavaScript,Apache License 2.0,963,80,0,112,7,3.3,26,92,41,2.3,409,0.63973,angular
+2061,ring-ui,https://github.com/JetBrains/ring-ui,JavaScript,Apache License 2.0,2546,96,0,91,4,28.2,222,346,346,0.2,720,0.6389100000000001,angular
+2064,clarity,https://github.com/vmware/clarity,TypeScript,Other,6134,52,0,93,5,9.2,10,1175,1087,1.2,612,0.6388199999999999,angular
+2069,kvm-guest-drivers-windows,https://github.com/virtio-win/kvm-guest-drivers-windows,C,"BSD 3-Clause ""New"" or ""Revised"" License",849,133,0,56,7,4.2,16,40,21,3.6,676,0.63862,angular
+2078,cordova-android,https://github.com/apache/cordova-android,Java,Apache License 2.0,3105,149,1,238,10,1.6,11,84,46,2.4,246,0.6381899999999999,angular
+2081,sys,https://github.com/golang/sys,Go,Other,830,109,0,196,5,3.8,0,14,4,9.6,1590,0.6380600000000001,angular
+2088,tinacms,https://github.com/tinacms/tinacms,TypeScript,Apache License 2.0,5305,18,0,64,8,49.7,14,170,118,1.6,733,0.6379100000000001,angular
+2093,vector,https://github.com/timberio/vector,Rust,Mozilla Public License 2.0,6024,29,0,107,6,45.8,12,1962,1387,1.4,80,0.6378,angular
+2098,jquery-ui,https://github.com/jquery/jquery-ui,JavaScript,Other,10873,154,3,349,11,0.6,6,46,11,1.1,6215,0.6377,eslint
+2106,libusb,https://github.com/libusb/libusb,C,GNU Lesser General Public License v2.1,2929,160,1,184,4,3.1,2,91,57,3.2,4243,0.6374,angular
+2109,billboard.js,https://github.com/naver/billboard.js,TypeScript,MIT License,4528,93,0,162,8,8.9,42,151,124,1.2,76,0.63722,angular
+2117,apisix,https://github.com/apache/apisix,Lua,Apache License 2.0,4122,21,0,142,9,16.6,9,1018,858,2.7,52,0.63703,angular
+2125,sagemaker-python-sdk,https://github.com/aws/sagemaker-python-sdk,Python,Apache License 2.0,1290,39,0,163,3,14.8,130,234,161,5.1,96,0.6368199999999999,angular
+2127,portainer,https://github.com/portainer/portainer,JavaScript,zlib License,16859,92,0,192,5,6.1,5,489,196,2.3,223,0.6368,angular
+2139,n8n,https://github.com/n8n-io/n8n,TypeScript,Other,11797,19,0,108,8,35.4,290,366,281,2.0,81,0.63631,atom
+2140,copy-webpack-plugin,https://github.com/webpack-contrib/copy-webpack-plugin,JavaScript,MIT License,2543,63,1,45,8,1.6,16,51,47,2.2,11391,0.6362899999999999,angular
+2142,legion,https://github.com/StanfordLegion/legion,C++,Apache License 2.0,432,100,1,68,7,21.9,3,129,30,2.2,2000,0.63625,angular
+2148,strace,https://github.com/strace/strace,C,Other,1049,267,0,143,5,11.9,6,10,3,0.8,9321,0.6360899999999999,angular
+2153,playwright,https://github.com/microsoft/playwright,TypeScript,Apache License 2.0,20021,14,0,84,5,58.3,30,1000,819,1.2,312,0.63595,angular
+2157,asterisk,https://github.com/asterisk/asterisk,C,Other,939,259,0,292,5,6.2,60,1,1,1.0,2737,0.6358199999999999,angular
+2163,X6,https://github.com/antvis/X6,TypeScript,MIT License,991,18,0,25,5,51.9,63,409,363,2.1,1312,0.63557,angular
+2165,build,https://github.com/nodejs/build,Shell,,311,79,0,61,10,2.6,0,91,54,2.9,6671,0.63552,angular
+2172,igraph,https://github.com/igraph/igraph,C,GNU General Public License v2.0,1099,194,0,51,7,7.2,6,153,113,3.9,279,0.63535,angular
+2187,qunit,https://github.com/qunitjs/qunit,JavaScript,MIT License,3860,154,0,169,12,2.3,8,81,51,1.1,429,0.63465,eslint
+2198,serenity,https://github.com/SerenityOS/serenity,C++,"BSD 2-Clause ""Simplified"" License",7890,27,0,256,6,181.9,0,1359,1039,1.4,86,0.6342399999999999,eslint
+2202,lego,https://github.com/go-acme/lego,Go,MIT License,4387,68,0,236,8,3.0,13,83,64,1.8,230,0.6341399999999999,angular
+2204,vite,https://github.com/vitejs/vite,TypeScript,MIT License,14402,9,0,105,7,27.4,43,628,552,1.9,231,0.6341100000000001,angular
+2206,starship,https://github.com/starship/starship,Rust,ISC License,13887,22,0,206,5,11.1,28,378,261,1.8,229,0.63408,angular
+2211,active_merchant,https://github.com/activemerchant/active_merchant,Ruby,MIT License,4266,169,0,655,4,6.2,11,85,63,0.4,376,0.63389,eslint
+2213,espurna,https://github.com/xoseperez/espurna,C++,GNU General Public License v3.0,2423,57,0,157,4,5.0,13,68,38,3.6,740,0.6338199999999999,angular
+2219,vuejs.org,https://github.com/vuejs/vuejs.org,JavaScript,MIT License,4767,85,0,669,8,2.7,3,58,24,0.4,1062,0.63348,angular
+2230,nodejs.org,https://github.com/nodejs/nodejs.org,JavaScript,Other,1633,68,1,541,9,8.8,0,193,165,0.7,1153,0.6332399999999999,angular
+2233,react-native-paper,https://github.com/callstack/react-native-paper,TypeScript,MIT License,7285,51,0,192,5,6.1,23,379,289,2.5,83,0.6331100000000001,angular
+2248,libbpf,https://github.com/libbpf/libbpf,C,Other,309,28,0,103,7,8.7,7,16,15,1.0,17751,0.6323,angular
+2250,bull,https://github.com/OptimalBits/bull,JavaScript,Other,9891,92,1,186,9,1.8,12,123,71,1.9,441,0.63221,angular
+2257,scalafmt,https://github.com/scalameta/scalafmt,Scala,Apache License 2.0,1032,63,0,146,8,19.4,23,113,91,1.0,101,0.6320399999999999,eslint
+2264,open62541,https://github.com/open62541/open62541,C,Other,1359,86,1,184,5,13.8,13,227,127,1.6,306,0.6319,angular
+2267,reactstrap,https://github.com/reactstrap/reactstrap,JavaScript,MIT License,9757,59,0,235,7,2.3,12,142,108,1.2,521,0.63185,angular
+2276,mathlib,https://github.com/leanprover-community/mathlib,Lean,Apache License 2.0,679,43,0,139,7,71.6,0,1227,1070,2.9,55,0.63157,angular
+2277,OpenTTD,https://github.com/OpenTTD/OpenTTD,C++,GNU General Public License v2.0,2773,200,0,133,2,10.3,5,398,292,1.9,1102,0.63151,eslint
+2287,echarts,https://github.com/apache/echarts,TypeScript,Apache License 2.0,44472,95,0,145,4,22.7,13,1049,582,1.7,42,0.63122,angular
+2296,centreon,https://github.com/centreon/centreon,PHP,GNU General Public License v2.0,452,177,0,164,1,14.2,15,346,262,0.6,3008,0.63097,angular
+2309,framework7,https://github.com/framework7io/framework7,JavaScript,MIT License,15927,84,0,154,4,19.2,20,93,51,1.0,454,0.63061,angular
+2323,android,https://github.com/LineageOS/android,,,2142,114,2,136,8,2.1,4,5,3,1.4,39479,0.63002,angular
+2325,google-api-python-client,https://github.com/googleapis/google-api-python-client,Python,Other,4353,130,1,152,5,1.9,22,186,164,1.4,796,0.6299399999999999,angular
+2327,riot,https://github.com/riot/riot,JavaScript,Other,14376,89,0,195,7,1.9,31,10,10,2.0,608,0.62988,angular
+2333,xemu,https://github.com/mborgerson/xemu,C,Other,299,218,0,1996,3,80.1,85,128,73,1.4,0,0.62971,angular
+2335,draft-js-plugins,https://github.com/draft-js-plugins/draft-js-plugins,TypeScript,MIT License,3674,59,0,192,8,3.7,34,252,240,0.8,149,0.62968,angular
+2336,wire-webapp,https://github.com/wireapp/wire-webapp,TypeScript,GNU General Public License v3.0,973,55,0,42,8,35.4,29,464,419,1.1,104,0.62955,angular
+2340,strongswan,https://github.com/strongswan/strongswan,C,Other,1072,185,1,107,5,6.1,15,8,2,3.9,2270,0.62952,angular
+2361,snapcraft,https://github.com/snapcore/snapcraft,Python,GNU General Public License v3.0,942,68,0,170,7,8.7,23,118,108,1.1,140,0.62897,angular
+2367,i18n,https://github.com/electron/i18n,TypeScript,Other,481,45,0,28,4,21.0,872,171,162,1.0,4635,0.6288699999999999,angular
+2386,uuid,https://github.com/uuidjs/uuid,JavaScript,MIT License,10393,122,0,59,7,2.5,4,28,23,3.0,2653,0.6282300000000001,angular
+2391,freebsd-src,https://github.com/freebsd/freebsd-src,C,Other,5586,336,0,801,8,156.5,5,48,10,0.2,14,0.62805,angular
+2396,typegoose,https://github.com/typegoose/typegoose,TypeScript,MIT License,1062,47,0,84,6,6.5,37,85,70,2.8,345,0.62798,angular
+2397,firewalld,https://github.com/firewalld/firewalld,Python,GNU General Public License v2.0,402,123,0,137,6,4.7,11,63,34,2.0,344,0.6279,angular
+2402,gstreamer,https://github.com/GStreamer/gstreamer,C,Other,893,255,0,540,5,6.8,13,0,0,0.0,10682,0.62783,angular
+2416,mini-css-extract-plugin,https://github.com/webpack-contrib/mini-css-extract-plugin,JavaScript,MIT License,4137,35,1,56,8,1.4,16,128,99,2.7,4437,0.62734,angular
+2422,ioredis,https://github.com/luin/ioredis,TypeScript,MIT License,8495,70,0,118,10,1.0,13,115,62,1.5,566,0.62716,angular
+2427,webpack-dev-middleware,https://github.com/webpack/webpack-dev-middleware,JavaScript,MIT License,2196,103,0,105,6,3.3,8,106,95,2.2,502,0.62698,angular
+2441,Semantic-UI-React,https://github.com/Semantic-Org/Semantic-UI-React,JavaScript,MIT License,11972,68,1,308,8,1.9,9,88,56,2.0,428,0.6265,angular
+2449,weechat,https://github.com/weechat/weechat,C,GNU General Public License v3.0,2074,211,0,137,5,9.1,7,50,23,2.0,527,0.62629,angular
+2455,flutterfire,https://github.com/FirebaseExtended/flutterfire,Dart,"BSD 3-Clause ""New"" or ""Revised"" License",3716,45,0,289,3,10.2,6,1107,764,2.9,84,0.62612,angular
+2458,razzle,https://github.com/jaredpalmer/razzle,JavaScript,MIT License,9850,60,0,140,7,6.3,65,102,65,2.9,65,0.62607,angular
+2461,google-cloud-python,https://github.com/googleapis/google-cloud-python,,Apache License 2.0,3449,85,2,311,8,2.0,7,35,29,1.6,1623,0.62593,angular
+2462,Fuse,https://github.com/krisk/Fuse,JavaScript,Apache License 2.0,11810,105,0,71,9,6.7,16,52,46,1.5,296,0.6258199999999999,angular
+2480,npm-check-updates,https://github.com/raineorshine/npm-check-updates,JavaScript,Other,5886,89,0,78,7,6.1,7,48,41,2.6,598,0.62532,angular
+2482,open-source-ios-apps,https://github.com/dkhamsing/open-source-ios-apps,Swift,MIT License,25855,72,0,299,9,24.3,2,19,19,0.7,486,0.62527,ember
+2483,ceph-csi,https://github.com/ceph/ceph-csi,Go,Apache License 2.0,490,37,0,83,6,16.9,11,328,225,3.1,129,0.6252,angular
+2489,site,https://github.com/hexojs/site,Stylus,MIT License,571,100,0,698,8,4.7,0,44,25,0.4,1434,0.625,angular
+2491,PyMISP,https://github.com/MISP/PyMISP,Python,Other,242,84,0,120,5,6.6,15,98,71,3.1,154,0.62497,angular
+2496,graphql-engine,https://github.com/hasura/graphql-engine,Haskell,Other,19795,31,0,323,1,17.6,24,987,407,1.6,438,0.62473,angular
+2500,openwrt,https://github.com/Lienol/openwrt,C,GNU General Public License v2.0,1473,205,0,730,5,8.8,0,63,48,1.1,486,0.62464,angular
+2505,js-lingui,https://github.com/lingui/js-lingui,TypeScript,MIT License,2956,49,0,125,8,6.4,11,300,273,3.2,47,0.62429,angular
+2509,docker-jitsi-meet,https://github.com/jitsi/docker-jitsi-meet,Lua,Apache License 2.0,2034,35,0,83,7,3.9,11,205,138,3.8,312,0.62421,angular
+2528,super-productivity,https://github.com/johannesjo/super-productivity,TypeScript,MIT License,2804,49,0,55,7,40.8,69,291,150,2.8,30,0.62366,angular
+2529,cucumber-js,https://github.com/cucumber/cucumber-js,TypeScript,MIT License,4112,117,0,142,7,3.6,12,109,86,1.5,182,0.62351,angular
+2536,react-native-webview,https://github.com/react-native-webview/react-native-webview,TypeScript,MIT License,3401,30,1,179,10,2.6,52,384,277,1.8,156,0.62331,angular
+2543,G2,https://github.com/antvis/G2,TypeScript,MIT License,10361,56,0,96,6,15.1,16,389,296,1.5,112,0.6230899999999999,angular
+2559,regex,https://github.com/rust-lang/regex,Rust,Other,1746,74,0,146,4,1.6,20,26,17,2.3,1980,0.62285,angular
+2561,ogre,https://github.com/OGRECave/ogre,C++,MIT License,2053,154,0,276,7,11.8,6,124,103,0.5,127,0.6228,eslint
+2564,helmfile,https://github.com/roboll/helmfile,Go,MIT License,2663,50,0,167,11,4.1,82,172,80,1.0,114,0.62265,angular
+2566,netlify-lambda,https://github.com/netlify/netlify-lambda,JavaScript,MIT License,531,39,0,62,9,2.0,4,66,60,0.2,44953,0.62262,angular
+2576,orbit,https://github.com/kiwicom/orbit,JavaScript,MIT License,758,41,0,58,8,19.8,77,279,250,1.2,141,0.62203,angular
+2577,rt-n56u,https://github.com/hanwckf/rt-n56u,C,,2076,106,0,229,4,4.7,3,104,53,2.4,519,0.6219600000000001,angular
+2581,core,https://github.com/ArkEcosystem/core,TypeScript,MIT License,281,39,0,46,6,3.1,29,175,171,0.9,3891,0.6219,angular
+2586,fivem,https://github.com/citizenfx/fivem,C++,,1608,49,0,171,3,32.8,507,73,59,1.7,219,0.6218100000000001,angular
+2590,node-addon-api,https://github.com/nodejs/node-addon-api,C++,Other,1048,48,0,76,8,2.2,7,180,140,2.2,904,0.6217,angular
+2599,edgex-go,https://github.com/edgexfoundry/edgex-go,Go,Apache License 2.0,723,38,0,89,6,7.4,60,293,237,1.9,195,0.62158,angular
+2617,react-hooks-testing-library,https://github.com/testing-library/react-hooks-testing-library,TypeScript,MIT License,3095,26,0,46,10,4.8,18,84,81,3.5,427,0.62093,angular
+2628,ofbiz-framework,https://github.com/apache/ofbiz-framework,Java,Apache License 2.0,302,177,0,70,13,20.5,0,32,21,2.1,891,0.62061,eslint
+2629,cbindgen,https://github.com/eqrion/cbindgen,Rust,Mozilla Public License 2.0,887,47,0,86,6,3.9,13,59,45,2.3,1203,0.62054,angular
+2675,angularfire,https://github.com/angular/angularfire,TypeScript,MIT License,6523,61,1,187,5,2.9,24,437,400,1.6,231,0.6190399999999999,angular
+2687,bpmn-js,https://github.com/bpmn-io/bpmn-js,JavaScript,Other,4445,83,0,44,5,3.8,34,72,49,2.2,1087,0.6186699999999999,angular
+2691,protobuf,https://github.com/golang/protobuf,Go,"BSD 3-Clause ""New"" or ""Revised"" License",7335,131,3,89,4,0.7,11,70,50,3.1,8289,0.61855,angular
+2694,Fomantic-UI,https://github.com/fomantic/Fomantic-UI,JavaScript,MIT License,2307,94,0,284,8,4.8,4,158,95,1.4,88,0.61849,angular
+2703,pd,https://github.com/tikv/pd,Go,Apache License 2.0,701,59,0,118,2,11.5,33,351,255,4.8,71,0.61826,angular
+2706,respec,https://github.com/w3c/respec,JavaScript,Other,509,106,2,116,9,5.6,72,103,72,1.2,262,0.61824,angular
+2709,kernel-msm,https://github.com/MotorolaMobilityLLC/kernel-msm,C,Other,465,85,86,12607,8,0.0,83,34,31,3.2,391,0.6180899999999999,angular
+2715,express,https://github.com/expressjs/express,JavaScript,MIT License,51430,140,5,282,10,0.3,1,92,73,2.5,2414,0.6179899999999999,angular
+2719,coreutils,https://github.com/coreutils/coreutils,C,Other,1983,343,0,243,5,2.6,13,4,4,1.5,1440,0.61785,angular
+2723,endless-sky,https://github.com/endless-sky/endless-sky,C++,Other,2629,84,0,195,2,11.7,3,312,178,2.0,750,0.61757,angular
+2731,open-event-frontend,https://github.com/fossasia/open-event-frontend,JavaScript,Apache License 2.0,1775,46,0,131,10,27.2,17,1221,1049,3.6,0,0.61732,angular
+2746,Solaar,https://github.com/pwr-Solaar/Solaar,Python,Other,1982,111,0,110,6,7.6,9,100,89,4.4,33,0.6168,angular
+2750,acrn-hypervisor,https://github.com/projectacrn/acrn-hypervisor,C,"BSD 3-Clause ""New"" or ""Revised"" License",630,35,0,159,2,21.5,6,281,221,2.4,749,0.6166699999999999,angular
+2751,mikro-orm,https://github.com/mikro-orm/mikro-orm,TypeScript,MIT License,2379,34,0,69,6,20.0,26,397,353,1.9,80,0.61657,angular
+2752,ripgrep,https://github.com/BurntSushi/ripgrep,Rust,Other,23204,59,1,273,5,3.5,4,78,55,2.7,915,0.61653,angular
+2755,structr,https://github.com/structr/structr,Java,GNU General Public License v3.0,591,122,0,39,3,18.0,6,4,3,4.2,5196,0.6165,eslint
+2769,emqx,https://github.com/emqx/emqx,Erlang,Apache License 2.0,7158,98,0,72,6,3.5,32,281,183,1.5,160,0.6161300000000001,angular
+2776,jsdoc,https://github.com/jsdoc/jsdoc,JavaScript,Apache License 2.0,11496,132,0,103,8,2.6,12,101,23,0.4,1149,0.61588,angular
+2784,fabric.js,https://github.com/fabricjs/fabric.js,JavaScript,Other,17610,129,0,257,3,2.5,24,212,149,2.5,58,0.61575,angular
+2785,google-auth-library-python,https://github.com/googleapis/google-auth-library-python,Python,Apache License 2.0,384,53,0,68,9,2.1,31,88,74,0.7,1160,0.61575,angular
+2808,ice,https://github.com/alibaba/ice,TypeScript,MIT License,15990,51,0,28,6,14.7,32,437,371,1.3,365,0.6152,angular
+2813,klipper,https://github.com/KevinOConnor/klipper,C,GNU General Public License v3.0,2545,78,0,181,4,14.0,2,466,356,4.3,38,0.6151300000000001,angular
+2818,tpm2-tss,https://github.com/tpm2-software/tpm2-tss,C,"BSD 2-Clause ""Simplified"" License",369,68,0,85,4,7.4,11,141,127,1.1,1358,0.61505,angular
+2824,google-cloud-java,https://github.com/googleapis/google-cloud-java,Java,Apache License 2.0,1504,75,0,206,5,4.1,25,93,82,0.7,314,0.61492,angular
+2829,google-api-go-client,https://github.com/googleapis/google-api-go-client,Go,Other,2525,114,0,75,4,6.1,21,133,116,0.9,693,0.6148100000000001,angular
+2855,pmdk,https://github.com/pmem/pmdk,C,Other,933,78,0,108,2,10.6,11,122,105,2.0,1070,0.61393,angular
+2856,errbot,https://github.com/errbotio/errbot,Python,GNU General Public License v3.0,2406,105,0,191,8,1.0,10,68,43,1.5,230,0.6138899999999999,angular
+2861,content,https://github.com/nuxt/content,JavaScript,Other,1210,10,0,73,5,16.8,22,210,113,1.7,1517,0.61379,angular
+2864,lua-nginx-module,https://github.com/openresty/lua-nginx-module,C,,8996,131,0,111,7,2.4,32,160,48,0.5,345,0.61369,angular
+2870,toggl-button,https://github.com/toggl/toggl-button,JavaScript,Other,874,93,0,231,4,2.8,57,54,19,1.5,328,0.61361,angular
+2879,components,https://github.com/serverless/components,JavaScript,Other,2072,36,0,60,7,10.6,47,62,41,1.3,753,0.6133,angular
+2880,serverless-application-model,https://github.com/aws/serverless-application-model,Python,Apache License 2.0,7618,52,0,204,8,2.2,16,220,116,1.1,142,0.61326,angular
+2881,patternfly-react,https://github.com/patternfly/patternfly-react,TypeScript,MIT License,428,47,0,121,1,19.9,4131,476,316,1.9,558,0.61325,angular
+2886,webiny-js,https://github.com/webiny/webiny-js,TypeScript,MIT License,4077,37,1,44,4,54.8,855,253,185,1.4,721,0.61316,angular
+2889,probot,https://github.com/probot/probot,TypeScript,ISC License,6511,52,1,145,3,3.7,111,109,88,2.6,1009,0.61311,angular
+2894,pinocchio,https://github.com/stack-of-tasks/pinocchio,C++,Other,401,77,0,38,9,17.2,16,55,51,4.0,45,0.61306,angular
+2896,open-pixel-art,https://github.com/twilio-labs/open-pixel-art,JavaScript,MIT License,324,16,0,1932,6,15.5,0,679,467,1.6,33,0.61303,angular
+2911,home-manager,https://github.com/nix-community/home-manager,Nix,MIT License,1729,49,0,242,7,8.2,0,261,167,2.4,253,0.61259,angular
+2915,filebrowser,https://github.com/filebrowser/filebrowser,Go,Apache License 2.0,8508,65,0,97,5,2.2,15,136,110,1.9,581,0.61248,angular
+2918,profanity,https://github.com/profanity-im/profanity,C,Other,954,109,0,89,5,11.4,9,67,42,1.9,273,0.61244,angular
+2924,oneDNN,https://github.com/oneapi-src/oneDNN,C++,Apache License 2.0,2222,57,0,151,2,41.0,33,112,90,2.9,68,0.61224,angular
+2926,sendgrid-python,https://github.com/sendgrid/sendgrid-python,Python,MIT License,1083,108,0,194,6,2.0,19,40,26,1.9,152,0.61219,angular
+2927,flynn,https://github.com/flynn/flynn,Go,"BSD 3-Clause ""New"" or ""Revised"" License",7858,91,5,133,7,0.8,101,14,5,0.9,23847,0.61217,angular
+2931,pcsx2,https://github.com/PCSX2/pcsx2,C++,Other,4663,148,0,238,1,17.3,1,580,367,2.1,591,0.6120399999999999,angular
+2944,conventional-changelog,https://github.com/conventional-changelog/conventional-changelog,JavaScript,ISC License,5016,85,0,111,10,1.2,6,80,53,0.8,965,0.6115,angular
+2945,patternfly,https://github.com/patternfly/patternfly,SCSS,,307,39,0,50,3,7.2,161,402,281,1.5,1441,0.61148,angular
+2962,opentelemetry-js,https://github.com/open-telemetry/opentelemetry-js,TypeScript,Apache License 2.0,650,21,0,95,8,10.4,20,301,192,2.3,81,0.6109600000000001,angular
+2979,next-auth,https://github.com/nextauthjs/next-auth,JavaScript,ISC License,4029,36,0,123,8,12.9,25,381,271,3.0,8,0.61051,angular
+2985,gogs,https://github.com/gogs/gogs,Go,MIT License,36142,84,1,499,5,6.5,4,122,66,0.8,426,0.61042,angular
+2988,tuf,https://github.com/theupdateframework/tuf,Python,Other,1174,97,0,64,6,6.2,4,125,76,3.0,303,0.61034,angular
+2990,yosys,https://github.com/YosysHQ/yosys,C++,ISC License,1577,98,0,181,4,26.4,1,178,113,1.6,223,0.61031,angular
+2993,open-event-server,https://github.com/fossasia/open-event-server,Python,GNU General Public License v3.0,2560,69,0,209,7,11.9,14,286,242,2.1,8,0.61027,angular
+3005,mongodb-memory-server,https://github.com/nodkz/mongodb-memory-server,TypeScript,,1303,45,0,76,7,3.2,52,52,34,2.7,315,0.6099,angular
+3014,baseweb,https://github.com/uber/baseweb,JavaScript,Other,5858,34,0,184,4,15.3,110,221,178,2.4,43,0.6096699999999999,angular
+3015,pyroute2,https://github.com/svinota/pyroute2,Python,,652,95,0,115,6,5.5,11,25,14,1.2,804,0.6096199999999999,angular
+3016,contentful.js,https://github.com/contentful/contentful.js,JavaScript,MIT License,750,93,0,55,5,2.5,30,165,143,1.6,428,0.60958,angular
+3021,swagger-editor,https://github.com/swagger-api/swagger-editor,JavaScript,Apache License 2.0,6707,81,0,112,7,2.7,26,91,63,0.6,408,0.60955,angular
+3026,shaka-player,https://github.com/google/shaka-player,JavaScript,Apache License 2.0,4601,74,0,117,4,12.5,18,345,229,1.9,57,0.60946,angular
+3029,lerna,https://github.com/lerna/lerna,JavaScript,MIT License,26112,62,2,270,8,1.2,3,168,21,1.1,3366,0.6093,angular
+3034,code-server,https://github.com/cdr/code-server,TypeScript,MIT License,38965,23,1,109,6,16.6,23,461,289,2.2,123,0.60916,angular
+3038,seL4,https://github.com/seL4/seL4,C,Other,2950,79,1,105,6,4.8,1,45,19,5.2,1210,0.6089399999999999,angular
+3046,jenkins-x-platform,https://github.com/jenkins-x/jenkins-x-platform,Makefile,Apache License 2.0,289,37,0,60,3,18.1,472,10,8,1.7,5692,0.6087899999999999,angular
+3049,LinuxGSM,https://github.com/GameServerManagers/LinuxGSM,Shell,MIT License,2557,90,0,158,5,4.6,19,435,357,0.9,74,0.60864,angular
+3050,nest-cli,https://github.com/nestjs/nest-cli,TypeScript,MIT License,851,45,0,55,9,7.5,17,126,106,1.0,397,0.6086,angular
+3063,polished,https://github.com/styled-components/polished,JavaScript,MIT License,6558,51,0,77,8,2.2,20,18,16,1.6,1308,0.60837,angular
+3073,pac4j,https://github.com/pac4j/pac4j,Java,Apache License 2.0,1946,109,0,175,7,7.9,8,76,76,0.5,192,0.60818,angular
+3090,yari,https://github.com/mdn/yari,HTML,Mozilla Public License 2.0,338,21,0,38,5,24.2,373,1212,1040,2.2,100,0.60785,angular
+3096,System.IO.Abstractions,https://github.com/System-IO-Abstractions/System.IO.Abstractions,C#,MIT License,812,128,0,122,4,1.9,75,39,34,0.9,1004,0.6077199999999999,angular
+3105,kamailio,https://github.com/kamailio/kamailio,C,Other,1301,236,0,405,6,34.3,11,121,108,2.9,0,0.60741,angular
+3106,alerta,https://github.com/alerta/alerta,Python,Apache License 2.0,1845,107,0,71,7,4.0,20,142,125,1.2,146,0.60738,angular
+3115,formulae.brew.sh,https://github.com/Homebrew/formulae.brew.sh,HTML,"BSD 2-Clause ""Simplified"" License",497,34,0,20,7,240.3,0,106,104,0.2,11860,0.60712,angular
+3127,rocketmq,https://github.com/apache/rocketmq,Java,Apache License 2.0,13231,50,1,276,6,2.5,1,306,191,1.5,1258,0.60672,ember
+3138,eigen,https://github.com/artsy/eigen,TypeScript,MIT License,2726,73,0,93,4,60.9,2,322,303,0.7,338,0.60628,angular
+3140,pact_broker,https://github.com/pact-foundation/pact_broker,Ruby,MIT License,519,106,0,62,7,8.7,25,20,12,1.8,209,0.60626,angular
+3145,pact-jvm,https://github.com/pact-foundation/pact-jvm,Groovy,Apache License 2.0,817,88,0,168,7,10.1,26,76,42,2.4,11,0.60612,angular
+3156,cordova-plugin-inappbrowser,https://github.com/apache/cordova-plugin-inappbrowser,Java,Apache License 2.0,985,95,0,137,9,0.9,9,85,38,1.7,194,0.6058399999999999,angular
+3161,cactbot,https://github.com/quisquous/cactbot,JavaScript,Apache License 2.0,426,70,0,98,4,33.0,59,511,483,1.2,23,0.6055699999999999,angular
+3164,cappuccino,https://github.com/cappuccino/cappuccino,Objective-J,GNU Lesser General Public License v2.1,2172,150,1,205,6,1.3,7,35,20,2.1,685,0.60548,eslint
+3168,spartacus,https://github.com/SAP/spartacus,TypeScript,Apache License 2.0,453,47,0,92,2,18.1,423,2451,1855,1.1,113,0.60542,angular
+3173,qt-creator,https://github.com/qt-creator/qt-creator,C++,Other,1381,148,2,727,4,89.4,9,0,0,0.0,1947,0.60533,eslint
+3180,spoon,https://github.com/INRIA/spoon,Java,Other,1042,170,0,107,6,6.0,3,130,92,2.4,134,0.6052,angular
+3182,axios-module,https://github.com/nuxt-community/axios-module,JavaScript,MIT License,963,42,0,70,8,1.8,14,62,46,1.8,931,0.60518,angular
+3192,sendgrid-php,https://github.com/sendgrid/sendgrid-php,PHP,MIT License,1229,109,0,151,8,2.0,18,36,27,1.8,86,0.60487,angular
+3205,companion,https://github.com/bitfocus/companion,JavaScript,Other,512,34,0,43,8,13.7,3,130,62,2.8,627,0.60452,angular
+3206,cspell,https://github.com/streetsidesoftware/cspell,TypeScript,MIT License,256,49,0,35,6,6.5,131,437,427,0.7,595,0.60452,angular
+3210,bench,https://github.com/frappe/bench,Python,GNU General Public License v3.0,721,80,2,95,10,4.4,5,34,16,1.4,2179,0.60439,angular
+3220,redoc,https://github.com/Redocly/redoc,TypeScript,MIT License,12479,64,1,142,13,3.0,20,173,62,1.0,172,0.60415,angular
+3225,cheerio,https://github.com/cheeriojs/cheerio,JavaScript,MIT License,23160,113,0,130,6,3.2,2,364,345,1.1,279,0.60402,angular
+3232,terraform-aws-eks,https://github.com/terraform-aws-modules/terraform-aws-eks,HCL,Other,1612,32,1,186,12,2.6,13,201,107,2.4,102,0.60387,angular
+3233,stryker,https://github.com/stryker-mutator/stryker,TypeScript,Apache License 2.0,1738,60,0,87,5,9.4,2,194,164,1.8,664,0.6038399999999999,angular
+3237,apollo-tooling,https://github.com/apollographql/apollo-tooling,TypeScript,MIT License,2716,54,1,167,6,6.2,22,119,57,0.8,456,0.60377,angular
+3263,Carp,https://github.com/carp-lang/Carp,Haskell,Other,3735,61,0,59,5,15.4,7,277,197,2.8,108,0.60316,angular
+3268,peachpie,https://github.com/peachpiecompiler/peachpie,C#,Apache License 2.0,1727,60,0,28,7,25.3,13,48,32,1.4,654,0.60312,angular
+3283,express-validator,https://github.com/express-validator/express-validator,TypeScript,MIT License,4766,113,0,109,6,1.4,12,81,44,1.7,290,0.6027899999999999,angular
+3298,phpMyFAQ,https://github.com/thorsten/phpMyFAQ,PHP,Mozilla Public License 2.0,483,197,0,74,8,8.7,8,84,56,0.6,283,0.60247,angular
+3307,vis-timeline,https://github.com/visjs/vis-timeline,JavaScript,Other,605,95,0,187,6,8.5,27,156,131,1.1,18,0.60218,angular
+3308,ember-intl,https://github.com/ember-intl/ember-intl,TypeScript,MIT License,409,76,0,90,7,7.7,23,64,52,1.1,132,0.60217,angular
+3317,rustlings,https://github.com/rust-lang/rustlings,Rust,MIT License,13696,65,0,163,3,4.7,7,93,73,1.8,752,0.6019899999999999,angular
+3326,ReactiveTraderCloud,https://github.com/AdaptiveConsulting/ReactiveTraderCloud,TypeScript,Apache License 2.0,1518,63,0,117,8,15.7,10,97,90,0.2,245,0.6016199999999999,angular
+3328,VKUI,https://github.com/VKCOM/VKUI,TypeScript,MIT License,463,49,0,63,4,25.3,74,547,426,0.9,111,0.60154,eslint
+3344,mkosi,https://github.com/systemd/mkosi,Python,GNU Lesser General Public License v2.1,577,55,0,93,9,6.5,4,130,110,1.9,146,0.60112,angular
+3351,blockchain-wallet-v4-frontend,https://github.com/blockchain/blockchain-wallet-v4-frontend,TypeScript,GNU Affero General Public License v3.0,302,47,0,46,5,49.4,325,167,158,0.2,412,0.60095,angular
+3359,sendgrid-java,https://github.com/sendgrid/sendgrid-java,Java,MIT License,376,90,0,99,9,2.2,19,51,42,1.2,150,0.6008,angular
+3361,standard-version,https://github.com/conventional-changelog/standard-version,JavaScript,ISC License,4513,58,0,67,9,1.0,5,69,32,1.2,2517,0.6007100000000001,angular
+3363,openwrt,https://github.com/project-openwrt/openwrt,C,GNU General Public License v3.0,259,41,0,343,2,61.8,0,51,49,2.6,595,0.60068,angular
+3371,KaTeX,https://github.com/KaTeX/KaTeX,JavaScript,MIT License,13111,91,0,126,7,5.5,1,175,144,1.6,248,0.6005699999999999,angular
+3375,vlc-android,https://github.com/videolan/vlc-android,Kotlin,GNU General Public License v2.0,966,124,0,212,4,24.7,25,9,3,0.4,305,0.60053,angular
+3390,photoprism,https://github.com/photoprism/photoprism,Go,GNU Affero General Public License v3.0,9836,36,0,57,7,38.3,2,424,249,4.0,41,0.60014,eslint
