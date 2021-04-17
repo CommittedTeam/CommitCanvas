@@ -2,25 +2,6 @@ import pytest
 
 from generate_type import detect_type as dp
 
-input_commits = [
-      "test(matchers): add support for toHaveClass in tests",
-      "refactor(WebWorker): Unify WebWorker naming\n\nCloses #3205",
-      "feat: upgrade ts2dart to 0.7.1",
-      "feat: export a proper promise type",
-      ":memo: Fix license",
-      ":memo: Add a screenshot",
-      ":fire: init",
-      "[BUGFIX beta] Guard 'meta' and move readonly error to prototype.",
-      "[DOC beta] Add docs for get helper",
-      "Core: Don't expose jQuery.access",
-      "Tests: don't use deprecated argument in test declaration",
-      "Update: Added as-needed option to arrow-parens (fixes #3277)",
-      "[[FEAT]] Add Window constructor to browser vars",
-      "[[FEAT]] Add pending to Jasmine's globals",
-]
-
-output_conventions = ["angular"]
-
 @pytest.mark.parametrize(
     "input_commits,expected_conventions",
     [
@@ -43,3 +24,14 @@ def test_match(input_commits, expected_conventions):
     """Check that match returns correct convention."""
     conventions = dp.match(input_commits)
     assert conventions == expected_conventions
+
+@pytest.mark.parametrize(
+    "input_matches,expected_convention",
+    [
+      (["angular","angular","angular","eslint"], "angular"),
+      (["undefined","undefined","eslint","eslint"],"undefined"),
+    ]
+)
+def test_detect(input_matches, expected_convention):
+    conventions = dp.detect(input_matches)
+    assert conventions == expected_convention 
