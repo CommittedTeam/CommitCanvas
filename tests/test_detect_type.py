@@ -17,7 +17,9 @@ from generate_type import detect_type as dp
       (["Tests: don't use deprecated argument in test declaration"], ["eslint"]),
       (["Update: Added as-needed option to arrow-parens (fixes #3277)"], ["eslint"]),
       (["[[FEAT]] Add Window constructor to browser vars"], ["jshint"]),
-      (["[[FEAT]] Add pending to Jasmine's globals"], ["jshint"])
+      (["[[FEAT]] Add pending to Jasmine's globals"], ["jshint"]),
+      (["Add new feature"],["undefined"]),
+      (["Add new feature: detect conventions"],["undefined"])
     ]
 )
 def test_match(input_commits, expected_conventions):
