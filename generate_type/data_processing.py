@@ -1,68 +1,12 @@
 """Feature engineering and data pre-processing."""
-import pydriller
 from pydriller import RepositoryMining
-import os
 import pandas as pd
-import re
-from difflib import SequenceMatcher
 from statistics import mean
-import matplotlib.pyplot as plt
-from ast import literal_eval
-import difflib
-import jellyfish
-import datetime
-import statistics
-from cdifflib import CSequenceMatcher
 from sklearn.feature_extraction.text import TfidfVectorizer
 import nltk
-from nltk.stem import WordNetLemmatizer
-from nltk.stem import PorterStemmer
-from nltk.tokenize import RegexpTokenizer
 from nltk.corpus import stopwords
-import itertools
-import numba
-import numpy as np
 
-def parse_for_type(paths):
-    """Parse through file name and returns its extension."""
-    formats = []
-    for path in paths:
-        # Make sure that path in collected data is not None
-        if path:
-            # os.path.splitext returns tuple of file name and file format. Get file format at index 1
-            file_format = os.path.splitext(path)[1]
-            formats.append(file_format)
-    return formats
-
-
-def get_file_formats(file_formats):
-    """Create a list of unique file extensions."""
-    # get unique elements of the list using set method, list will be unordered
-    unique_file_formats = list(set(parse_for_type(file_formats)))
-    # sort the set for testing purposes
-    sorted_formats = sorted(unique_file_formats)
-    return sorted_formats
-
-def test_files_ratio(strings):
-    """
-    Get the ratio of the test related files in all files modified.
-    
-    This feature assumes that test files contain word "test"
-    """
-    count = 0
-    for i in strings:
-        # Majority of the test related files have word "test" in the file path
-        if i:
-            if "test" in (i.lower()):
-                count += 1
-    try:
-        ratio = round((count / len(strings)),2)
-    except ZeroDivisionError:
-        ratio = None
-
-    return ratio
-
-def get_dummies(dataframe):
+def encode_extensions(dataframe):
     """
     Encode categorical data as dummy variables.
     
@@ -71,38 +15,40 @@ def get_dummies(dataframe):
     # one commit may have multiple modified files and therefore multiple different file extensions
     # pandas get_dummies() can encode that as long as extensions are split by separators.
     # pandas uses "|" by default
-    joined = (dataframe.str.join('|'))
+    extensions = dataframe["unique_file_extensions"]
+    joined = (extensions.str.join('|'))
+    print(joined)
     dummies = joined.str.get_dummies()
 
     return dummies
 
-def detect_bots(row):
-    """ If there is keyword: bot in the author name or email then that is considered as bot"""
-    if re.findall( r'.bot.', row["commit_author_email"]) or re.findall( r'.bot.', row["commit_author_name"]):
-        return True
-
-def get_subject_line(message):
-    """Separate commit subject from the commit type"""
-    return (message.split(":")[1].strip())
+def group_extensions(types,data):
+    grouped_extensions = {}
+    for commit_type in types:   
+        new_data = data.loc[data['commit_type'] == commit_type]
+        extensions = new_data["unique_file_extensions"].to_list()
+        flat_list = [item for sublist in extensions for item in sublist]
+        grouped_extensions.update({commit_type: flat_list})
+    return grouped_extensions
 
 def group_messages(types,data):
     """Group commit messages based on the conventional commit type they have"""
-    parsed_messages = {}
+    grouped_messages = {}
     for commit_type in types:   
         new_data = data.loc[data['commit_type'] == commit_type]
-        parsed_messages.update({commit_type:(new_data.commit_subject).tolist()})
-    return parsed_messages
+        grouped_messages.update({commit_type:(new_data.commit_subject).tolist()})
+    return grouped_messages
 
 def stem_tokenizer(text):
     """Do stemming on words"""
-    ps = PorterStemmer()
+    ps = nltk.PorterStemmer()
     tokens = [word for word in nltk.word_tokenize(text) if (word.isalpha() and word not in stopwords.words('english'))] 
     stems = [ps.stem(item) for item in tokens]
     return stems
 
-def get_keywords(dataset,types):
+def get_keywords(dataset,types,tokenize = None):
     """Get word frequencies for each commit type with tf-idf approach"""
-    tfIdfVectorizer=TfidfVectorizer(tokenizer = stem_tokenizer)
+    tfIdfVectorizer=TfidfVectorizer(tokenizer = tokenize )
     tfIdf = tfIdfVectorizer.fit_transform(dataset)
     keywords = {}
     for i in range(len(dataset)):
@@ -110,47 +56,52 @@ def get_keywords(dataset,types):
         df = df.sort_values(types[i], ascending=False)
         df = df[(df != 0).all(1)]
         keywords.update(df.to_dict())
-    return(keywords)
+    print(keywords)
+    return keywords
 
-def get_keywords_for_data(types,data):
-    """Count the frequencey of keywords in the commit message for each conventional commit type"""
-    subjects = data.commit_subject.tolist()
-    tokenized = [stem_tokenizer(subject) for subject in subjects]
+def get_keywords_for_types(data,types):
 
     messages = group_messages(types,data)
     dataset = [" ".join(document) for document in list(messages.values())]
-    words = (get_keywords(dataset,types))
+    frequencies = pd.DataFrame(get_keywords(dataset,types,stem_tokenizer)).fillna(0)
 
     combined = []
-    for i in tokenized:
-        dictionary = {"chore": 0, "ci": 0,"build": 0, "fix": 0,"feat": 0,"docs": 0,"refactor": 0,"test": 0,"style": 0}
-        for token in i:
-            for key, value in words.items():
-                for keyword in list(value.keys()):
-                    if token == keyword:
-                        dictionary[key] += value[keyword]
-        combined.append(dictionary)
-    return(pd.DataFrame(combined))
+    for subject in data.commit_subject:
 
-# NOTE needs to be refactored because according to pandas documentation apply function is very slow and there are other better ways for implementing this
-def add_new_features(types,data):
-    """ Add new features to the dataset."""
-    data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
-    data["commit_subject"]= data['commit_msg'].apply(lambda message: get_subject_line(message))
-    data["test_files_ratio"] = data['file_paths'].apply(lambda files: test_files_ratio(files))
-    data["unique_file_formats"] = data['file_paths'].apply(lambda files: get_file_formats(files))
-    data["num_unique_extensions"] = data['unique_file_formats'].apply(lambda files: len(files))
-    
-    keywords_for_data = (get_keywords_for_data(types,data))
-
-    dummies = get_dummies(data.unique_file_formats)
-    combined = pd.concat([data, dummies],axis=1)
-
-    train_data = pd.concat([combined,keywords_for_data.set_index(combined.index)],axis=1)
-
-    train_data.to_pickle("data/train_data.pkl")
+        tokenized = stem_tokenizer(subject)
+        # Find the frequency sums for each commit type category
+        sum_ = frequencies[frequencies.index.isin(tokenized)].sum(0)
+        combined.append(sum_.to_dict())
 
     return combined
+
+def add_new_features():
+    """ Add new features to the dataset.""" 
+    data = pd.read_pickle("data/gatorgrader.pkl")
+    types = ["chore","fix","feat","refactor","style","test","docs"]
+
+    dummies = encode_extensions(data)
+    combined = pd.concat([data, dummies],axis=1)
+    
+    scores = pd.DataFrame(get_keywords_for_types(data,types))
+
+    train_data = pd.concat([combined,scores.set_index(combined.index)],axis=1)
+    train_data = train_data[train_data["commit_type"].isin(types)]
+    # drop commits made by the bots
+    train_data = train_data[train_data["isbot"] != True]
+    # drop duplicate commits if any
+    train_data = train_data.drop_duplicates("commit_hash")
+    # label commits with language so that its easier to run experiments for various language groups
+    train_data.insert(1, 'language', 'Python')
+    # drop features that will not be used during training
+    features_drop = ["commit_hash","commit_msg","commit_subject","commit_author_name","commit_author_email","isbot","file_paths","unique_file_extensions","diffs"]
+    train_data = train_data.drop(features_drop,axis=1)
+    
+    train_data.to_pickle("data/train_gator.pkl")
+
+add_new_features()  
+
+
 
 
 

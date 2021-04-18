@@ -17,6 +17,13 @@
 
 import re
 from statistics import mode
+from github import Github
+import time
+import urllib
+import calendar
+import json
+import pandas as pd
+import giturlparse
 
 def match(list_commits):
 
@@ -36,7 +43,7 @@ def match(list_commits):
     for commit in list_commits:
         temp_key = ""
         for key in conventions.keys():
-            # Tka eonly subject line from the multiline commit messages
+            # Take only subject line from the multiline commit messages
             if (re.match(conventions[key],commit.split('\n')[0])):
                 temp_key = key
                 break
@@ -52,4 +59,88 @@ def detect(matches):
     except:
         convention = "undefined"
     return convention
+
+def wait(seconds):
+    print("Waiting for {} seconds ...".format(seconds))
+    time.sleep(seconds)
+    print("Done waiting - resume!")
+
+def api_wait(githb):
+    rl = githb.get_rate_limit()
+    current_time = calendar.timegm(time.gmtime())
+    if  rl.core.remaining <= 10:  # extra margin of safety
+        reset_time = calendar.timegm(rl.core.reset.timetuple())
+        wait(reset_time - current_time + 10.0)
+    elif rl.search.remaining <= 2:
+        reset_time = calendar.timegm(rl.search.reset.timetuple())
+        wait(reset_time - current_time + 10.0)
+
+# data = pd.read_csv("data/selected_repos.csv", index_col=0)
+# conv = pd.read_csv("data/conventional_repos.csv",index_col=0)
+# print(conv[conv.language == "JavaScript"])
+# print(data)
+# print(data.convention.value_counts())
+# print(data.language.value_counts())
+
+# print(data[data.language == "JavaScript"])
+
+
+# #NOTE: function to select repositories
+
+# grouped = data.groupby('language').head(20)
+
+# selected_repos = grouped[grouped.language.isin(["JavaScript","TypeScript","Python"])]
+# selected_repos.to_csv("data/selected_repos.csv")
+
+
+
+# #NOTE: function to clone repositories
+# # With gitpython
+import git
+# data = pd.read_csv("data/selected_repos.csv")
+# for url in data.url:
+#     print(url)
+#     git.Git("./data/repositories").clone(url)
+
+
+
+# NOTE: function to label repositories with conventions
+# all_data = pd.read_csv("data/all.csv")
+# top_data = all_data[all_data["criticality_score"] > 0.60]
+# print(top_data)
+# second_half = top_data[1000:]
+# print(second_half)
+
+# urls = second_half.url.tolist()
+# i = 0
+# conventions = []
+# while i < len(urls):
+
+#     path = giturlparse.parse(urls[i]).pathname[1:]
+#     g = Github("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")
+#     print(i,path)
+    
+#     repo = g.get_repo(path)
+
+#     commits = repo.get_commits()
+
+#     commit_messages = []
+#     try:
+#         for commit in commits[:50]:
+#             commit_messages.append(commit.commit.message)
+#         i+=1
+#     except:
+#          api_wait(g)
+#          continue       
+
+#     convention = detect(match(commit_messages))
+#     print(convention)
+#     print("---------------------------")
+#     conventions.append(convention)
+
+# second_half["convention"] = conventions
+# second_half.to_csv("data/conventions_second_half.csv")
+
+
+
 
