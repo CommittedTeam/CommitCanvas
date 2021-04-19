@@ -1,5 +1,5 @@
 ,name,url,language,license,stars,created_since,updated_since,contributor_count,org_count,commit_frequency,recent_releases_count,updated_issues_count,closed_issues_count,comment_frequency,dependents_count,criticality_score,convention
-0,node,https://github.com/nodejs/node,JavaScript,Other,75769,145,0,3250,10,61.1,66,2066,1414,3.9,1037565,0.9933799999999999,angular
+0,node,https://github.com/nodejs/node,JavaScript,Other,75769,145,0,3250,10,61.1,66,2066,1414,3.9,1037565,0.99338,angular
 24,openssl,https://github.com/openssl/openssl,C,Apache License 2.0,14518,268,0,705,4,48.0,15,989,602,4.7,408323,0.89094,angular
 27,gatsby,https://github.com/gatsbyjs/gatsby,JavaScript,MIT License,48517,69,0,3896,3,80.8,5,2122,1788,1.6,982574,0.8880899999999999,angular
 35,ant-design,https://github.com/ant-design/ant-design,TypeScript,MIT License,65911,69,0,1519,6,53.2,76,2488,1936,2.6,34898,0.8770899999999999,angular

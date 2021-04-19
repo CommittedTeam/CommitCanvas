@@ -62,7 +62,6 @@ def get_commit_data(repos):
         commit_type = get_commit_types(commit.msg.lower())
         # skip commits that do not follow conventional commit types syntax
         if commit_type is not None:
-            
             file_paths = []
             diffs = []
 

@@ -12,7 +12,7 @@ from sklearn.metrics import precision_recall_fscore_support
 
 def data_prep(name, language):
     """ Prepare data for training"""
-    data = pd.read_pickle("generate_type/data/train_gator.pkl")
+    data = pd.read_pickle("generate_type/data/train_data.pkl")
     print(data)
     # Select specific repository or the programming language as specified by the user
     if language is not None:
