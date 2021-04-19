@@ -1,7 +1,0 @@
-|              | Type             | Scope  | Subject        | Body            | Footer      | Imperative | Other Features                                                                              |   |
-|--------------|------------------|--------|----------------|-----------------|-------------|------------|---------------------------------------------------------------------------------------------|---|
-| gitlint      |                  |        |  check         |  check          |             |            | author valid email ignore lines matching regex                                              |   |
-| commitlint   |  check           | check  |  check         |  check          |  check      | deprecated |                                                                                             |   |
-| comitizen    | prompt           | prompt | prompt crop    | prompt wrap     | prompt crop |            |                                                                                             |   |
-| conform      |  check           | check  |  check         | check           |             | check      | Certificate of Origin,GPG signature, Spell check Jira issue check,one commit ahead ofmaster |   |
-| commitcanvas |  check  generate |        | check generate | check summarize |             | check      |                                                                                             |   |
