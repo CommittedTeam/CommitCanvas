@@ -93,7 +93,7 @@ V                1
 
 ```
 
-- To test out the machine learning model. Select top 7 or 8 from JavaScript, TypeScript, Python. The full csv file for this repositories is [here](new_repositories.csv)
+- To test out the machine learning model. Select top 7 or 8 from JavaScript, TypeScript, Python. The full csv file for this repositories is [here](data/new_repositories.csv)
 
 ```
 
