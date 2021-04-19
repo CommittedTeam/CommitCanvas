@@ -2,11 +2,15 @@
 
 [conventional commits detector](https://github.com/conventional-changelog/conventional-commits-detector)
 
-[angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
-[atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages)
-[ember](https://github.com/emberjs/ember.js/blob/master/CONTRIBUTING.md#pull-requests)
-[eslint](https://eslint.org/docs/developer-guide/contributing/pull-requests)
-[jshint](https://github.com/jshint/jshint/blob/master/CONTRIBUTING.md#commit-message-guidelines)
+1. [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
+
+2. [atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages)
+
+3. [ember](https://github.com/emberjs/ember.js/blob/master/CONTRIBUTING.md#pull-requests)
+
+4. [eslint](https://eslint.org/docs/developer-guide/contributing/pull-requests)
+
+5. [jshint](https://github.com/jshint/jshint/blob/master/CONTRIBUTING.md#commit-message-guidelines)
 
 [jquery](https://contribute.jquery.org/commits-and-pull-requests/#commit-guidelines)
 
