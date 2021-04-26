@@ -3,6 +3,7 @@
 [conventional commits detector](https://github.com/conventional-changelog/conventional-commits-detector)
 
 1. [angular](https://github.com/angular/angular/blob/master/CONTRIBUTING.md#commit)
+https://docs.google.com/document/d/1QrDFcIiPjSLDn3EL15IJygNPiHORgU1_OOAqWjiDU5Y/edit#heading=h.z8a3t6ehl060
 
 2. [atom](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages)
 
@@ -40,137 +41,125 @@ Ratio(top_repos/total_repos):  0.033
 
 ```
 
-Number of conventional repositories:  510
-
-Number of repositories per convention:
-angular    473
-eslint      27
-ember        7
-atom         2
-jshint       1
+Number of conventional repositories: 200
 
 ```
 
 ```
-
 Number of repositories per language:
-JavaScript     129
-TypeScript     112
-C               72
-Python          37
-Go              35
-C++             26
-Java            22
-Rust            10
-Shell            9
-PHP              7
-Ruby             6
-C#               5
-Lua              4
-HTML             4
-Vue              3
-Haskell          3
-Groovy           2
-PowerShell       2
-Kotlin           2
-Makefile         2
-Lean             1
-Scala            1
-Starlark         1
-TeX              1
-Tcl              1
-Objective-J      1
-Erlang           1
-SCSS             1
-Dart             1
-Nix              1
-HCL              1
-Objective-C      1
-Stylus           1
-Zig              1
-Swift            1
-V                1
+JavaScript     74
+TypeScript     71
+Python         16
+Go              9
+Java            8
+C++             3
+Shell           3
+C#              2
+Rust            2
+C               2
+Ruby            2
+Vue             2
+SCSS            1
+HTML            1
+PHP             1
+Objective-C     1
+Haskell         1
+Groovy          1
+Lua             1
+OCaml           1
+TeX             1
+Starlark        1
+Lean            1
+Name: language, dtype: int64
 
 ```
 
-- To test out the machine learning model. Select top 7 or 8 from JavaScript, TypeScript, Python. The full csv file for this repositories is [here](data/new_repositories.csv)
+- The full csv file for this repositories is [here](data/angular_repos.csv)
 
 ```
 
-Total number of commits:  95901
+total number of conventional commits 458986
 
-```
 
-```
+     conventional_commits                  name  ... criticality_score convention
+0                   20267               angular  ...           0.87075    angular
+1                   14347                sentry  ...           0.77036    angular
+2                   13069  camunda-bpm-platform  ...           0.66856    angular
+3                   10603                frappe  ...           0.82136    angular
+4                    9522                gatsby  ...           0.88809    angular
+..                    ...                   ...  ...               ...        ...
+219                   146       cordova-android  ...           0.63819    angular
+220                   111             fabric.js  ...           0.61575    angular
+221                   103       sendgrid-nodejs  ...           0.65542    angular
+222                    81                agenda  ...           0.63838    angular
+223                    73       sendgrid-python  ...           0.61219    angular
 
-                      name  criticality_score convention  conventional_commits
-0                   gatsby            0.88809    angular                  9489
-1               ant-design            0.87709    angular                  7255
-2                 three.js            0.87063     eslint                  7822
-3                   frappe            0.82136    angular                 11498
-4               serverless            0.80944    angular                  2684
-5                  vue-cli            0.77915    angular                  2855
-6                  vuetify            0.75811    angular                  7049
-7                 renovate            0.75585    angular                  8284
-8              webpack-cli            0.75338    angular                  2021
-9                sequelize            0.75117    angular                  1864
-10              docusaurus            0.74669    angular                  2413
-11                  quasar            0.74328    angular                  7133
-12      webpack-dev-server            0.73795    angular                   647
-13                    rxjs            0.72545    angular                  3921
-14        electron-builder            0.72006    angular                  2003
-15  graphql-code-generator            0.71901    angular                  1184
-16                 typeorm            0.71463    angular                   691
-17                     dvc            0.71078    angular                  3628
-18             pyinstaller            0.67869    angular                  2181
-19                 freeipa            0.67675    angular                  3265
-20            ceph-ansible            0.66828    angular                  2136
-21         trezor-firmware            0.65661    angular                  4890
-22           sentry-python            0.64791    angular                   988
+[205 rows x 18 columns]
 
 ```
 
 ```
 
 Top 20 conventional commit types:
-fix              24827
-chore            13814
-feat             11067
-docs              9096
-refactor          4610
-test              2586
-tests             2023
-build             1198
-editor            1009
-style              878
-examples           878
-ci                 766
-dvc                755
-webglrenderer      572
-ipatests           525
-doc                436
-core               429
-perf               411
-site               394
-webui              381
+fix         127815
+chore       111597
+feat         69825
+docs         45512
+refactor     22394
+test         15840
+build        14385
+ci            4203
+style         3596
+ref           3027
+perf          2538
+doc           1964
+tests         1596
+wip           1169
+release       1054
+r              826
+feature        740
+browser        689
+all            650
+python         578
 
 ```
 
-### Results from running the machine learning model
+### Classification reports
+
+- [angular](https://github.com/angular/angular)
 
 ```
 
               precision    recall  f1-score   support
 
-       chore       0.77      0.59      0.67      2350
-        docs       0.71      0.76      0.73      1811
-        feat       0.62      0.59      0.61      2206
-         fix       0.69      0.82      0.75      4771
-    refactor       0.67      0.36      0.47       917
-        test       0.72      0.71      0.72       515
+       chore       0.61      0.46      0.52       237
+        docs       0.85      0.93      0.89       998
+        feat       0.71      0.54      0.61       581
+         fix       0.68      0.82      0.75      1258
+    refactor       0.72      0.61      0.66       699
+        test       0.75      0.68      0.71       269
 
-    accuracy                           0.69     12570
-   macro avg       0.70      0.64      0.66     12570
-weighted avg       0.69      0.69      0.69     12570
+    accuracy                           0.74      4042
+   macro avg       0.72      0.67      0.69      4042
+weighted avg       0.74      0.74      0.73      4042
+
+```
+
+- [serverless](https://github.com/serverless/serverless)
+
+```
+
+              precision    recall  f1-score   support
+
+       chore       0.92      0.97      0.94        86
+        docs       0.98      0.92      0.95        62
+        feat       0.76      0.69      0.72        64
+         fix       0.80      0.75      0.77       107
+    refactor       0.74      0.81      0.77       117
+        test       0.91      0.93      0.92        44
+
+    accuracy                           0.83       480
+   macro avg       0.85      0.84      0.85       480
+weighted avg       0.83      0.83      0.83       480
 
 ```
