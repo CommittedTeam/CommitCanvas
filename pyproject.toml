@@ -12,6 +12,7 @@ en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/dow
 pyarrow = "^3.0.0"
 typer = "^0.3.2"
 matplotlib = "^3.4.1"
+nltk = "^3.6.2"
 
 
 [tool.poetry.dev-dependencies]

@@ -9,11 +9,11 @@ from sklearn.metrics import classification_report
 from sklearn.metrics import plot_confusion_matrix
 import matplotlib.pyplot as plt
 from sklearn.metrics import precision_recall_fscore_support
+from generate_type import data_processing as dp
 
 def data_prep(name, language):
     """ Prepare data for training"""
-    data = pd.read_feather("generate_type/data/train_data.ftr")
-    print(data)
+    data = pd.read_feather("generate_type/data/collected_data.ftr")
     # Select specific repository or the programming language as specified by the user
     if language is not None:
         data = data.loc[data['language'] == language]
@@ -22,14 +22,16 @@ def data_prep(name, language):
     
     # drop extra features
     data = data.drop("language", axis=1)
+    data = dp.process_data(data)
     data = data.dropna()
-
+    print(data)
     return data
 
 def get_labels(data):
     """ Encode the labels"""
     status = np.array(data["commit_type"])
     # Labels are the values we want to predict
+    print(data.commit_type.value_counts())
     targetNames = np.unique(status)
     le = LabelEncoder()
     labels = le.fit_transform(status)

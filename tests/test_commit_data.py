@@ -6,9 +6,6 @@ from generate_type import commit_data as cd
     [
      ('refactor: rename commit message verification script\n\ncommit message body', "refactor"),
      ('refactor(scope): rename commit message verification script', "refactor"),
-     ('[[refactor]] test function', 'refactor'),
-     ('[refactor] [test] test function', 'refactor'),
-     (':bug: fix bug','bug'),
      ('refactor commit message verification script', None),
      ('refactor commit message: verification script', None),
     ]

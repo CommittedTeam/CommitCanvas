@@ -7,11 +7,13 @@ import detect_type
 import pathlib
 
 def get_commit_types(commit_msg):
-    """Check if commist message follows conventional style and get commit type"""
-    convention = detect_type.match([commit_msg])
-    if convention[0] != "undefined":         
-        commit_type = re.findall( r'[a-zA-Z]+', commit_msg)[0]
-        return commit_type
+    """Check if commist message follows angular conventional syntax and get commit type"""
+    try:
+        if re.match(r'^(\w*)(?:\((.*)\))?: (.*)$',commit_msg.split('\n')[0]):      
+            commit_type = re.findall( r'[a-zA-Z]+', commit_msg)[0]
+            return commit_type
+    except:
+        return None
 
 def parse_for_extension(paths):
     """Parse through file name and returns its extension."""
@@ -28,8 +30,9 @@ def get_file_extensions(file_formats):
 
 def get_subject_line(message):
     """Separate commit subject from the commit type"""
-    subject = re.split(': |] ',message)[1]
-    return subject
+    if message:
+        subject = re.split(': |] ',message)[1]
+        return subject
 
 def isbot(commit_author_name, commit_author_email):
     """Detect bots """
@@ -57,67 +60,69 @@ def get_ratio(test,total):
 def get_commit_data(repos):
     """Collect the commit data with pydriller."""
     commits_info = []
+    for index, repo in repos.iterrows():
+        print(repo["url"])
+        for commit in RepositoryMining(repo.url,order="reverse").traverse_commits():
+            commit_type = get_commit_types(commit.msg.lower())
+            # skip commits that do not follow conventional commit types syntax
+            if commit_type is not None:
+                file_paths = []
+                diffs = []
 
-    for commit in RepositoryMining(repos).traverse_commits():
-        commit_type = get_commit_types(commit.msg.lower())
-        # skip commits that do not follow conventional commit types syntax
-        if commit_type is not None:
-            file_paths = []
-            diffs = []
+                commit_message = commit.msg
+                author_name = commit.author.name
+                author_email = commit.author.email
 
-            commit_message = commit.msg
-            author_name = commit.author.name
-            author_email = commit.author.email
+                for m in commit.modifications:
+        
+                    diffs.append(m.diff)
+                    path = m.new_path
+                    # new path may return None if the file was deleted
+                    if path:
+                        file_paths.append(path)
+                    else:
+                        file_paths.append("deleted_file")
 
-            for m in commit.modifications:
-    
-                diffs.append(m.diff)
-                path = m.new_path
-                # new path my return None of the file was deleted
-                if path:
-                    file_paths.append(path)
-                else:
-                    file_paths.append("deleted_file")
+                file_extensions = get_file_extensions(file_paths)
+                test_files_count = test_files(file_paths)
 
-            file_extensions = get_file_extensions(file_paths)
-            test_files_count = test_files(file_paths)
+                commit_data = {
 
-            commit_data = {
+                    "name": repo["name"],
+                    "language": repo["language"],
+                    "commit_hash": commit.hash,
+                    "commit_msg": commit_message,
+                    "commit_subject": get_subject_line(commit_message),
+                    "commit_type": commit_type,
+                    "commit_author_name": author_name,
+                    "commit_author_email": author_email,
+                    "isbot": isbot(author_name,author_email),               
+                    "file_paths": file_paths,
+                    "num_files": commit.files,
+                    "test_files": test_files_count,
+                    "test_files_ratio": get_ratio(test_files_count,file_paths),
+                    "unique_file_extensions": file_extensions,
+                    "num_unique_file_extensions": len(file_extensions),
+                    "num_lines_added": commit.insertions,
+                    "num_lines_removed": commit.deletions,
+                    "num_lines_total": commit.lines,
+                    "diffs": diffs,
+                    
+                }
+                commits_info.append(commit_data)
 
-                "name": commit.project_name,
-                "commit_hash": commit.hash,
-                "commit_msg": commit_message,
-                "commit_subject": get_subject_line(commit_message),
-                "commit_type": commit_type,
-                "commit_author_name": author_name,
-                "commit_author_email": author_email,
-                "isbot": isbot(author_name,author_email),               
-                "file_paths": file_paths,
-                "num_files": commit.files,
-                "test_files": test_files_count,
-                "test_files_ratio": get_ratio(test_files_count,file_paths),
-                "unique_file_extensions": file_extensions,
-                "num_unique_file_extensions": len(file_extensions),
-                "num_lines_added": commit.insertions,
-                "num_lines_removed": commit.deletions,
-                "num_lines_total": commit.lines,
-                "diffs": diffs,
-                
-            }
-            
-            commits_info.append(commit_data)
+        commit_data = pd.DataFrame(commits_info)
+        commit_data.to_feather("data/collec345.ftr")
+
 
     return commits_info
 
 def traverse_repos():
-    projects = os.listdir("data/repositories")
-
-    for project in projects:
-        print(project)
-        path = "data/repositories/{}".format(project)
-        data = get_commit_data(path)
-        data = pd.DataFrame(data)
-        data.to_pickle("data/collected_repos/{}.pkl".format(project))
-        data.to_csv("data/collected_repos/{}.csv".format(project))
+    
+    data = pd.read_csv("data/labeled_repos.csv")
+    angular = data[data.convention == "angular"]
+    angular = angular[26:50]
+    commit_data = pd.DataFrame(get_commit_data(angular))
+    commit_data.to_feather("data/collec345.ftr")
 
 traverse_repos()
