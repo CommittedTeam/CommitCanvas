@@ -14,8 +14,9 @@ from sklearn.metrics import plot_confusion_matrix
 import matplotlib.pyplot as plt
 
 types = ["chore", "docs","feat","fix","refactor","test"]
-data = pd.read_feather("data/collected_data.ftr")
-data = data[data.name == "serverless"]
+data = pd.read_feather("data/collect_gatorgrader.ftr")
+print(data.columns)
+# data = data[data.name == "serverless"]
 data = data[data["commit_type"].isin(types)]
 # drop commits made by the bots
 data = data[data["isbot"] != True]
@@ -73,14 +74,22 @@ X_train, X_test, y_train, y_test = train_test_split(
     train, label, random_state=42)
 
 pipeline = pipeline.fit(X_train, y_train)
-predicted = pipeline.predict(X_test)
+import joblib
+rf_model = joblib.load('model/trained_model.pkl')
+print(X_test)
+predicted = rf_model.predict(X_test)
 
 # display classification report
 print(
 classification_report(y_test,predicted, target_names=types)
 )
 
+
+# print("saving the model")
+# joblib.dump(pipeline, 'model/trained_model.pkl')
+# print("saving model complete")
 # plot confusion matrix
-plot_confusion_matrix(pipeline, X_test, y_test, display_labels=types,cmap='Blues',normalize="true")
+plot_confusion_matrix(rf_model, X_test, y_test, display_labels=types,cmap='Blues',normalize="true")
 plt.show()
+
 
