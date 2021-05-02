@@ -127,5 +127,3 @@ def traverse_repos():
     commit_data.to_feather("data/collect_gatorgrader.ftr")
     # commit_data.to_feather("data/collec345.ftr")
 
-traverse_repos()
-
