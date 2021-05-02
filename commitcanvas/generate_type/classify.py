@@ -32,7 +32,8 @@ from commitcanvas.generate_type.tokenizers import dummy
 from commitcanvas.generate_type import commit_data
 import joblib
 import pandas as pd
-
+import shutil
+from subprocess import check_output
 
 
 
