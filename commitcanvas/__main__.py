@@ -11,7 +11,7 @@ def main():
     # save the commit message into the file
     shutil.copy(sys.argv[1], ".git/pre-commit-saved-commit-msg")
 
-    # get the commit message for the commit checks
+    # get the commit message for the 
     with open(".git/pre-commit-saved-commit-msg", "r") as file:
         commit_message = file.read()
 
