@@ -40,7 +40,7 @@ repos:
 #   - id: reorder-python-imports
 #     stages: [commit]
 
-#lint the commit message with commitcanvas
+#lint the commit message with commitcanv
 - repo: https://github.com/CommittedTeam/CommitCanvas
   rev: 8a030bb8e515dbe36bc113cf3b16794b5dfa1f0a
   hooks:
