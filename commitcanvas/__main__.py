@@ -26,7 +26,7 @@ def entry():
         # rewrite the file so that you avoid the seek
         f.seek(0, 0)
         stats = gs.staged_stats(diff, content)
-        my_data = pkg_resources.resource_stream(__name__, "model/trained_model.pkl")
+        my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
         model = joblib.load(my_data)
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
