@@ -124,8 +124,6 @@ python         578
 
 ```
 
-### Classification reports
-
 - [angular](https://github.com/angular/angular)
 
 ```
