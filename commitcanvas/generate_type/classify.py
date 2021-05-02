@@ -84,7 +84,7 @@ def entry():
         stats = staged_stats(diff, content)
 
         model = joblib.load("model/trained_model.pkl")
-        predicted = model.predict(stats)
+        predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 
 # def entry():
@@ -102,6 +102,6 @@ def entry():
 
 #     diff = (pd.DataFrame([stats]))
 
-#     model = joblib.load("generate_type/model/trained_model.pkl")
+#     model = joblib.load("commitcanvas/generate_type/model/trained_model.pkl")
 #     predicted = model.predict(diff)
 #     print(predicted)
