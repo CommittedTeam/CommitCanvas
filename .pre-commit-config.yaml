@@ -1,5 +1,5 @@
-minimum_pre_commit_version: 1.21.0
-repos:
+# minimum_pre_commit_version: 1.21.0
+# repos:
 
 # # check with pylint
 # - repo: https://github.com/PyCQA/pylint
@@ -40,9 +40,9 @@ repos:
 #   - id: reorder-python-imports
 #     stages: [commit]
 
-#lint the commit message with commitcanv
-- repo: https://github.com/CommittedTeam/CommitCanvas
-  rev: 8a030bb8e515dbe36bc113cf3b16794b5dfa1f0a
-  hooks:
-  - id: commitcanvas
-    stages: [prepare-commit-msg]
+#lint the commit message with commitcan
+# - repo: https://github.com/CommittedTeam/CommitCanvas
+#   rev: 8a030bb8e515dbe36bc113cf3b16794b5dfa1f0a
+#   hooks:
+#   - id: commitcanvas
+#     stages: [prepare-commit-msg]

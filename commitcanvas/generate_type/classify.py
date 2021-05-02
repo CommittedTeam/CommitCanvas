@@ -83,7 +83,7 @@ def entry():
         f.seek(0, 0)
         stats = staged_stats(diff, content)
 
-        model = joblib.load("model/trained_model.pkl")
+        model = joblib.load("commitcanvas/generate_type/model/trained_model.pkl")
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 
