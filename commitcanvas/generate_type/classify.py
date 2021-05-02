@@ -83,6 +83,7 @@ def entry():
         f.seek(0, 0)
         stats = staged_stats(diff, content)
         my_data = pkg_resources.resource_stream(__name__, "model/trained_model.pkl")
+        print(my_data)
         model = joblib.load(my_data)
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
