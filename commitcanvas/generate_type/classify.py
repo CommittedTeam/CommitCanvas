@@ -29,12 +29,12 @@
 import sys
 from commitcanvas.generate_type.tokenizers import stem_tokenizer
 from commitcanvas.generate_type.tokenizers import dummy
-from commitcanvas.generate_type import commit_data
+from commitcanvas.generate_type import commit_data as cm
 import joblib
 import pandas as pd
 import shutil
 from subprocess import check_output
-
+import io
 
 
 def staged_stats(diff,commit_subject):
@@ -49,15 +49,15 @@ def staged_stats(diff,commit_subject):
     added = df.added.sum()
     deleted = df.deleted.sum()
     paths = df.file_paths.tolist()
-    file_extensions = get_file_extensions(paths)
-    test_files_count = test_files(paths)
+    file_extensions = cm.get_file_extensions(paths)
+    test_files_count = cm.test_files(paths)
 
 
     staged_changes_stats = {
         'commit_subject': commit_subject,
         "num_files": len(paths),
         "test_files": test_files_count,
-        "test_files_ratio": get_ratio(test_files_count,paths),
+        "test_files_ratio": cm.get_ratio(test_files_count,paths),
         "unique_file_extensions": file_extensions,
         "num_unique_file_extensions": len(file_extensions),
         "num_lines_added": added,
