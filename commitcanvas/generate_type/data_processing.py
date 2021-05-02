@@ -10,12 +10,12 @@ from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import plot_confusion_matrix
 import matplotlib.pyplot as plt
-from generate_type.tokenizers import stem_tokenizer
-from generate_type.tokenizers import dummy
+from commitcanvas.generate_type.tokenizers import stem_tokenizer
+from commitcanvas.generate_type.tokenizers import dummy
 
 def save():
     types = ["chore", "docs","feat","fix","refactor","test"]
-    data = pd.read_feather("generate_type/data/collect_gatorgrader.ftr")
+    data = pd.read_feather("commitcanvas/generate_type/data/collect_gatorgrader.ftr")
     print(data.columns)
     # data = data[data.name == "serverless"]
     data = data[data["commit_type"].isin(types)]
@@ -77,7 +77,7 @@ def save():
 
 
     print("saving the model")
-    joblib.dump(pipeline, 'generate_type/model/trained_model.pkl')
+    joblib.dump(pipeline, 'commitcanvas/generate_type/model/trained_model.pkl')
     print("saving model complete")
 # plot confusion matrix
 # plot_confusion_matrix(pipeline, X_test, y_test, display_labels=types,cmap='Blues',normalize="true")

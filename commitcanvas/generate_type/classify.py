@@ -27,9 +27,9 @@
 #         rf.model(name,language)
 
 import sys
-from generate_type.tokenizers import stem_tokenizer
-from generate_type.tokenizers import dummy
-from generate_type import commit_data
+from commitcanvas.generate_type.tokenizers import stem_tokenizer
+from commitcanvas.generate_type.tokenizers import dummy
+from commitcanvas.generate_type import commit_data
 import joblib
 import pandas as pd
 

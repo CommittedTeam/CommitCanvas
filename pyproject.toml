@@ -24,8 +24,8 @@ PyDriller = "^1.15.5"
 
 [tool.poetry.scripts]
 # commitcanvas = "commitcanvas.__main__:main"
-# commitcanvas = "generate_type.classify:entry"
-commitcanvas = "generate_type.data_processing:save"
+commitcanvas = "commitcanvas.generate_type.classify:entry"
+#save = "commitcanvas.generate_type.data_processing:save"
 
 # [tool.poetry.plugins."blogtool.parsers"]
 # "commitcanvas" = "commitcanvas.__main__:main"
