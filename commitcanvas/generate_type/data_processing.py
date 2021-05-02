@@ -66,7 +66,7 @@ def save():
 
     pipeline = pipeline.fit(X_train, y_train)
     import joblib
-
+    
     print(X_test)
     predicted = pipeline.predict(X_test)
 
