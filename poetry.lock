@@ -164,7 +164,7 @@ python-versions = "*"
 name = "gitdb"
 version = "4.0.7"
 description = "Git Object Database"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.4"
 
@@ -175,7 +175,7 @@ smmap = ">=3.0.1,<5"
 name = "gitpython"
 version = "3.1.14"
 description = "Python Git Library"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.4"
 
@@ -237,7 +237,7 @@ python-versions = ">=3.6"
 name = "lizard"
 version = "1.17.7"
 description = "A code analyzer without caring the C/C++ header files. It works with Java, C/C++, JavaScript, Python, Ruby, Swift, Objective C. Metrics includes cyclomatic complexity number etc."
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -326,7 +326,7 @@ pyparsing = ">=2.0.2"
 name = "pandas"
 version = "1.2.4"
 description = "Powerful data structures for data analysis, time series, and statistics"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.7.1"
 
@@ -420,7 +420,7 @@ numpy = ">=1.16.6"
 name = "pydriller"
 version = "1.15.5"
 description = "Framework for MSR"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -490,7 +490,7 @@ six = ">=1.5"
 name = "pytz"
 version = "2021.1"
 description = "World timezone definitions, modern and historical"
-category = "dev"
+category = "main"
 optional = false
 python-versions = "*"
 
@@ -571,7 +571,7 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
 name = "smmap"
 version = "4.0.0"
 description = "A pure Python implementation of a sliding window memory map manager"
-category = "dev"
+category = "main"
 optional = false
 python-versions = ">=3.5"
 
@@ -769,7 +769,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7.1"
-content-hash = "789203696fd3cd8cd094ba3287691ed9ba242cd2ccf5ab18d8f804efda43eb5b"
+content-hash = "537aa5feea20a9afeaf9f234487bb9f42793a7e39839890fb4a6adbaa64ca064"
 
 [metadata.files]
 appdirs = [
