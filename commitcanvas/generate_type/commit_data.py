@@ -2,8 +2,8 @@ from pydriller import RepositoryMining
 import os
 import pandas as pd
 import re
-from github import Github
-import detect_type
+# from github import Github
+# import detect_type
 import pathlib
 
 def get_commit_types(commit_msg):
