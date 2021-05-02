@@ -61,7 +61,7 @@ def staged_stats(diff,commit_subject):
         "unique_file_extensions": file_extensions,
         "num_unique_file_extensions": len(file_extensions),
         "num_lines_added": added,
-        "num_lines_deleted": deleted,
+        "num_lines_removed": deleted,
         "num_lines_total": added + deleted,    
     }
 
