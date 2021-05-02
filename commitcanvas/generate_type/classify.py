@@ -83,27 +83,6 @@ def entry():
         f.seek(0, 0)
         stats = staged_stats(diff, content)
         my_data = pkg_resources.resource_stream(__name__, "model/trained_model.pkl")
-        print(my_data)
         model = joblib.load(my_data)
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
-
-# def entry():
-#     stats = {
-#             'commit_subject': "update revision id",
-#             "num_files": 1,
-#             "test_files": 0,
-#             "test_files_ratio": 0.0,
-#             "unique_file_extensions": [".yaml"],
-#             "num_unique_file_extensions": 1,
-#             "num_lines_added": 1,
-#             "num_lines_removed": 1,
-#             "num_lines_total": 2, 
-#     }
-
-#     diff = (pd.DataFrame([stats]))
-#     my_data = pkg_resources.resource_stream(__name__, "model/trained_model.pkl")
-#     print(my_data)
-#     model = joblib.load(my_data)
-#     predicted = model.predict(diff)
-#     print(predicted)
