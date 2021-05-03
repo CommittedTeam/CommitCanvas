@@ -7,7 +7,6 @@ from commitcanvas.generate_type.tokenizers import dummy
 from commitcanvas import get_staged_changes as gs
 import joblib
 import pandas as pd
-import shutil
 from subprocess import check_output
 import io
 import pkg_resources
@@ -21,7 +20,6 @@ def entry():
     stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
     file_names = check_output(['git', 'diff', '--staged', "--name-only"]).strip()
     
-    # Figure out which branch we're on
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
         # rewrite the file so that you avoid the seek
@@ -31,18 +29,4 @@ def entry():
         model = joblib.load(my_data)
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
-
-
-# stats = gs.staged_stats(diff, content)
-# print(stats)
-# def main():
-#     """Get commit message from command line and do checks."""
-#     # save the commit message into the file
-#     shutil.copy(sys.argv[1], ".git/pre-commit-saved-commit-msg")
-
-#     # get the commit message for the 
-#     with open(".git/pre-commit-saved-commit-msg", "r") as file:
-#         commit_message = file.read()
-
-#     commitcanvas_check.commit_check(commit_message)
 

@@ -80,8 +80,6 @@ def train_model(name,language,report,save,cross):
 
     types = ["chore", "docs","feat","fix","refactor","test"]
     data = data_prep(name, language, types)
-    train = get_features(data)
-    label = get_labels(data)
 
     if cross:
         train_repos = data[data["name"] != name]
@@ -93,6 +91,8 @@ def train_model(name,language,report,save,cross):
         y_test = get_labels(test_repo)
     else:
         # create a train test split
+        train = get_features(data)
+        label = get_labels(data)
         X_train, X_test, y_train, y_test = train_test_split(
             train, label, random_state=42)
 
