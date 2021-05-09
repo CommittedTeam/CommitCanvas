@@ -24,7 +24,7 @@ pytest-cov = "^2.10.0"
 codecov = "^2.1.8"
 
 [tool.poetry.scripts]
-check = "commitcanvas.__main__:app"
+check = "commitcanvas.__main__:entry"
 commitcanvas = "commitcanvas.generate_type.classify:app"
 
 [build-system]
