@@ -15,10 +15,10 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def entry(msg_file: str=None,path: str=None):
+def entry():
     """Get commit message from command line and do checks."""
 
-    print(path)
+    
     print(sys.argv)
 
     commit_msg_filepath = sys.argv[2]
