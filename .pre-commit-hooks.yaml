@@ -4,5 +4,6 @@
     verbose: False
     language: python
     pass_filenames: false
+    stages: [prepare-commit-msg]
     args: ['--path', 'description']
     
