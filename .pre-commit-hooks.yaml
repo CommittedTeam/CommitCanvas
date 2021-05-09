@@ -3,5 +3,4 @@
     entry: check
     verbose: False
     language: python
-    stages: [prepare-commit-msg]
     args: [--path=None]
