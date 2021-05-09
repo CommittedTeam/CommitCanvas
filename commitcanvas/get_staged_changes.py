@@ -2,23 +2,39 @@ import io
 import pandas as pd
 from commitcanvas.generate_type import commit_data as cm
 
+# string1 = "1 file changed, 1 insertion(+), 1 deletion(-)"
+# string2 = "1 file changed, 1 deletion(-)"
+def short_stat(decoded_diff):
+    added = None
+    deleted = None
+    for i in changes:
+        if ("+" in i):
+            added = [int(s) for s in i.split() if s.isdigit()][0]
+        if ("-" in i):
+            deleted = [int(s) for s in i.split() if s.isdigit()][0]
+
+    if (not added):
+        added = 0
+    if (not deleted):
+        deleted = 0
+
+    return (added,deleted)
 
 def staged_stats(stats,file_names,commit_subject):
 
     decoded_diff = stats.decode('utf-8')
+    added,deleted = short_stat(decoded_diff)
+
     decoded_files = file_names.decode('utf-8')
-    stats_list = [int(s) for s in decoded_diff.split() if s.isdigit()]
     files_list = decoded_files.split("\n")
 
-    added = stats_list[1]
-    deleted = stats_list[2]
     file_extensions = cm.get_file_extensions(files_list)
     test_files_count = cm.test_files(files_list)
 
 
     staged_changes_stats = {
         'commit_subject': commit_subject,
-        "num_files": stats_list[1],
+        "num_files": len(files_list),
         "test_files": test_files_count,
         "test_files_ratio": cm.get_ratio(test_files_count,files_list),
         "unique_file_extensions": file_extensions,

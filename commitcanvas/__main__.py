@@ -22,7 +22,6 @@ def entry():
     
     with open(commit_msg_filepath, 'r+') as f:
         content = f.read()
-        # rewrite the file so that you avoid the seek
         f.seek(0, 0)
         stats = gs.staged_stats(stats,file_names,content)
         my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
