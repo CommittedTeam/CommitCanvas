@@ -12,7 +12,9 @@ import io
 import pkg_resources
 import typer
 
+app = typer.Typer()
 
+@app.command()
 def entry():
     """Get commit message from command line and do checks."""
 
