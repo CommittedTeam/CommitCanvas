@@ -3,10 +3,11 @@ import pandas as pd
 from commitcanvas.generate_type import commit_data as cm
 
 # string1 = "1 file changed, 1 insertion(+), 1 deletion(-)"
-# string2 = "1 file changed, 1 deletion(-)"
+# string2 = "1 file changed, 1 deletion(-)
 def short_stat(decoded_diff):
     added = None
     deleted = None
+    changes = decoded_diff.split(",")
     for i in changes:
         if ("+" in i):
             added = [int(s) for s in i.split() if s.isdigit()][0]
