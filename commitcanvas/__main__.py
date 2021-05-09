@@ -10,10 +10,16 @@ import pandas as pd
 from subprocess import check_output
 import io
 import pkg_resources
+import typer
 
+app = typer.Typer()
 
-def entry():
+@app.command()
+def entry(url: str = None, path: str = None):
     """Get commit message from command line and do checks."""
+
+    print(url)
+    print(path)
 
     commit_msg_filepath = sys.argv[1]
     #commitcanvas_check.commit_check(commit_msg_filepath)
