@@ -20,18 +20,18 @@ def entry(path: str=None):
 
     print(path)
     print(sys.argv)
-    sys.exit(0)
-    # commit_msg_filepath = sys.argv[1]
-    # #commitcanvas_check.commit_check(commit_msg_filepath)
-    # stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
-    # file_names = check_output(['git', 'diff', '--staged', "--name-only"]).strip()
+
+    commit_msg_filepath = sys.argv[1]
+    #commitcanvas_check.commit_check(commit_msg_filepath)
+    stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
+    file_names = check_output(['git', 'diff', '--staged', "--name-only"]).strip()
     
-    # with open(commit_msg_filepath, 'r+') as f:
-    #     content = f.read()
-    #     f.seek(0, 0)
-    #     stats = gs.staged_stats(stats,file_names,content)
-    #     my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
-    #     model = joblib.load(my_data)
-    #     predicted = model.predict(stats)[0]
-    #     f.write("{}: {}".format(predicted,content))
+    with open(commit_msg_filepath, 'r+') as f:
+        content = f.read()
+        f.seek(0, 0)
+        stats = gs.staged_stats(stats,file_names,content)
+        my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
+        model = joblib.load(my_data)
+        predicted = model.predict(stats)[0]
+        f.write("{}: {}".format(predicted,content))
 
