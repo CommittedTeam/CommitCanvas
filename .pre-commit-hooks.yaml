@@ -3,5 +3,6 @@
     entry: check
     verbose: False
     language: python
-    args: ['path', 'description']
+    pass_filenames: false
+    args: ['--path', 'description']
     
