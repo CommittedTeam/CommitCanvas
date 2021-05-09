@@ -2,6 +2,7 @@
 import typer
 from typing import Tuple
 from commitcanvas.generate_type import train_model as tm
+import reporover
 
 app = typer.Typer()
 
@@ -12,12 +13,14 @@ def callback():
     """
 
 @app.command()
-def classify(name: str = None, language: str = None, cross: bool = False, report: bool = False, save: bool = False):
+def classify(url: str = None, name: str = None, language: str = None, cross: bool = False, report: bool = False, save: bool = False):
     """
     random forest model with specified data
     """
     if ((language and name) is not None):      
         raise typer.BadParameter("If value for language is not empty, value for name must be empty")
 
+    tm.train_model(url, name, language, report, save, cross)
 
-    tm.train_model(name, language, report, save, cross)
+
+    

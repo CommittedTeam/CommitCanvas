@@ -12,10 +12,14 @@ import matplotlib.pyplot as plt
 from commitcanvas.generate_type.tokenizers import stem_tokenizer
 from commitcanvas.generate_type.tokenizers import dummy
 import joblib
+from reporover import collect
 
-def data_prep(name, language, types):
+def data_prep(url, name, language, types):
     """ Prepare data for training"""
-    data = pd.read_feather("commitcanvas/generate_type/data/collect_gatorgrader.ftr")
+    if url:   
+        data = commit_data = collect.collect(url)
+    else:
+        data = pd.read_feather("commitcanvas/generate_type/data/collect_gatorgrader.ftr")
     # Select specific repository or the programming language as specified by the user
     if language is not None:
         data = data.loc[data['language'] == language]
@@ -37,8 +41,8 @@ def data_prep(name, language, types):
         
 def get_features(data):
     # list of columns that will be used for training
-    features_drop = ['commit_subject',"num_files","test_files","test_files_ratio","unique_file_extensions","num_unique_file_extensions","num_lines_added","num_lines_removed","num_lines_total"]
-    train = data[features_drop]
+    features = ['commit_subject',"num_files","test_files","test_files_ratio","unique_file_extensions","num_unique_file_extensions","num_lines_added","num_lines_removed","num_lines_total"]
+    train = data[features]
 
     return train
 
@@ -76,10 +80,10 @@ def build_pipline():
     return pipeline
     
 # TODO cross validation needs to be tested
-def train_model(name,language,report,save,cross):
+def train_model(url,name,language,report,save,cross):
 
     types = ["chore", "docs","feat","fix","refactor","test"]
-    data = data_prep(name, language, types)
+    data = data_prep(url, name, language, types)
 
     if cross:
         train_repos = data[data["name"] != name]
@@ -101,7 +105,7 @@ def train_model(name,language,report,save,cross):
 
     if save:
         print("saving the model")
-        joblib.dump(pipeline, 'commitcanvas/generate_type/model/trained_model.pkl')
+        joblib.dump(pipeline, "{}/trained_model.pkl".format(path))
         print("saving model complete")
 
     if report:
