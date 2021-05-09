@@ -9,13 +9,14 @@ python = ">=3.7.1"
 pre-commit = "^2.5.1"
 spacy = "^2.3.2"
 en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz" }
-pyarrow = "^3.0.0"
+pyarrow = "^4.0.0"
 typer = "^0.3.2"
 matplotlib = "^3.4.1"
 nltk = "^3.6.2"
 scikit-learn = "^0.24.2"
 PyDriller = "^1.15.5"
 pandas = "^1.2.4"
+reporover = { git = "https://github.com/CommittedTeam/RepoRover", branch = "repo-mining" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.3.5"

@@ -1,6 +1,6 @@
 import io
 import pandas as pd
-from commitcanvas.generate_type import commit_data as cm
+from reporover import parse
 
 # string1 = "1 file changed, 1 insertion(+), 1 deletion(-)"
 # string2 = "1 file changed, 1 deletion(-)
@@ -29,15 +29,15 @@ def staged_stats(stats,file_names,commit_subject):
     decoded_files = file_names.decode('utf-8')
     files_list = decoded_files.split("\n")
 
-    file_extensions = cm.get_file_extensions(files_list)
-    test_files_count = cm.test_files(files_list)
+    file_extensions = parse.get_file_extensions(files_list)
+    test_files_count = parse.test_files(files_list)
 
 
     staged_changes_stats = {
         'commit_subject': commit_subject,
         "num_files": len(files_list),
         "test_files": test_files_count,
-        "test_files_ratio": cm.get_ratio(test_files_count,files_list),
+        "test_files_ratio": parse.get_ratio(test_files_count,files_list),
         "unique_file_extensions": file_extensions,
         "num_unique_file_extensions": len(file_extensions),
         "num_lines_added": added,
