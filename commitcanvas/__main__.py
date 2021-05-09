@@ -15,13 +15,13 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def entry(path: str=None):
+def entry(msg_file: str=None,path: str=None):
     """Get commit message from command line and do checks."""
 
     print(path)
     print(sys.argv)
 
-    commit_msg_filepath = sys.argv[1]
+    commit_msg_filepath = sys.argv[2]
     #commitcanvas_check.commit_check(commit_msg_filepath)
     stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
     file_names = check_output(['git', 'diff', '--staged', "--name-only"]).strip()

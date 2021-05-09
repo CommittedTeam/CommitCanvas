@@ -5,5 +5,5 @@
     language: python
     pass_filenames: false
     stages: [prepare-commit-msg]
-    args: ['--path', 'description']
+    args: ['--path', 'description', '--msg_file', '.git/COMMIT_EDITMSG']
     
