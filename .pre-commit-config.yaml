@@ -45,4 +45,3 @@ repos:
   rev: e78450d335ccb77da98a2f21c574bc414120bc84
   hooks:
   - id: commitcanvas
-    stages: [prepare-commit-msg]
