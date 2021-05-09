@@ -3,4 +3,5 @@
     entry: check
     verbose: False
     language: python
-    args: [--path=None]
+    args: ['path', 'description']
+    
