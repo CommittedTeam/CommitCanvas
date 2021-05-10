@@ -15,7 +15,7 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def entry(path: str=None, commit: str=None):
+def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
 
     
