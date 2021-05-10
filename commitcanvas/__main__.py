@@ -15,7 +15,7 @@ import typer
 app = typer.Typer()
 
 @app.command()
-def entry():
+def entry(path: str=None):
     """Get commit message from command line and do checks."""
 
     
