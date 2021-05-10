@@ -21,7 +21,7 @@ def entry(path: str=None, commit: str=None):
     
     print(sys.argv)
 
-    commit_msg_filepath = sys.argv[4]
+    commit_msg_filepath = commit
     #commitcanvas_check.commit_check(commit_msg_filepath)
     stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
     file_names = check_output(['git', 'diff', '--staged', "--name-only"]).strip()
