@@ -3,6 +3,6 @@
     entry: check
     verbose: False
     language: python
-    args: ["--commit",".git/COMMIT_EDITMSG"]
+    pass_filenames: false
     stages: [prepare-commit-msg]
     
