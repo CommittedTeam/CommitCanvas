@@ -13,7 +13,7 @@ def callback():
     """
 
 @app.command()
-def classify(url: str = None, name: str = None, language: str = None, cross: bool = False, report: bool = False, save: bool = False):
+def classify(url: str = None, name: str = None, language: str = None, cross: bool = False, report: bool = False, save: str = None):
     """
     random forest model with specified data
     """

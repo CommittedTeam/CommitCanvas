@@ -105,7 +105,7 @@ def train_model(url,name,language,report,save,cross):
 
     if save:
         print("saving the model")
-        joblib.dump(pipeline, "{}/trained_model.pkl".format(path))
+        joblib.dump(pipeline, "{}/trained_model.pkl".format(save))
         print("saving model complete")
 
     if report:
