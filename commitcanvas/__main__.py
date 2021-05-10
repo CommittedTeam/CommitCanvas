@@ -18,9 +18,6 @@ app = typer.Typer()
 def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
 
-    
-    print(sys.argv)
-
     commit_msg_filepath = commit
     #commitcanvas_check.commit_check(commit_msg_filepath)
     stats = check_output(['git', 'diff', '--staged', "--shortstat"]).strip()
@@ -30,8 +27,13 @@ def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
         content = f.read()
         f.seek(0, 0)
         stats = gs.staged_stats(stats,file_names,content)
-        my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
-        model = joblib.load(my_data)
+
+        if path:
+            model = joblib.load("{}/trained_model.pkl".format(path))
+        else:
+            my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
+            model = joblib.load(my_data)
+
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 

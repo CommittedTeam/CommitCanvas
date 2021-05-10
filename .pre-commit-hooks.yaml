@@ -4,6 +4,5 @@
     verbose: False
     language: python
     pass_filenames: false
-    args: ["--commit",".git/COMMIT_EDITMSG"]
     stages: [prepare-commit-msg]
     
