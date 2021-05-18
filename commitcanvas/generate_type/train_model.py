@@ -78,11 +78,11 @@ def build_pipline():
     pipeline = Pipeline(steps=[('prep',col_transform), ('model', model)])
 
     return pipeline
-    
+   
 # TODO cross validation needs to be tested
-def train_model(url,name,language,report,save,cross):
+def train_model(url,name,language,report,save,cross, types):
 
-    types = ["chore", "docs","feat","fix","refactor","test"]
+    types = types.strip().split(",")
     data = data_prep(url, name, language, types)
 
     if cross:
