@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# trained model file
+model/
+
 # C extensions
 *.so
 
