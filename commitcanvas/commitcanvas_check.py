@@ -3,7 +3,7 @@ import sys
 
 from commitcanvas import commit_message_checker as cm
 
-
+# TODO: refactor this code
 def get_checks(commit_message):
     """Do all the checks for the commit message."""
     length = cm.check_length(commit_message)

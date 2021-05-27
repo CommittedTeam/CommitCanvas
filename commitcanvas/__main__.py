@@ -37,6 +37,7 @@ def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 
-# model = joblib.load("generate_type/model/trained_model.pkl")
-# print(model)
-# joblib.dump(model, "generate_type/model/trained_model1.pkl",compress=('zlib', 6))
+
+
+model = joblib.load("generate_type/model/trained_model.pkl")
+print(model)

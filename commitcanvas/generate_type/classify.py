@@ -1,14 +1,14 @@
 """Training and evaluating the classification model."""
 import typer
 from typing import Tuple
-from commitcanvas.generate_type import train_model as tm
+from commitcanvas.generate_type.train_model import train
 
 app = typer.Typer()
 
 @app.callback()
 def callback():
     """
-    classify command takes three arguments, please see the documentation for more details
+    please see the documentation reagrding acceptable command line options
     """
 
 @app.command()
@@ -19,7 +19,14 @@ def classify(url: str = None, types: str = "chore,docs,feat,fix,refactor,test", 
     if ((language and name) is not None):      
         raise typer.BadParameter("If value for language is not empty, value for name must be empty")
 
-    tm.train_model(url, name, language, report, save, cross, types)
+    new_train = train(url, name, language, cross, types, save)
+    pipeline = new_train.train_model()
+
+    if save:
+        new_train.save_model(pipeline)
+
+    if report:
+        new_train.get_report(pipeline)
 
 
-    
+
