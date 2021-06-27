@@ -1,16 +1,13 @@
 """Command line inferface."""
-# pylint: disable = import-error
-import sys
-from commitcanvas import commitcanvas_check
-from commitcanvas.generate_type.tokenizers import stem_tokenizer
-from commitcanvas.generate_type.tokenizers import dummy
+# pyright: reportMissingImports=false
+from commitcanvas_models.train_model.tokenizers import stem_tokenizer
+from commitcanvas_models.train_model.tokenizers import dummy
 from commitcanvas import get_staged_changes as gs
 import joblib
-import pandas as pd
 from subprocess import check_output
-import io
-import pkg_resources
 import typer
+import model.model as md
+from commitcanvas import commitcanvas_check
 
 app = typer.Typer()
 
@@ -31,13 +28,8 @@ def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
         if path:
             model = joblib.load("{}/trained_model.pkl".format(path))
         else:
-            my_data = pkg_resources.resource_stream(__name__, "generate_type/model/trained_model.pkl")
-            model = joblib.load(my_data)
-
+            model = md.load()
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 
-
-
-model = joblib.load("generate_type/model/trained_model.pkl")
-print(model)
+        commitcanvas_check.commit_check(content)

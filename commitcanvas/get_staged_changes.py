@@ -1,4 +1,4 @@
-import io
+# pyright: reportMissingImports=false
 import pandas as pd
 from reporover import parse
 
