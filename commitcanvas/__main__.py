@@ -6,7 +6,7 @@ from commitcanvas import get_staged_changes as gs
 import joblib
 from subprocess import check_output
 import typer
-import model.model as md
+import model as md
 from commitcanvas import commitcanvas_check
 
 app = typer.Typer()
