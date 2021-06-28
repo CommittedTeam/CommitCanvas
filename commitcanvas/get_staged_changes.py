@@ -37,7 +37,7 @@ def staged_stats(stats,file_names,commit_subject):
         'commit_subject': commit_subject,
         "num_files": len(files_list),
         "test_files": test_files_count,
-        "test_files_ratio": get_commit_data.get_ratio(test_files_count,files_list),
+        "test_files_ratio": get_commit_data.get_ratio(test_files_count,len(files_list)),
         "unique_file_extensions": file_extensions,
         "num_unique_file_extensions": len(file_extensions),
         "num_lines_added": added,
