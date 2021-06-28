@@ -337,7 +337,7 @@ joblib = ">=1.0.1,<2.0.0"
 
 [package.source]
 type = "url"
-url = "https://github.com/CommittedTeam/commitcanvas-models/releases/download/0.1.0/model-0.1.0.tar.gz"
+url = "https://github.com/CommittedTeam/commitcanvas-models/releases/download/0.1.1/model-0.1.0.tar.gz"
 [[package]]
 name = "more-itertools"
 version = "8.8.0"
@@ -1069,7 +1069,7 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.7.1,<4.0"
-content-hash = "eb9d3c601abca95f2504b041c6600629161e4e27a67b7c16992e7658d9c6f92f"
+content-hash = "fb325d1f7a548854b54e0077de4c69391ca5cbfa6e169272239238bd86868275"
 
 [metadata.files]
 appdirs = [
