@@ -61,7 +61,7 @@ repos:
     - id: commitcanvas
       language_version: python3.7
       language: python
-      stages: [commit-msg]
+      stages: [prepare-commit-msg]
 
 ```
 
