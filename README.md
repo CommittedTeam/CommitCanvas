@@ -23,6 +23,7 @@
 
 Have you ever wanted a tool that could ...
 
+  - predict the [conventional](https://www.conventionalcommits.org/en/v1.0.0/) commit label for commit message
   - predict whether or not a commit is likely to break the build?
   - let you know when your commit message does not follow a standard?
   - tell you whether or not a commit message has the correct label?
@@ -35,6 +36,8 @@ CommitCanvas already has a feature that helps users identify and fix commit mess
   - Capitalize the subject line and each paragraph
   - Use the imperative mood in the subject line
   - Wrap subject line at 72 characters
+
+Commitcnavas also automatically attaches the conventional commit label to the commit message
 
 Other features mentioned above are under development and will be added to CommitCanvas in the near future. Please see the [issues](https://github.com/CommittedTeam/CommitCanvas/issues) for more information.
 
@@ -64,15 +67,40 @@ repos:
 
 Install `pre-commit`, please refer the [documentation](https://pre-commit.com/#install)
 
-To use `commitcanvas` as a `commit-msg` hook, install pre-commit in `.git/hooks/commit-msg`:
+To use `commitcanvas` as a `prepare-commit-msg` hook, install pre-commit in `.git/hooks/prepare-commit-msg`:
 
-`pre-commit install --hook-type commit-msg`
+`pre-commit install --hook-type prepare-commit-msg`
 
 NOTE: You need to run this command everytime you clone the repository, unless you configure `pre-commit` globaly. Please follow the [link](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories) for more information.
 
 ## Run
 
 Every time you make a commit `commitcanvas` will automatically check the commit message, and if there are any erros, `git commit` command will be aborted before creating a commit, and helpul tips will be dispalyed about how to improve the commit message.
+
+If you would like to skip commitcanvas errors, please run `git commit` with `SKIP=commitcanvas`. Please see
+[pre-commit](https://pre-commit.com/#temporarily-disabling-hooks) documentation for more information about
+environment variables.
+
+Commitcanvas will also predict and attach the conventional commit label automatically. If you would like
+to edit the message as well as the predicted label please run `git commit` command with `-e` option.
+
+### Project Agnostic
+
+Commitcanvas can be used in project agnostic mode. In this mode commitcanvas will use deployed model that
+was trained on over 300 open-source,[critical](https://github.com/ossf/criticality_score),[conventional](https://www.conventionalcommits.org/en/v1.0.0/) repositories.
+
+Unless project-specific path provided commitcnavas will use the pre-deployed model as a default
+
+### Project Specific
+
+Commitcnavas can also be used in project specific mode. In this mode commitcnavas can be trained on selected repository.
+
+For instance if you would like to train commitcnavas on your repository you need to provide git url and the
+local path to save the trained model.
+
+Command to train and save the model: `commitcanvas train <url> <save>`
+
+After the model is saved please add the path to `pre-commit-config.yaml` file in your repository
 
 ## Development info
 
@@ -92,7 +120,7 @@ Every time you make a commit `commitcanvas` will automatically check the commit 
 
 When under developmnet always install the dependencies with `poetry install` and run the program with `poetry run python program_name`.
 
-You can add new dependencies to `pyproject.toml` either manually or by `poetry add package_name`. Please refer to documentation [here](https://python-poetry.org/docs/cli/#add) for more information.
+You can add new dependencies to `pyproject.toml` either manually or byhttps://www.conventionalcommits.org/en/v1.0.0/ `poetry add package_name`. Please refer to documentation [here](https://python-poetry.org/docs/cli/#add) for more information.
 
 Use `poetry update` for updating the dependencies to their latest versions as neccessary. Please refer to documentation [here](https://python-poetry.org/docs/cli/#update) for more information.
 

@@ -27,7 +27,7 @@ def commit_check(commit_message):
     if not boolean_value:
         if not list_of_checks[0]:
 
-            print("Error: subject line should start with capital letter")
+            print("Error: subject line should start with lower case letter")
 
         if not list_of_checks[1]:
 
