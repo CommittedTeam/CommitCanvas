@@ -13,7 +13,7 @@ def test_version():
 
 @pytest.mark.parametrize(
     "input_message,expected_boolean",
-    [("fix typo", False), ("Update file", True), ("add new feature", False)],
+    [("fix typo", True), ("Update file", False), ("add new feature", True)],
 )
 def test_check_for_capital_letter(input_message, expected_boolean):
     """Check that capital letter is detected correcty."""

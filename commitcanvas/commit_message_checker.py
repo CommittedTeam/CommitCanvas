@@ -32,8 +32,8 @@ def check_for_period(message):
 
 
 def check_capital_letter(message):
-    """Check that subject line starts with capital letter."""
-    check = message[0].isupper()
+    """Check that subject line starts with lower case letter."""
+    check = message[0].islower()
 
     return check
 

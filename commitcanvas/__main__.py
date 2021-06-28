@@ -29,7 +29,7 @@ def entry(path: str=None, commit: str=".git/COMMIT_EDITMSG"):
             model = joblib.load("{}/trained_model.pkl".format(path))
         else:
             model = md.load()
-        print(stats)
+
         predicted = model.predict(stats)[0]
         f.write("{}: {}".format(predicted,content))
 
