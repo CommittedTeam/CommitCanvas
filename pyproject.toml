@@ -5,11 +5,19 @@ description = ""
 authors = ["bagashvilit <bagashvilit@allegheny.edu>"]
 
 [tool.poetry.dependencies]
-python = ">=3.6.1"
+python = ">=3.7.1,<4.0"
 pre-commit = "^2.5.1"
 spacy = "^2.3.2"
 en_core_web_sm = { url = "https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz" }
-
+pyarrow = "^4.0.0"
+typer = "^0.3.2"
+nltk = "^3.6.2"
+scikit-learn = "^0.24.2"
+pandas = "^1.2.4"
+# install the deployed model as a commitcanvas dependency
+model = {url = "https://github.com/CommittedTeam/commitcanvas-models/releases/download/0.1.1/model-0.1.0.tar.gz"}
+reporover = { git = "https://github.com/CommittedTeam/RepoRover", branch = "repo-mining" }
+commitcanvas_models = { git = "https://github.com/CommittedTeam/commitcanvas-models", branch = "commitcanvas-model" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.3.5"
@@ -17,10 +25,8 @@ pytest-cov = "^2.10.0"
 codecov = "^2.1.8"
 
 [tool.poetry.scripts]
-commitcanvas = "commitcanvas.__main__:main"
-
-# [tool.poetry.plugins."blogtool.parsers"]
-# "commitcanvas" = "commitcanvas.__main__:main"
+check = "commitcanvas.__main__:app"
+commitcanvas = "commitcanvas.commit_label.train_model:app"
 
 [build-system]
 requires = ["poetry>=0.12"]

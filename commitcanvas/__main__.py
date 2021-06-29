@@ -1,22 +1,41 @@
 """Command line inferface."""
-# pylint: disable = import-error
-import shutil
-import sys
+# pyright: reportMissingImports=false
+# noqa: F401,E501
+# flake8: noqa
+# pylint: disable=E0401,W0611
+from subprocess import check_output
+
+import joblib
+import model as md
+import typer
+from commitcanvas_models.train_model.tokenizers import dummy
+from commitcanvas_models.train_model.tokenizers import stem_tokenizer
 
 from commitcanvas import commitcanvas_check
+from commitcanvas import get_staged_changes as gs
+
+app = typer.Typer()
 
 
-def main():
+@app.command()
+def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
-    # save the commit message into the file
-    shutil.copy(sys.argv[1], ".git/pre-commit-saved-commit-msg")
+    commit_msg_filepath = commit
+    # commitcanvas_check.commit_check(commit_msg_filepath)
+    stats = check_output(["git", "diff", "--staged", "--shortstat"]).strip()
+    file_names = check_output(["git", "diff", "--staged", "--name-only"]).strip()
 
-    # get the commit message for the commit checks
-    with open(".git/pre-commit-saved-commit-msg", "r") as file:
-        commit_message = file.read()
+    with open(commit_msg_filepath, "r+") as file:
+        content = file.read()
+        file.seek(0, 0)
+        stats = gs.staged_stats(stats, file_names, content)
 
-    commitcanvas_check.commit_check(commit_message)
+        if path:
+            model = joblib.load("{}/trained_model.pkl".format(path))
+        else:
+            model = md.load()
 
+        predicted = model.predict(stats)[0]
+        file.write("{}: {}".format(predicted, content))
 
-if __name__ == "__main__":
-    main()
+        commitcanvas_check.commit_check(content)

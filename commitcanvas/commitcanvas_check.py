@@ -4,6 +4,7 @@ import sys
 from commitcanvas import commit_message_checker as cm
 
 
+# refactor this code
 def get_checks(commit_message):
     """Do all the checks for the commit message."""
     length = cm.check_length(commit_message)
@@ -27,7 +28,7 @@ def commit_check(commit_message):
     if not boolean_value:
         if not list_of_checks[0]:
 
-            print("Error: subject line should start with capital letter")
+            print("Error: subject line should start with lower case letter")
 
         if not list_of_checks[1]:
 

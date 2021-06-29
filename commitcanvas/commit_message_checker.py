@@ -11,6 +11,7 @@
 import spacy
 
 
+# refactor code in this file to make sure that it works with commit type
 def check_blank_line(message):
     """Check if there is a blank line between subject and a paragraph."""
     splitted = message.splitlines()
@@ -32,8 +33,8 @@ def check_for_period(message):
 
 
 def check_capital_letter(message):
-    """Check that subject line starts with capital letter."""
-    check = message[0].isupper()
+    """Check that subject line starts with lower case letter."""
+    check = message[0].islower()
 
     return check
 
