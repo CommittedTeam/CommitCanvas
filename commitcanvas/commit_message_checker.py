@@ -10,7 +10,8 @@
 # pylint: disable = import-error
 import spacy
 
-# TODO: refactor code in this file to make sure that it works with commit type
+
+# refactor code in this file to make sure that it works with commit type
 def check_blank_line(message):
     """Check if there is a blank line between subject and a paragraph."""
     splitted = message.splitlines()

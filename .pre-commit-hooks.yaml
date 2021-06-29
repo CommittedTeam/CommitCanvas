@@ -5,4 +5,4 @@
     language: python
     pass_filenames: false
     stages: [prepare-commit-msg]
-    
+
