@@ -5,8 +5,6 @@ import pandas as pd
 from reporover import get_commit_data
 
 
-# string1 = "1 file changed, 1 insertion(+), 1 deletion(-)"
-# string2 = "1 file changed, 1 deletion(-)
 def short_stat(decoded_diff):
     """Get the commit data from git shortstat."""
     added = None
