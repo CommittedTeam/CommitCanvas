@@ -35,8 +35,7 @@ CommitCanvas already has a feature that helps users identify and fix commit mess
   - Capitalize the subject line and each paragraph
   - Use the imperative mood in the subject line
   - Wrap subject line at 72 characters
-
-Commitcnavas also automatically attaches the conventional commit label to the commit message
+  - automatically attach the conventional commit label to the commit message
 
 Other features mentioned above are under development and will be added to CommitCanvas in the near future. Please see the [issues](https://github.com/CommittedTeam/CommitCanvas/issues) for more information.
 
