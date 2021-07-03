@@ -85,9 +85,9 @@ to edit the message as well as the predicted label please run `git commit` comma
 ### Project Agnostic
 
 Commitcanvas can be used in project agnostic mode. In this mode commitcanvas will use deployed model that
-was trained on over 300 open-source,[critical](https://github.com/ossf/criticality_score),[conventional](https://www.conventionalcommits.org/en/v1.0.0/) repositories.
+was trained on over 300 open-source, [critical](https://github.com/ossf/criticality_score), [conventional](https://www.conventionalcommits.org/en/v1.0.0/) repositories.
 
-Unless project-specific path provided commitcnavas will use the pre-deployed model as a default
+Unless project-specific path is provided commitcnavas will use the pre-deployed model as a default
 
 ### Project Specific
 
@@ -99,6 +99,9 @@ local path to save the trained model.
 Command to train and save the model: `commitcanvas train <url> <save>`
 
 After the model is saved please add the path to `pre-commit-config.yaml` file in your repository
+
+Please see [Commitcanvas-models](https://github.com/CommittedTeam/commitcanvas-models) for more information
+about the deployed models
 
 ## Development info
 
