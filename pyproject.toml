@@ -15,7 +15,7 @@ nltk = "^3.6.2"
 scikit-learn = "^0.24.2"
 pandas = "^1.2.4"
 # install the deployed model as a commitcanvas dependency
-model = {url = "https://github.com/CommittedTeam/commitcanvas-models/releases/download/0.1.1/model-0.1.0.tar.gz"}
+model = {url = "https://github.com/CommittedTeam/commitcanvas-models/releases/download/0.2.0/model-0.2.0.tar.gz"}
 reporover = { git = "https://github.com/CommittedTeam/RepoRover", branch = "repo-mining" }
 commitcanvas_models = { git = "https://github.com/CommittedTeam/commitcanvas-models", branch = "commitcanvas-model" }
 
