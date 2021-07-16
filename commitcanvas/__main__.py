@@ -22,8 +22,12 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
     commit_msg_filepath = commit
     # commitcanvas_check.commit_check(commit_msg_filepath)
-    stats = check_output(["git", "diff", "--staged", "--shortstat"]).strip()
-    file_names = check_output(["git", "diff", "--staged", "--name-only"]).strip()
+    stats = check_output(
+        ["git", "--no-pager", "diff", "--staged", "--shortstat"]
+    ).strip()
+    file_names = check_output(
+        ["git", "--no-pager", "diff", "--staged", "--name-only"]
+    ).strip()
 
     with open(commit_msg_filepath, "r+") as file:
         content = file.read()
