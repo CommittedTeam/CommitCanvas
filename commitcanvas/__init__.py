@@ -1,2 +1,4 @@
-"""Empty file required by pylint."""
-__version__ = "0.1.0"
+import pluggy
+
+hookimpl = pluggy.HookimplMarker("commitcanvas")
+"""Plug in marker"""

@@ -1,3 +1,0 @@
-[console_scripts]
-commitcanvas = commitcanvas.__main__:main
-
