@@ -17,7 +17,6 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         content = file.read()
         file.seek(0, 0)
 
-        import path
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
 
