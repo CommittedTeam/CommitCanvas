@@ -20,9 +20,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
 
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
-
+        print(os.path.pardir)
         sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
-        
+
         plugins = importlib.import_module(path)
 
 
