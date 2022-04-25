@@ -9,7 +9,7 @@ app = typer.Typer()
 
 
 @app.command()
-def entry(pat: str = None, commit: str = ".git/COMMIT_EDITMSG"):
+def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
     commit_msg_filepath = commit
     # commitcanvas_check.commit_check(commit_msg_filepath)
@@ -21,15 +21,16 @@ def entry(pat: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
 
-        sys.path.append(os.path.abspath(os.path.join(os.path.pardir, pat)))
+        sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
         
         import os.path
+        print(os.getcwd())
 
-        if os.path.isfile(pat):
+        if os.path.isfile(patt):
             print ("File exist")
         else:
             print ("File not exist")
-        plugins = importlib.import_module(pat)
+        plugins = importlib.import_module(patt)
 
 
         pm.register(plugins)
