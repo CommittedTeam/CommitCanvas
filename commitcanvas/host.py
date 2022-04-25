@@ -23,7 +23,7 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
         pm.add_hookspecs(hookspecs)
         plugins = importfile('{}/{}'.format(os.getcwd(),path))
         
-        disable = disable.split(',')
+        disable = disable.replace(" ", "").split(",")
         default_classes = getmembers(default, isclass)
         enabled_default_classes = [obj for obj in default_classes if obj[0] not in disable]
 
