@@ -23,7 +23,7 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
 
     utils.registrar(pm, getmembers(user_plugins, isclass))
 
-    errors = pm.hook.rule(utils.read_message(commit))
+    errors = pm.hook.rule(message=utils.read_message(commit))
 
     if errors:
         print("\n")
