@@ -1,7 +1,5 @@
 import pluggy
 from commitcanvas import hookspecs,lib
-from subprocess import check_output
-import joblib
 import typer
 
 
