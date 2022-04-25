@@ -1,11 +1,9 @@
-import pluggy
-from commitcanvas import hookspecs, default
 import typer
 import sys
-import importlib
 import os
 from pydoc import importfile
 from inspect import getmembers, isclass
+from commitcanvas import utils
 
 app = typer.Typer()
 
@@ -19,24 +17,19 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
         content = file.read()
         file.seek(0, 0)
 
-        pm = pluggy.PluginManager("commitcanvas")
-        pm.add_hookspecs(hookspecs)
-        plugins = importfile('{}/{}'.format(os.getcwd(),path))
+
+        user_plugins = importfile('{}/{}'.format(os.getcwd(),path))
         
-        disable = disable.replace(" ", "").split(",")
-        default_classes = getmembers(default, isclass)
-        enabled_default_classes = [obj for obj in default_classes if obj[0] not in disable]
+        kept_default_classes = utils.default_tokeep(disable)
 
+        pm = utils.create_pluginmanager()
 
-        for obj in enabled_default_classes:
-            pm.register(obj[1]())
+        utils.registrar(pm, kept_default_classes)
 
-        classes = getmembers(plugins, isclass)
-        for obj in classes:
-            pm.register(obj[1]())
+        utils.registrar(pm, getmembers(user_plugins, isclass))
 
         errors = pm.hook.rule(message=content)
-        print(errors)
+
         if errors:
             print("\n")
             print(*errors, sep = "\n")
