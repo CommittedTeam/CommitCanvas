@@ -1,12 +1,15 @@
 import pluggy
 from commitcanvas import hookspecs, default
 from inspect import getmembers, isclass
+import sys
+
 
 def create_pluginmanager():
     pm = pluggy.PluginManager("commitcanvas")
     pm.add_hookspecs(hookspecs)
 
     return pm
+
 
 def default_tokeep(disable):
 
@@ -17,10 +20,12 @@ def default_tokeep(disable):
 
     return kept_default_classes
 
+
 def registrar(pm, classes):
 
     for obj in classes:
         pm.register(obj[1]())
+
 
 def read_message(commit):
     commit_msg_filepath = commit
@@ -30,3 +35,15 @@ def read_message(commit):
         file.seek(0, 0)
 
         return content
+
+
+def display_errors(errors):
+
+    if errors:
+        print("\n")
+        print(*errors, sep = "\n")
+
+        sys.exit(1)
+
+    else:
+        sys.exit(0)

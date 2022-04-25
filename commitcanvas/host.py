@@ -1,12 +1,10 @@
 import typer
-import sys
 import os
 from pydoc import importfile
 from inspect import getmembers, isclass
 from commitcanvas import utils
 
 app = typer.Typer()
-
 
 @app.command()
 def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = ""):
@@ -25,14 +23,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
 
     errors = pm.hook.rule(message=utils.read_message(commit))
 
-    if errors:
-        print("\n")
-        print(*errors, sep = "\n")
+    utils.display_errors(errors)
 
-        sys.exit(1)
 
-    else:
-        sys.exit(0)
 
 
 
