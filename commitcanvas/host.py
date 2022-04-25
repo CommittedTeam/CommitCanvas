@@ -21,22 +21,23 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
 
-        sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
+        # sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
         
-        import os.path
+        
         print(os.getcwd())
 
         if os.path.isfile(patt):
             print ("File exist")
         else:
             print ("File not exist")
-        plugins = importlib.import_module(patt)
+
+        # plugins = importlib.import_module(path)
 
 
-        pm.register(plugins)
+        # pm.register(plugins)
 
-        pm.hook.checkm(message=content)
-        pm.hook.checkl(message=content)
+        # pm.hook.checkm(message=content)
+        # pm.hook.checkl(message=content)
 
         sys.exit(1)
 
