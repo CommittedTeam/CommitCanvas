@@ -26,7 +26,7 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         
         print(os.getcwd())
 
-        if os.path.isfile(patt):
+        if os.path.isfile(path):
             print ("File exist")
         else:
             print ("File not exist")
