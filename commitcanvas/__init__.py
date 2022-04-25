@@ -1,4 +1,4 @@
 import pluggy
 
-check = pluggy.HookimplMarker("commitcanvas")
+hookimpl = pluggy.HookimplMarker("commitcanvas")
 """Plug in marker"""
