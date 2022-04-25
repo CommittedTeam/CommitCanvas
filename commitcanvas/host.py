@@ -1,11 +1,9 @@
 import pluggy
-from commitcanvas import hookspecs,lib
+from commitcanvas import hookspecs
 import typer
 import sys
+import joblib
 
-pm = pluggy.PluginManager("commitcanvas")
-pm.add_hookspecs(hookspecs)
-pm.register(lib)
 
 
 app = typer.Typer()
@@ -20,9 +18,15 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
     with open(commit_msg_filepath, "r+") as file:
         content = file.read()
         file.seek(0, 0)
-        print(content)
+
+
+        pm = pluggy.PluginManager("commitcanvas")
+        pm.add_hookspecs(hookspecs)
+        pm.register(path)
         pm.hook.checkm(message=content)
         pm.hook.checkl(message=content)
+
+        model = joblib.load(path)
 
         sys.exit(1)
 
