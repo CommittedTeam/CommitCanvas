@@ -3,7 +3,7 @@ import pluggy
 check = pluggy.HookspecMarker("commitcanvas")
 
 
-@hookspec
+@check
 def rule(message: str):
     """Check the style of commit message.
 
