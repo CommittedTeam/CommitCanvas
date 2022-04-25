@@ -5,6 +5,7 @@ import sys
 import importlib
 import os
 from pydoc import importfile
+from inspect import getmembers, isclass
 
 app = typer.Typer()
 
@@ -13,7 +14,6 @@ app = typer.Typer()
 def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
     """Get commit message from command line and do checks."""
     commit_msg_filepath = commit
-    # commitcanvas_check.commit_check(commit_msg_filepath)
 
     with open(commit_msg_filepath, "r+") as file:
         content = file.read()
@@ -21,18 +21,20 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
 
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
-
-
         plugins = importfile('{}/{}'.format(os.getcwd(),path))
+        
+        classes = getmembers(plugins, isclass)
+        for obj in classes:
+            pm.register(obj[1]())
 
+        errors = pm.hook.rule(message=content)
+        if errors:
+            print(*errors, sep = "\n")
 
-        pm.register(plugins)
+            sys.exit(1)
 
-        pm.hook.checkm(message=content)
-        pm.hook.checkl(message=content)
-
-        sys.exit(1)
-
+        else:
+            sys.exit(0)
 
 
 
