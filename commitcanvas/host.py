@@ -28,6 +28,7 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
             pm.register(obj[1]())
 
         errors = pm.hook.rule(message=content)
+        print(errors)
         if errors:
             print(*errors, sep = "\n")
 
