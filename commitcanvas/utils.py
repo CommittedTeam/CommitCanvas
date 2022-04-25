@@ -21,3 +21,12 @@ def registrar(pm, classes):
 
     for obj in classes:
         pm.register(obj[1]())
+
+def read_message(commit):
+    commit_msg_filepath = commit
+
+    with open(commit_msg_filepath, "r+") as file:
+        content = file.read()
+        file.seek(0, 0)
+
+        return content
