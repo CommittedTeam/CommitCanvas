@@ -23,10 +23,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         print(os.path.pardir)
         sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
 
-        plugins = importlib.import_module(path)
+        import path
 
-
-        pm.register(plugins)
+        pm.register(path)
 
         pm.hook.checkm(message=content)
         pm.hook.checkl(message=content)
