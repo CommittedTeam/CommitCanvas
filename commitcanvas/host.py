@@ -2,8 +2,6 @@ import pluggy
 from commitcanvas import hookspecs
 import typer
 import sys
-import joblib
-
 
 
 app = typer.Typer()
@@ -23,10 +21,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
         pm.register(path)
+
         pm.hook.checkm(message=content)
         pm.hook.checkl(message=content)
-
-        model = joblib.load(path)
 
         sys.exit(1)
 
