@@ -3,6 +3,7 @@ from commitcanvas import hookspecs
 import typer
 import sys
 import importlib
+import os
 
 app = typer.Typer()
 
@@ -20,7 +21,10 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm = pluggy.PluginManager("commitcanvas")
         pm.add_hookspecs(hookspecs)
 
+        sys.path.append(os.path.abspath(os.path.join(os.path.pardir, path)))
+        
         plugins = importlib.import_module(path)
+
 
         pm.register(plugins)
 
