@@ -1,5 +1,5 @@
 import pluggy
-from commitcanvas import hookspecs
+from commitcanvas import hookspecs, default
 import typer
 import sys
 import importlib
@@ -23,6 +23,10 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm.add_hookspecs(hookspecs)
         plugins = importfile('{}/{}'.format(os.getcwd(),path))
         
+        default_classes = getmembers(default, isclass)
+        for obj in default_classes:
+            pm.register(obj[1]())
+
         classes = getmembers(plugins, isclass)
         for obj in classes:
             pm.register(obj[1]())
