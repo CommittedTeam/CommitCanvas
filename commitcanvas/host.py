@@ -11,7 +11,7 @@ app = typer.Typer()
 
 
 @app.command()
-def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
+def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: list = None):
     """Get commit message from command line and do checks."""
     commit_msg_filepath = commit
 
@@ -23,8 +23,12 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG"):
         pm.add_hookspecs(hookspecs)
         plugins = importfile('{}/{}'.format(os.getcwd(),path))
         
+
         default_classes = getmembers(default, isclass)
-        for obj in default_classes:
+        enabled_default_classes = [obj for obj in default_classes if obj[0] not in disable]
+
+
+        for obj in enabled_default_classes:
             pm.register(obj[1]())
 
         classes = getmembers(plugins, isclass)

@@ -1,13 +1,13 @@
 import commitcanvas
 
-class plug3:
+class subject_capital_letter:
     @commitcanvas.hookimpl
     def rule(self,message:str):
         if message[0].islower():
-            return("Commit must start with upparcase character") 
+            return("Commit must start with capital letter") 
 
 
-class plug1:
+class subject_max_char_count:
     @commitcanvas.hookimpl
     def rule(self,message:str):
         max_count = 100
