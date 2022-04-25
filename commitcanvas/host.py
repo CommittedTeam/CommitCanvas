@@ -1,7 +1,7 @@
 import pluggy
 from commitcanvas import hookspecs,lib
 import typer
-
+import sys
 
 pm = pluggy.PluginManager("commitcanvas")
 pm.add_hookspecs(hookspecs)
