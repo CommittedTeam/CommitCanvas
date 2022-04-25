@@ -30,6 +30,7 @@ class blank_line:
     def rule(self,message:str):
 
         lines = message.splitlines()
+        print(lines)
         if len(lines) > 1:
             if not lines[1]:
                return("Commit message must have blank line between the subject and the body") 
