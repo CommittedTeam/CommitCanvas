@@ -8,7 +8,7 @@ app = typer.Typer()
 
 @app.command()
 def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = ""):
-    """Get commit message from command line and do checks."""
+    """Get commit message from command line and run checks."""
 
 
     user_plugins = importfile('{}/{}'.format(os.getcwd(),path))
