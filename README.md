@@ -106,7 +106,7 @@ Here are some of the ways to customize commitcanvas:
 
   3. Add `commitcanvas` as a dependency for your repository
 
-  4. import `commitcanvas` in your file and add your own plugins, see the example [file](https://github.com/CommittedTeam/test-useful-tools/blob/master/commitcanvas_plugins.py). Each plugin needs to be represented as its own class. The function name has to be `rule` and must take two arguments `(self,message)`. For example, let's write a new rule that requires the commit message to have at least 2 words.
+  4. import `commitcanvas` in `commitcanvas_plugins.py` and add your own plugins, see the example [file](https://github.com/CommittedTeam/test-useful-tools/blob/master/commitcanvas_plugins.py). Each plugin needs to be represented as its own class. The function name has to be `rule` and must take two arguments `(self,message)`. For example, let's write a new rule that requires the commit message to have at least 2 words.
 
   ```
   class subject_min_word_count:
