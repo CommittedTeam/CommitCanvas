@@ -78,7 +78,7 @@ Every time you make a commit `commitcanvas` will automatically check the commit 
 
 Here are some of the ways to customize commitcanvas:
 
-- CommitCanvas comes with default rules for checking the style of your commit message. Please see the [default rules](commitcanvas/default.py). However since commitcanvas uses `pluggy` you can add your own rules or customize the default ones. Please follow the steps below:
+- CommitCanvas comes with default rules for checking the style of your commit message. Please see the [default rules](commitcanvas/default.py). However since commitcanvas uses `pluggy` you can add your own rules. Please follow the steps below:
 
   1. Inside your repository create a python file where you will write your rules, such as `commitcanvas_plugins.py`. Name of the file does not matter as long as it's not `commitcanvas.py`
 
@@ -117,7 +117,10 @@ Here are some of the ways to customize commitcanvas:
         if count <= min_count:
             return("Commit message must have more than {} words, got: {}".format(min_count,count)) 
   ```
-- If you would like to disable specific default rules, pass their names to `disable` parameter in `args` inside `.pre-commit-config.yaml`. The names must match the class names specified in[default_rules.py](commitcanvas/default.py) and need to be separated by comma. For example:
+
+  Now if you run `git commit`, your commit message will be check by default as well as added rules.
+
+- CommitCanvas also lets you disable specific default rules. Pass their names to `disable` parameter in `args` inside `.pre-commit-config.yaml`. The names must match the class names specified in[default_rules.py](commitcanvas/default.py) and need to be separated by comma. For example:
 
     ```
 
