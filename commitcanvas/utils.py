@@ -6,7 +6,11 @@ import sys
 
 
 def create_pluginmanager():
-    """Create PlugginManager instance for commitcanvas."""
+    """Create PlugginManager instance for commitcanvas.
+    
+    param: None
+    return: Pluginmanager object
+    """
 
     pm = pluggy.PluginManager("commitcanvas")
     pm.add_hookspecs(hookspecs)
