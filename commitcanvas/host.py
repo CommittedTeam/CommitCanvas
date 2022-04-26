@@ -16,23 +16,23 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
              commit: path to the file where commit message is stored, this parameter is needed for pre-commit
              disable: optional argument for the user to disable default hooks.
                       The user will give string with comma separated names of plugins to disable
-    :return: print error messages if any and return exit code 1 for the commit to be aborted by pre-commit
+    :return: print error messages if any and return exit code 1 so that pre-commit aborts the commit
 
     """
 
-
+    # import the python module where user defined custom plugins
     user_plugins = importfile('{}/{}'.format(os.getcwd(),path))
     
+    # remove the default plugins that user disabled
     kept_default_classes = utils.default_tokeep(disable)
 
     pm = utils.create_pluginmanager()
-
+    # register default plugins
     utils.registrar(pm, kept_default_classes)
-
+    # register user provided plugins
     utils.registrar(pm, getmembers(user_plugins, isclass))
 
     errors = pm.hook.rule(message=utils.read_message(commit))
-
     utils.display_errors(errors)
 
 
