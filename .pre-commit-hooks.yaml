@@ -2,7 +2,7 @@
     name: commitcanvas
     entry: check
     verbose: False
-    # language: python
+    language: system
     pass_filenames: false
     stages: [commit-msg]
 
