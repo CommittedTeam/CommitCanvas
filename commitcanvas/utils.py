@@ -1,22 +1,7 @@
 """Helper functions for entry point"""
-import pluggy
-from commitcanvas import hookspecs, default
+from commitcanvas import default
 from inspect import getmembers, isclass
 import sys
-
-
-def create_pluginmanager():
-    """Create PlugginManager instance for commitcanvas.
-    
-    :params: None
-    :return: Pluginmanager object
-    """
-
-    pm = pluggy.PluginManager("commitcanvas")
-    pm.add_hookspecs(hookspecs)
-
-    return pm
-
 
 def default_tokeep(disable: str) -> list[str]:
     """Remove classes that user disabled.

@@ -5,7 +5,7 @@ hookspec = pluggy.HookspecMarker("commitcanvas")
 
 
 @hookspec
-def rule(message: str):
+def rule(message: str) -> str:
     """Check the style of commit message.
 
     :param: commit message

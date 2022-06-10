@@ -3,6 +3,8 @@ import os
 from pydoc import importfile
 from inspect import getmembers, isclass
 from commitcanvas import utils
+import pluggy
+from commitcanvas import hookspecs
 
 app = typer.Typer()
 
@@ -28,7 +30,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
     # remove the default plugins that user disabled
     kept_default_classes = utils.default_tokeep(disable)
 
-    pm = utils.create_pluginmanager()
+    pm = pluggy.PluginManager("commitcanvas")
+    pm.add_hookspecs(hookspecs)
+
     # register default plugins
     utils.registrar(pm, kept_default_classes)
     # register user provided plugins
