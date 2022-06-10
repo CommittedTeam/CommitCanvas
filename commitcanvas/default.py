@@ -5,7 +5,8 @@ class subject_capital_letter:
     @commitcanvas.check
     def rule(self,message:str):
         """Subject line of commit message starts with capital letter."""
-        if message[0].islower():
+        lines = message.splitlines()[0]
+        if lines[0].islower():
             return("Subject must start with capital letter") 
 
 

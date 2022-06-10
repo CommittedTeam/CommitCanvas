@@ -21,7 +21,9 @@ def entry(path: str = None, commit: str = ".git/COMMIT_EDITMSG", disable: str = 
     """
 
     # import the python module where user defined custom plugins
+
     user_plugins = importfile('{}/{}'.format(os.getcwd(),path))
+
     
     # remove the default plugins that user disabled
     kept_default_classes = utils.default_tokeep(disable)
