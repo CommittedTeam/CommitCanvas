@@ -1,10 +1,16 @@
-from commitcanvas import default
+"""Unit tests for default.py."""
+# pylint: disable = import-error
 import pytest
+
+from commitcanvas import default
 
 
 @pytest.mark.parametrize(
     "commit_message,expected",
-    [("fix typo", True), ("Update file", False), ("add new feature", True),
+    [
+        ("fix typo", True),
+        ("Update file", False),
+        ("add new feature", True),
         (
             (
                 "add missing test dependency\n"
@@ -15,7 +21,7 @@ import pytest
     ],
 )
 def test_subject_capital_letter(commit_message, expected):
-    """Check if the rule correctly returns error message for the given commit message."""
+    """Check that message is capitalized."""
     check = default.subject_capital_letter()
     error = check.rule(message=commit_message)
     assert expected == bool(error)
@@ -23,7 +29,10 @@ def test_subject_capital_letter(commit_message, expected):
 
 @pytest.mark.parametrize(
     "commit_message,expected",
-    [("fix typo.", True), ("Update file", False), ("add new feature.", True),
+    [
+        ("fix typo.", True),
+        ("Update file", False),
+        ("add new feature.", True),
         (
             (
                 "add missing test dependency\n"

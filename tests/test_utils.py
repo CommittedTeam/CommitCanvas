@@ -1,9 +1,14 @@
+"""Unit tests for utils.py."""
+# pylint: disable = import-error
 import pytest
+
 from commitcanvas import utils
-from commitcanvas import hookspecs
-from commitcanvas import default
-import pluggy
-from inspect import getmembers, isclass
+
+# from commitcanvas import hookspecs
+# from commitcanvas import default
+# import pluggy
+# from inspect import getmembers, isclass
+
 
 def test_default_tokeep_single():
     """Check that single check is disabled correctly."""
@@ -12,21 +17,27 @@ def test_default_tokeep_single():
 
     assert disable not in remaining
 
+
 def test_default_tokeep_space():
-    """Check that two comma separated checks are disabled correctly, if there is space between."""
+    """Check that two comma separated checks are disabled correctly."""
     disable = "subject_capital_letter, subject_max_char_count"
     remaining = utils.default_tokeep(disable)
 
     assert "subject_capital_letter" not in remaining
     assert "subject_max_char_count" not in remaining
 
+
 def test_default_tokeep_no_space():
-    """Check that two comma separated checks are disabled correctly, if there is no space between."""
+    """Check that two comma separated checks are disabled correctly.
+
+    if there is no space between.
+    """
     disable = "subject_capital_letter,subject_max_char_count"
     remaining = utils.default_tokeep(disable)
 
     assert "subject_capital_letter" not in remaining
-    assert "subject_max_char_count" not in remaining    
+    assert "subject_max_char_count" not in remaining
+
 
 @pytest.mark.parametrize(
     "input_errors,expected_value",
