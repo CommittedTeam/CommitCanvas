@@ -26,7 +26,7 @@ def registrar(pluggy_manager, classes: List[tuple]) -> None:
 
     :params: pm: PluginManager object
              classes: list of tuples, where each tuple
-             has plugin's name and class
+             has plugin's (name, class)
     :return: None
     """
     for obj in classes:
