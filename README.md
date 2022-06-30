@@ -55,7 +55,7 @@ Currently `commitcanvas` works as a `pre-commit` hook ,so please follow the step
     # check with commitcanvas.
     - repo: https://github.com/CommittedTeam/CommitCanvas
       # the revision or tag to clone at
-      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75	
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
       hooks:
         - id: commitcanvas
           language_version: python3.7
@@ -93,7 +93,7 @@ Here are some of the ways to customize commitcanvas:
     # check with commitcanvas.
     - repo: https://github.com/CommittedTeam/CommitCanvas
       # the revision or tag to clone at
-      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75	
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
       hooks:
         - id: commitcanvas
           language_version: python3.7
@@ -102,7 +102,7 @@ Here are some of the ways to customize commitcanvas:
           args: ["--path","commitcanvas_plugins.py"
           ]
 
-    ```   
+    ```
 
   3. import `commitcanvas` in `commitcanvas_plugins.py` and add your own plugins, see the example [file](https://github.com/CommittedTeam/test-useful-tools/blob/master/commitcanvas_plugins.py). Each plugin needs to be represented as its own class. The function name has to be `rule` and must take two arguments `(self,message)`. For example, let's write a new rule that requires the commit message to have at least 2 words.
 
@@ -113,7 +113,7 @@ Here are some of the ways to customize commitcanvas:
         min_count = 2
         count = len(message.split(" "))
         if count <= min_count:
-            return("Commit message must have more than {} words, got: {}".format(min_count,count)) 
+            return("Commit message must have more than {} words, got: {}".format(min_count,count))
   ```
 
   Now if you run `git commit`, your commit message will be checked by default as well as added rules.
@@ -128,7 +128,7 @@ Here are some of the ways to customize commitcanvas:
     # check with commitcanvas.
     - repo: https://github.com/CommittedTeam/CommitCanvas
       # the revision or tag to clone at
-      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75	
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
       hooks:
         - id: commitcanvas
           language_version: python3.7

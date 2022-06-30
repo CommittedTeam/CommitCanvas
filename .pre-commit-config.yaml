@@ -1,15 +1,6 @@
 minimum_pre_commit_version: 1.21.0
 repos:
 
-# check with pylint
-- repo: https://github.com/PyCQA/pylint
-  rev: pylint-2.5.3
-  hooks:
-  - id: pylint
-    stages: [commit]
-    args:
-      - --score=n
-
 # check docstrings
 - repo: https://github.com/PyCQA/pydocstyle
   rev: 5.0.2
