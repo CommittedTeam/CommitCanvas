@@ -8,9 +8,10 @@ Check the style and return errors and respective exit code.
 # from inspect import isclass
 # from pydoc import importfile
 # import pluggy
+from typing import List
+from typing import Optional
+
 import typer
-from typer import List
-from typer import Optional
 
 # from commitcanvas import hookspecs
 # from commitcanvas import utils
