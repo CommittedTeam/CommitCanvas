@@ -8,6 +8,7 @@ Check the style and return errors and respective exit code.
 # from inspect import isclass
 # from pydoc import importfile
 # import pluggy
+import sys
 from typing import List
 from typing import Optional
 
@@ -42,7 +43,7 @@ def entry(
 
     print(path)
     print(disable)
-
+    sys.exit(1)
     # if path:
     #     user_plugins = importfile("{}/{}".format(os.getcwd(), path))
     # else:
