@@ -5,7 +5,7 @@ from inspect import isclass
 from typing import List
 
 
-def default_tokeep(plugins, disable: List[str]) -> List[str]:
+def filter(plugins, disable: List[str]) -> List[str]:
     """Remove classes that user disabled.
 
     :params: string that has comma separated names of

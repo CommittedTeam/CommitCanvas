@@ -5,6 +5,7 @@ import tempfile
 
 import pytest
 
+import commitcanvas_plugins
 from commitcanvas import utils
 
 
@@ -44,3 +45,11 @@ def test_read_message(user_input, read):
             tmpfile.write(user_input)
 
         assert utils.read_message(tmpfilepath) == read
+
+
+def test_filter():
+    """Check that rules are correctly disabled."""
+    disable = ["subject_endwith_period"]
+    kept_plugins = utils.filter(commitcanvas_plugins, disable)
+
+    assert "subject_endwith_period" not in kept_plugins

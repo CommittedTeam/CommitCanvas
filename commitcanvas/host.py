@@ -43,7 +43,7 @@ def entry(
 
     for i in path:
         plugins = importfile("{}/{}".format(os.getcwd(), i))
-        kept_plugins = utils.default_tokeep(plugins, disable)
+        kept_plugins = utils.filter(plugins, disable)
         # register user provided plugins
         utils.registrar(pluggy_manager, kept_plugins)
 
