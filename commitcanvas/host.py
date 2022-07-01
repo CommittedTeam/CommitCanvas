@@ -38,8 +38,6 @@ def entry(
     :return: print error messages if any and return exit code 1
 
     """
-    # import the python module where user defined custom plugins
-
     # remove the default plugins that user disabled
     kept_default_classes = utils.default_tokeep(disable)
 
@@ -48,10 +46,12 @@ def entry(
 
     # register default plugins
     utils.registrar(pluggy_manager, kept_default_classes)
-    # register user provided plugins
+
+    # import the python module where user defined custom plugins
     if path:
         for i in path:
             user_plugins = importfile("{}/{}".format(os.getcwd(), i))
+            # register user provided plugins
             utils.registrar(pluggy_manager, getmembers(user_plugins, isclass))
     else:
         user_plugins = None

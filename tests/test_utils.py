@@ -20,7 +20,7 @@ def test_default_tokeep_single():
 
 def test_default_tokeep_space():
     """Check that two comma separated checks are disabled correctly."""
-    disable = "subject_capital_letter, subject_max_char_count"
+    disable = ["subject_capital_letter", "subject_max_char_count"]
     remaining = utils.default_tokeep(disable)
 
     assert "subject_capital_letter" not in remaining
