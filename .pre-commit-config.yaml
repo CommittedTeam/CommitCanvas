@@ -1,15 +1,6 @@
 minimum_pre_commit_version: 1.21.0
 repos:
 
-# check with pylint
-- repo: https://github.com/PyCQA/pylint
-  rev: pylint-2.5.3
-  hooks:
-  - id: pylint
-    stages: [commit]
-    args:
-      - --score=n
-
 # check docstrings
 - repo: https://github.com/PyCQA/pydocstyle
   rev: 5.0.2
@@ -28,7 +19,7 @@ repos:
 
 # format Python code with black
 - repo: https://github.com/ambv/black
-  rev: 19.10b0
+  rev: 22.3.0
   hooks:
   - id: black
     stages: [commit]
@@ -40,9 +31,10 @@ repos:
   - id: reorder-python-imports
     stages: [commit]
 
-#lint the commit message with commitcan
+#lint the commit message with commitcanvas
 - repo: https://github.com/CommittedTeam/CommitCanvas
-  rev: e78450d335ccb77da98a2f21c574bc414120bc84
+  rev: 9f052acaab0591cf6b120199a4133a1bae268244
   hooks:
   - id: commitcanvas
+    stages: [commit-msg]
 

@@ -41,67 +41,110 @@ Other features mentioned above are under development and will be added to Commit
 
 ## Installation
 
-Currently `commitcanvas` works with `pre-commit` so please follow the steps below.
+Currently `commitcanvas` works as a `pre-commit` hook ,so please follow the steps below.
 
-Add `.pre-commit-config.yaml` to your repository.
+1. Add `.pre-commit-config.yaml` file to your git repository. Such as [.pre-commit-config.yaml](./.pre-commit-config.yaml)
 
-Add following code block inside the `.pre-commit-config.yaml`:
+2. Add following code block inside your `.pre-commit-config.yaml`:
 
-```
+    ```
 
-minimum_pre_commit_version: 1.21.0
-repos:
+    minimum_pre_commit_version: 1.21.0
+    repos:
 
-# check with commitcanvas.
-- repo: https://github.com/CommittedTeam/CommitCanvas
-  rev: the revision or tag to clone at
-  hooks:
-    - id: commitcanvas
-      language_version: python3.7
-      language: python
-      stages: [prepare-commit-msg]
+    # check with commitcanvas.
+    - repo: https://github.com/CommittedTeam/CommitCanvas
+      # the revision or tag to clone at
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
+      hooks:
+        - id: commitcanvas
+          language_version: python3.7
+          language: python
+          stages: [commit-msg]
 
-```
+    ```
 
-Install `pre-commit`, please refer the [documentation](https://pre-commit.com/#install)
+3. Install `pre-commit`, please refer the [documentation](https://pre-commit.com/#install)
 
-To use `commitcanvas` as a `prepare-commit-msg` hook, install pre-commit in `.git/hooks/prepare-commit-msg`:
+4. To use `commitcanvas` as a `commit-msg` hook, install pre-commit in `.git/hooks/prepare-commit-msg` by running the following command:
 
-`pre-commit install --hook-type prepare-commit-msg`
+    `pre-commit install --hook-type commit-msg`
 
-NOTE: You need to run this command everytime you clone the repository, unless you configure `pre-commit` globaly. Please follow the [link](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories) for more information.
+      NOTE: You need to run this command everytime you clone the repository, unless you configure `pre-commit` globaly. Please follow the [link](https://pre-commit.com/#automatically-enabling-pre-commit-on-repositories) for more information.
 
 ## Run
 
-Every time you make a commit `commitcanvas` will automatically check the commit message, and if there are any erros, `git commit` command will be aborted before creating a commit, and helpul tips will be dispalyed about how to improve the commit message.
+Every time you make a commit `commitcanvas` will automatically check the commit message, and if there are any errors, `git commit` command will be aborted before creating a commit, and helpul tips will be dispalyed about how to improve the commit message.
 
-If you would like to skip commitcanvas errors, please run `git commit` with `SKIP=commitcanvas`. Please see
+Here are some of the ways to customize commitcanvas:
+
+- CommitCanvas comes with default rules for checking the style of your commit message. Please see the [default rules](commitcanvas/default.py). However since commitcanvas uses `pluggy` you can add your own rules. Please follow the steps below:
+
+  1. Inside your repository create a python file where you will write your rules, such as `commitcanvas_plugins.py`. Name of the file does not matter as long as it's not `commitcanvas.py`
+
+  2. Add the file as an argument to `--path` parameter in `args` inside `.pre-commit-config.yaml`. For example:
+
+
+    ```
+
+    minimum_pre_commit_version: 1.21.0
+    repos:
+
+    # check with commitcanvas.
+    - repo: https://github.com/CommittedTeam/CommitCanvas
+      # the revision or tag to clone at
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
+      hooks:
+        - id: commitcanvas
+          language_version: python3.7
+          language: python
+          stages: [commit-msg]
+          args: ["--path","commitcanvas_plugins.py"
+          ]
+
+    ```
+
+  3. import `commitcanvas` in `commitcanvas_plugins.py` and add your own plugins, see the example [file](https://github.com/CommittedTeam/test-useful-tools/blob/master/commitcanvas_plugins.py). Each plugin needs to be represented as its own class. The function name has to be `rule` and must take two arguments `(self,message)`. For example, let's write a new rule that requires the commit message to have at least 2 words.
+
+  ```
+  class subject_min_word_count:
+    @commitcanvas.check
+    def rule(self,message):
+        min_count = 2
+        count = len(message.split(" "))
+        if count <= min_count:
+            return("Commit message must have more than {} words, got: {}".format(min_count,count))
+  ```
+
+  Now if you run `git commit`, your commit message will be checked by default as well as added rules.
+
+- CommitCanvas also lets you disable specific default rules. Pass their names to `disable` parameter in `args` inside `.pre-commit-config.yaml`. The names must match the class names specified in[default_rules.py](commitcanvas/default.py) and need to be separated by comma. For example:
+
+    ```
+
+    minimum_pre_commit_version: 1.21.0
+    repos:
+
+    # check with commitcanvas.
+    - repo: https://github.com/CommittedTeam/CommitCanvas
+      # the revision or tag to clone at
+      rev: 38cf0d1f95ee3ec0e3ac6771d9ca2ab6bce70c75
+      hooks:
+        - id: commitcanvas
+          language_version: python3.7
+          language: python
+          stages: [commit-msg]
+          args: ["--path","commitcanvas_plugins.py",
+              "--disable","subject_max_char_count, blank_line"
+          ]
+
+    ```
+
+- If you would like to use an external library or package in your custom hooks please add the name of that package in `.pre-commit-config.yaml`. For example if you would like to use `pandas` and `textblob` you can add them to the `additional_dependencies: [pandas, textblob]`.
+
+- If you would like to skip commitcanvas errors, please run `git commit` with `SKIP=commitcanvas`. Please see
 [pre-commit](https://pre-commit.com/#temporarily-disabling-hooks) documentation for more information about
 environment variables.
-
-Commitcanvas will also predict and attach the conventional commit label automatically. If you would like
-to edit the message as well as the predicted label please run `git commit` command with `-e` option.
-
-### Project Agnostic
-
-Commitcanvas can be used in project agnostic mode. In this mode commitcanvas will use deployed model that
-was trained on over 300 open-source, [critical](https://github.com/ossf/criticality_score), [conventional](https://www.conventionalcommits.org/en/v1.0.0/) repositories.
-
-Unless project-specific path is provided commitcnavas will use the pre-deployed model as a default
-
-### Project Specific
-
-Commitcnavas can also be used in project specific mode. In this mode commitcnavas can be trained on selected repository.
-
-For instance if you would like to train commitcnavas on your repository you need to provide git url and the
-local path to save the trained model.
-
-Command to train and save the model: `commitcanvas train <url> <save>`
-
-After the model is saved please add the path to `pre-commit-config.yaml` file in your repository
-
-Please see [Commitcanvas-models](https://github.com/CommittedTeam/commitcanvas-models) for more information
-about the deployed models
 
 ## Development info
 
@@ -161,8 +204,6 @@ Some of the existing tools that are similar to CommitCanvas:
 - [gitlint](https://github.com/jorisroovers/gitlint): "Linting for your git commit messages"
 - [commitlint](https://github.com/conventional-changelog/commitlint): "Lint commit messages"
 - [cz-cli](https://github.com/commitizen/cz-cli): "The commitizen command line utility."
-
-Popular existing tools for checking the commit message usually have features to lint the message, fix or suggest labels, add or modify the checks and help the users keep creating explicit commit history. In addition to those functionalities, in the near future, CommitCanvas will also have a feature to predict the build status and let the users see if the commit is going to break the build before pushing their changes to Github. Please see the [issues](https://github.com/CommittedTeam/CommitCanvas/issues) for more information.
 
 ## Contributing
 
