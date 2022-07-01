@@ -25,7 +25,6 @@ def registrar(pluggy_manager, classes: List[tuple]) -> None:
              has plugin's (name, class)
     :return: None
     """
-    print(classes)
     for obj in classes:
         pluggy_manager.register(obj[1]())
 
