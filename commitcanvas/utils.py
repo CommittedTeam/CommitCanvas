@@ -14,7 +14,6 @@ def default_tokeep(plugins, disable: List[str]) -> List[str]:
     """
     defaults = getmembers(plugins, isclass)
     kept_default_classes = [i for i in defaults if i[0] not in disable]
-
     return kept_default_classes
 
 
