@@ -3,23 +3,28 @@
 Check the style and return errors and respective exit code.
 """
 # pylint: disable = import-error
-import os
-from inspect import getmembers
-from inspect import isclass
-from pydoc import importfile
-
-import pluggy
+# import os
+# from inspect import getmembers
+# from inspect import isclass
+# from pydoc import importfile
+# import pluggy
 import typer
+from typer import List
+from typer import Optional
 
-from commitcanvas import hookspecs
-from commitcanvas import utils
+# from commitcanvas import hookspecs
+# from commitcanvas import utils
 
 app = typer.Typer()
 FILE = ".git/COMMIT_EDITMSG"
 
 
 @app.command()
-def entry(path: str = None, commit: str = FILE, disable: str = ""):
+def entry(
+    path: Optional[List[str]] = typer.Option(None),
+    commit: str = FILE,
+    disable: Optional[List[str]] = typer.Option(None),
+):
     """Get commit message from command line and run checks.
 
     All the arguments will be given by the user in THEIR
@@ -33,21 +38,25 @@ def entry(path: str = None, commit: str = FILE, disable: str = ""):
 
     """
     # import the python module where user defined custom plugins
-    if path:
-        user_plugins = importfile("{}/{}".format(os.getcwd(), path))
-    else:
-        user_plugins = None
 
-    # remove the default plugins that user disabled
-    kept_default_classes = utils.default_tokeep(disable)
+    print(path)
+    print(disable)
 
-    pluggy_manager = pluggy.PluginManager("commitcanvas")
-    pluggy_manager.add_hookspecs(hookspecs)
+    # if path:
+    #     user_plugins = importfile("{}/{}".format(os.getcwd(), path))
+    # else:
+    #     user_plugins = None
 
-    # register default plugins
-    utils.registrar(pluggy_manager, kept_default_classes)
-    # register user provided plugins
-    utils.registrar(pluggy_manager, getmembers(user_plugins, isclass))
+    # # remove the default plugins that user disabled
+    # kept_default_classes = utils.default_tokeep(disable)
 
-    errors = pluggy_manager.hook.rule(message=utils.read_message(commit))
-    utils.display_errors(errors)
+    # pluggy_manager = pluggy.PluginManager("commitcanvas")
+    # pluggy_manager.add_hookspecs(hookspecs)
+
+    # # register default plugins
+    # utils.registrar(pluggy_manager, kept_default_classes)
+    # # register user provided plugins
+    # utils.registrar(pluggy_manager, getmembers(user_plugins, isclass))
+
+    # errors = pluggy_manager.hook.rule(message=utils.read_message(commit))
+    # utils.display_errors(errors)
