@@ -26,6 +26,7 @@ def registrar(pluggy_manager, classes: List[tuple]) -> None:
     :return: None
     """
     for obj in classes:
+        print(obj[1]())
         pluggy_manager.register(obj[1]())
 
 

@@ -47,7 +47,6 @@ def entry(
         plugins = importfile("{}/{}".format(os.getcwd(), i))
         kept_plugins = utils.default_tokeep(plugins, disable)
         # register user provided plugins
-        print(kept_plugins)
         utils.registrar(pluggy_manager, getmembers(kept_plugins, isclass))
 
     errors = pluggy_manager.hook.rule(message=utils.read_message(commit))
