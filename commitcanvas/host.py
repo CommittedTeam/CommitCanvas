@@ -38,23 +38,16 @@ def entry(
     :return: print error messages if any and return exit code 1
 
     """
-    # remove the default plugins that user disabled
-    kept_default_classes = utils.default_tokeep(disable)
-
     pluggy_manager = pluggy.PluginManager("commitcanvas")
     pluggy_manager.add_hookspecs(hookspecs)
 
-    # register default plugins
-    utils.registrar(pluggy_manager, kept_default_classes)
-
     # import the python module where user defined custom plugins
-    if path:
-        for i in path:
-            user_plugins = importfile("{}/{}".format(os.getcwd(), i))
-            # register user provided plugins
-            utils.registrar(pluggy_manager, getmembers(user_plugins, isclass))
-    else:
-        user_plugins = None
+
+    for i in path:
+        plugins = importfile("{}/{}".format(os.getcwd(), i))
+        kept_plugins = utils.default_tokeep(plugins, disable)
+        # register user provided plugins
+        utils.registrar(pluggy_manager, getmembers(kept_plugins, isclass))
 
     errors = pluggy_manager.hook.rule(message=utils.read_message(commit))
     utils.display_errors(errors)

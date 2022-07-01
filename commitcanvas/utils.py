@@ -4,17 +4,15 @@ from inspect import getmembers
 from inspect import isclass
 from typing import List
 
-from commitcanvas import default
 
-
-def default_tokeep(disable: List[str]) -> List[str]:
+def default_tokeep(plugins, disable: List[str]) -> List[str]:
     """Remove classes that user disabled.
 
     :params: string that has comma separated names of
             default plugins to be disabled
     :return: list of names of default plugins that will be kept
     """
-    defaults = getmembers(default, isclass)
+    defaults = getmembers(plugins, isclass)
     kept_default_classes = [i for i in defaults if i[0] not in disable]
 
     return kept_default_classes
