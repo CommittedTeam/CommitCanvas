@@ -4,8 +4,6 @@ Check the style and return errors and respective exit code.
 """
 # pylint: disable = import-error
 import os
-from inspect import getmembers
-from inspect import isclass
 from pydoc import importfile
 from typing import List
 from typing import Optional
@@ -47,7 +45,7 @@ def entry(
         plugins = importfile("{}/{}".format(os.getcwd(), i))
         kept_plugins = utils.default_tokeep(plugins, disable)
         # register user provided plugins
-        utils.registrar(pluggy_manager, getmembers(kept_plugins, isclass))
+        utils.registrar(pluggy_manager, kept_plugins)
 
     errors = pluggy_manager.hook.rule(message=utils.read_message(commit))
     utils.display_errors(errors)
