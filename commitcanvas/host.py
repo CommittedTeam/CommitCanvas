@@ -21,7 +21,7 @@ FILE = ".git/COMMIT_EDITMSG"
 @app.command()
 def entry(
     path: Optional[List[str]] = typer.Option(None),
-    commit: str = FILE,
+    commit: Optional[str] = FILE,
     disable: Optional[List[str]] = typer.Option(None),
 ):
     """Get commit message from command line and run checks.
